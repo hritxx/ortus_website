@@ -1,7 +1,7 @@
 import React from "react";
 import Section from "./Section";
 import imageCharts from "@/images/charts.jpg";
-import Blockquote from "./BlockQuote";
+import Blockquote from "./Blockquote";
 
 const Build = () => {
   return (
@@ -34,8 +34,8 @@ const Build = () => {
         }}
         className="mt-12"
       >
-        &quot;If you don&apos;t find a way to make money while you sleep, you
-        will work until you die.&quot;
+        If you don&apos;t find a way to make money while you sleep, you will
+        work until you die.
       </Blockquote>
     </Section>
   );
