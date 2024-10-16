@@ -28,7 +28,7 @@ const Testimonial = () => {
   };
   return (
     <Container>
-      <CenterAligner className="mt-12 mr-4 ml-4 bg-blue-900 px-5 py-10 rounded-4xl">
+      <CenterAligner className="mt-12  bg-blue-900  rounded-4xl">
         <h1 className="text-slate-200 text-center text-2xl font-bold sm:text-3xl pb-8">
           Customers love{" "}
           <strong className="font-semibold text-blue-200">ORTUS FINANCE</strong>{" "}

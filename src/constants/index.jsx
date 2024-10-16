@@ -35,7 +35,7 @@ export const navigation = [
   },
 ];
 
-export const faq = [
+export const data = [
   {
     id: 1,
     question: "How do I invest with ORTUS FINANCE?",
