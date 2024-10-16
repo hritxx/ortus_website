@@ -26,8 +26,8 @@ const Discover = () => {
           Once the research phase is complete, we compile everything into a
           <strong className="font-semibold text-neutral-950">report</strong>{" "}
           that looks more impressive than it actually is, making sure to
-          highlight the "key findings" that justify our recommendations — and,
-          of course, our fees.
+          highlight the &quot;key findings&quot; that justify our
+          recommendations — and, of course, our fees.
         </p>
       </div>
     </Section>

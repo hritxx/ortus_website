@@ -34,8 +34,8 @@ const Build = () => {
         }}
         className="mt-12"
       >
-        ”If you don't find a way to make money while you sleep, you will work
-        until you die."
+        &quot;If you don&apos;t find a way to make money while you sleep, you
+        will work until you die.&quot;
       </Blockquote>
     </Section>
   );
