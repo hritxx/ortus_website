@@ -104,11 +104,16 @@ reality."
                     {row.cells.map((cell) => {
                       const { key: cellKey, ...cellProps } =
                         cell.getCellProps();
+                      const isOrtus = cell.column.id === "ortus";
                       return (
                         <td
                           key={cellKey}
                           {...cellProps}
-                          className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap"
+                          className={`px-6 py-4 text-sm whitespace-nowrap ${
+                            isOrtus
+                              ? "text-green-600 font-semibold"
+                              : "text-gray-600"
+                          }`}
                         >
                           {cell.render("Cell")}
                         </td>

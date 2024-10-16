@@ -114,7 +114,7 @@ export const tableData = [
   },
   {
     id: "5 Lakhs to 10 Lakhs",
-    ortus: "12%",
+    ortus: "12%⬆",
     sbi: "6.50%",
     po: "7.50%",
     lic: "7.50%",
@@ -124,7 +124,7 @@ export const tableData = [
   },
   {
     id: "21 Lakhs to 50 Lakhs",
-    ortus: "15%",
+    ortus: "15%⬆",
     sbi: "6.50%",
     po: "7.50%",
     lic: "7.50%",
@@ -134,7 +134,7 @@ export const tableData = [
   },
   {
     id: "50 Lakhs to 1 Crore",
-    ortus: "20%",
+    ortus: "20%⬆",
     sbi: "6.50%",
     po: "7.50%",
     lic: "7.50%",
@@ -144,7 +144,7 @@ export const tableData = [
   },
   {
     id: "1 Crore and above",
-    ortus: "25%",
+    ortus: "25%⬆",
     sbi: "6.50%",
     po: "7.50%",
     lic: "7.50%",
