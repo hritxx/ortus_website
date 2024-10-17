@@ -10,6 +10,7 @@ export const content = [
 export const theme = {
   extend: {
     colors: {
+      golden: "#FFD700",
       p1: "#2EF2FF",
       p2: "#3C52D9",
       p3: "#C8EA80",

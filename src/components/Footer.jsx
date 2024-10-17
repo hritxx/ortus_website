@@ -65,7 +65,7 @@ const Footer = () => {
             <Logo className="h-8">Ortus Finance</Logo>
           </Link>
           <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+            © Ortus Finance Pvt. Ltd. {new Date().getFullYear()}
           </p>
         </div>
       </FadeIn>

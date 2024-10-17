@@ -96,7 +96,7 @@ const FaqItem = ({ title, answer }) => {
             : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="mt-4 text-base font-semibold text-yellow-300 overflow-hidden">
+        <div className="mt-4 text-xl font-semibold text-yellow-300 overflow-hidden ">
           {answer}
         </div>
       </div>
