@@ -63,7 +63,7 @@ const Faq = () => {
   return (
     <Container>
       <div className="mt-16 p-4 bg-blue-900  rounded-4xl">
-        <h2 className="text-slate-200 text-center text-2xl font-bold sm:text-3xl pb-8">
+        <h2 className="mt-10 text-slate-200 text-center text-2xl font-bold sm:text-3xl ">
           Frequently Asked Questions
         </h2>
         <div className="mt-10 border-t text-xl border-white/10 pt-10 ml-5 mr-5 ">
