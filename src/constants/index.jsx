@@ -106,7 +106,7 @@ export const tableData = [
     id: "",
     ortus: "Guaranteed",
     sbi: "Upto",
-    po: "Upto%",
+    po: "Upto",
     lic: "Upto",
     hdfc: "Upto",
     pnb: "Upto",
