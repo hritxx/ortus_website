@@ -113,7 +113,17 @@ export const tableData = [
     axis: "Upto",
   },
   {
-    id: "5 Lakhs to 10 Lakhs",
+    id: "1 Lakhs to 4.99 Lakhs",
+    ortus: "10%✅",
+    sbi: "6.50%",
+    po: "7.50%",
+    lic: "7.50%",
+    hdfc: "7%",
+    pnb: "7.75%",
+    axis: "7.10%",
+  },
+  {
+    id: "5 Lakhs to 20 Lakhs",
     ortus: "12%✅",
     sbi: "6.50%",
     po: "7.50%",
