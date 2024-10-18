@@ -12,6 +12,7 @@ import clsx from "clsx";
 import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
+import Image from "next/image";
 
 const Header = ({
   panelId,
@@ -27,7 +28,16 @@ const Header = ({
       <div className="flex items-center justify-between">
         {/*logo*/}
         <Link href={"/"} aria-label="Home">
-          <Logo invert={invert}>ORTUS FINANCE Pvt. Ltd.</Logo>
+          <div className="flex items-center">
+            <Image
+              src="/images/logo.png" // Replace with the actual path to your logo image
+              alt="ORTUS Logo"
+              width={60} // Adjust width as needed
+              height={60} // Adjust height as needed
+              className="mr-2"
+            />
+            <Logo invert={invert}>ORTUS FINANCE</Logo>
+          </div>
         </Link>
         <div className="flex items-center gap-x-8">
           <Button href={"/contact"} invert={invert}>

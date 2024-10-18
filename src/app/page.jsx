@@ -30,11 +30,11 @@ export default function Home() {
       <Clients />
       <Testimonials
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: "Phobia", logo: logoPhobiaDark }}
+        client={{ name: "Bijaya Deb", logo: logoPhobiaDark }}
       >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user microphone without triggering one of
-        those annoying permission dialogs.
+        I've experienced exceptional growth with ORTUS FINANCE. Their low fees
+        and expert guidance have made a significant difference in my financial
+        planning.
       </Testimonials>
       <Services />
       <Testimonial />
