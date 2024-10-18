@@ -32,9 +32,9 @@ export default function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: "Bijaya Deb", logo: logoPhobiaDark }}
       >
-        I've experienced exceptional growth with ORTUS FINANCE. Their low fees
-        and expert guidance have made a significant difference in my financial
-        planning.
+        I&apos;ve experienced exceptional growth with ORTUS FINANCE. Their low
+        fees and expert guidance have made a significant difference in my
+        financial planning.
       </Testimonials>
       <Services />
       <Testimonial />
