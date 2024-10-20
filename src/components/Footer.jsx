@@ -61,7 +61,7 @@ const Footer = () => {
             <NewsletterForm />
           </div>
         </div>
-        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12 sm:flex-col sm:items-center sm:text-center">
+        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12 sm:grid-cols-1 sm:items-center">
           <Link href={"/"} aria-label="Home">
             <div className="flex flex-col items-center">
               <Image
@@ -69,7 +69,6 @@ const Footer = () => {
                 alt="ORTUS Logo"
                 width={100} // Adjust width as needed
                 height={100} // Adjust height as needed
-                layout="intrinsic"
                 className="mb-2 sm:"
               />
               <Logo className="h-8">ORTUS FINANCE </Logo>
