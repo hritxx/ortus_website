@@ -18,28 +18,16 @@ const Table = () => {
         accessor: "ortus",
       },
       {
-        Header: "SBI",
-        accessor: "sbi",
+        Header: "Govt. Financial Institutions",
+        accessor: "gov",
       },
       {
-        Header: "POST OFFICE",
-        accessor: "po",
+        Header: "Non Govt. Financial Institutions",
+        accessor: "nonGov",
       },
       {
-        Header: "LIC",
-        accessor: "lic",
-      },
-      {
-        Header: "HDFC",
-        accessor: "hdfc",
-      },
-      {
-        Header: "PNB",
-        accessor: "pnb",
-      },
-      {
-        Header: "AXIS",
-        accessor: "axis",
+        Header: "Small Finance Banks",
+        accessor: "smallBanks",
       },
     ],
     []
@@ -82,7 +70,7 @@ reality."
                         <th
                           key={columnKey}
                           {...columnProps}
-                          className="px-6 py-3 text-xs font-semibold text-gray-700 uppercase tracking-wider"
+                          className="px-6 py-3 text-xs font-semibold text-gray-700 uppercase tracking-wider text-center"
                         >
                           {column.render("Header")}
                         </th>
@@ -109,7 +97,7 @@ reality."
                         <td
                           key={cellKey}
                           {...cellProps}
-                          className={`px-6 py-4 text-sm whitespace-nowrap ${
+                          className={`px-6 py-4 text-sm whitespace-nowrap text-center ${
                             isOrtus
                               ? "text-green-600 font-semibold"
                               : "text-gray-600"

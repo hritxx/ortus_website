@@ -34,6 +34,7 @@ const Header = ({
               alt="ORTUS Logo"
               width={60} // Adjust width as needed
               height={60} // Adjust height as needed
+              layout="intrinsic"
               className="mr-2"
             />
             <Logo invert={invert}>ORTUS FINANCE</Logo>
