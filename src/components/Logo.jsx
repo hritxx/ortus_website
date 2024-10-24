@@ -16,15 +16,15 @@ const Logo = ({ invert, href, className, children, ...props }) => {
     );
   }
   return (
-    <h2
+    <h1
       className={clsx(
-        "cursor-pointer text-2xl font-bold duration-300",
+        "cursor-pointer sm:text-xl md:text-2xl lg:text-2xl  font-bold duration-300",
         className
       )}
       {...props}
     >
       {inner}
-    </h2>
+    </h1>
   );
 };
 
