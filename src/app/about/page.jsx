@@ -40,9 +40,9 @@ Assurance "
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placed clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem value="360" label="Clients" />
+          {/* <StatListItem value="52" label="Placed clients" /> */}
+          <StatListItem value="₹16.8L" label="Available Funds" />
         </StatList>
       </Container>
       <TeamSection />
