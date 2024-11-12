@@ -40,6 +40,9 @@ const Header = ({
           </div>
         </Link>
         <div className="flex items-center gap-x-8">
+          {/* <Button href={"/contact"} invert={invert}>
+            Contact Us
+          </Button> */}
           <Button href={"/contact"} invert={invert}>
             Contact Us
           </Button>
@@ -100,7 +103,7 @@ const Navigation = () => {
       </NavigationRow>
       <NavigationRow>
         <NavigationItem href={"/process"}>Our Process</NavigationItem>
-        <NavigationItem href={"/blog"}>Blog</NavigationItem>
+        <NavigationItem href={"/licenses"}>Licenses</NavigationItem>
       </NavigationRow>
     </nav>
   );

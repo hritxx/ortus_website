@@ -6,6 +6,74 @@ import Customer3 from "@/images/customers/Sulav.png";
 
 import Customer1 from "@/images/customers/Aayush.png";
 
+export const teamMembers = [
+  {
+    id: 1,
+    name: "Prantik Deb",
+    position: "Co-Founder & CEO",
+    image: "/images/team/prantik.jpg", // Path to local image
+    bio: "",
+    email: "jortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 2,
+    name: "Nabanil Debbarma",
+    position: "Co-Founder & CFO",
+    key: "",
+    image: "/images/team/nabanil.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 3,
+    name: "Rahul Mog",
+    position: "Co-Founder & COO",
+    key: "",
+    image: "/images/team/rahul.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 4,
+    name: "Saugat Debbarma",
+    position: "Equity Research Analyst",
+    key: "(Trader/Investor)",
+    image: "/images/team/saugat.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 5,
+    name: "Sajib Debbarma",
+    position: "Technical Analyst",
+    key: "(Trader)",
+    image: "/images/team/sajib.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://twitter.com/sarahlee",
+  },
+  {
+    id: 6,
+    name: "Ishak Debbarma",
+    position: "Jr. Eqity Research Analyst",
+    key: "(Trader/Investor) ",
+    image: "/images/team/ishak.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+];
+
 export const navigation = [
   {
     title: "Work",
@@ -25,7 +93,7 @@ export const navigation = [
     links: [
       { title: "About", href: "/about" },
       { title: "Process", href: "/process" },
-      { title: "Blog", href: "/blog" },
+      { title: "Licenses", href: "/licenses" },
       { title: "Contact us", href: "/contact" },
     ],
   },
@@ -131,7 +199,7 @@ export const tableData = [
     smallBanks: "8.5%",
   },
   {
-    id: "50 Lakhs to 1 Crore",
+    id: "51 Lakhs to 1 Crore",
     ortus: "20%✅",
     gov: "7%",
     nonGov: "7.75%",

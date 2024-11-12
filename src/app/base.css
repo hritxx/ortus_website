@@ -1,53 +1,9 @@
 @tailwind base;
-
-@font-face {
-  font-family: "Mona Sans";
-  font-weight: 200 900;
-  font-display: block;
-  font-style: normal;
-  font-stretch: 75% 125%;
-  src: url("../fonts/Mona-Sans.var.woff2");
-}
-
-.g1 {
-  @apply bg-gradient-to-b from-[rgba(196,203,245,0.5)] to-transparent;
-}
-
-.g2 {
-  @apply bg-gradient-to-b from-[#3062a3] to-[#19549f];
-}
-
-.g3 {
-  @apply bg-gradient-to-b from-[#3c52d9] to-[#0c1838];
-}
-
-.g4 {
-  @apply bg-gradient-to-b from-[#253575] to-[#162561];
-}
-
-.g5 {
-  @apply bg-gradient-to-b from-[#334679] to-[#162561];
-}
-
-.g6 {
-  @apply bg-gradient-to-b from-[#334679] to-[#0c1838];
-}
-
-.g7 {
-  @apply bg-gradient-to-b from-[#1b275a] to-[#0e1434];
-}
-
-.g8 {
-  @apply bg-gradient-to-r from-transparent via-[#2ef2ff] to-transparent;
-}
-
-.g9 {
-  @apply bg-gradient-to-b from-[#080d27] to-transparent;
-}
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
-    --radius: 0.5rem;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -67,12 +23,14 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
+    --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -98,5 +56,14 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

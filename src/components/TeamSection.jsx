@@ -5,6 +5,7 @@ import Image from "next/image"; // Import the Next.js Image component
 import { FaTimes, FaEnvelope, FaInstagram, FaFacebook } from "react-icons/fa";
 import Container from "./Container";
 import FadeIn from "./FadeIn";
+import { teamMembers } from "@/constants";
 
 const TeamSection = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -13,69 +14,6 @@ const TeamSection = () => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Prantik Deb",
-      position: "Co-Founder & CEO",
-      image: "/images/team/prantik.jpg", // Path to local image
-      bio: "",
-      email: "jortusfinance.invest@gmail.com",
-      linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-      twitter: "https://www.instagram.com/0rtusfinance/",
-    },
-    {
-      id: 2,
-      name: "Nabanil Debbarma",
-      position: "Co-Founder & CFO",
-      image: "/images/team/nabanil.jpg", // Path to local image
-      bio: "",
-      email: "ortusfinance.invest@gmail.com",
-      linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-      twitter: "https://www.instagram.com/0rtusfinance/",
-    },
-    {
-      id: 3,
-      name: "Rahul Mog",
-      position: "Co-Founder & COO",
-      image: "/images/team/rahul.jpg", // Path to local image
-      bio: "",
-      email: "ortusfinance.invest@gmail.com",
-      linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-      twitter: "https://www.instagram.com/0rtusfinance/",
-    },
-    {
-      id: 4,
-      name: "Saugat Debbarma",
-      position: "Equity Research Analyst(Trader/Investor)",
-      image: "/images/team/saugat.jpg", // Path to local image
-      bio: "",
-      email: "ortusfinance.invest@gmail.com",
-      linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-      twitter: "https://www.instagram.com/0rtusfinance/",
-    },
-    {
-      id: 5,
-      name: "Sajib Debbarma",
-      position: "Technical Analyst(Trader)",
-      image: "/images/team/sajib.jpg", // Path to local image
-      bio: "",
-      email: "ortusfinance.invest@gmail.com",
-      linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-      twitter: "https://twitter.com/sarahlee",
-    },
-    {
-      id: 6,
-      name: "Ishak Debbarma",
-      position: "Jr. Eqity Research Analyst(Trader/Investor)",
-      image: "/images/team/ishak.jpg", // Path to local image
-      bio: "",
-      email: "ortusfinance.invest@gmail.com",
-      linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-      twitter: "https://www.instagram.com/0rtusfinance/",
-    },
-  ];
 
   const openModal = (member) => {
     setSelectedMember(member);
@@ -88,12 +26,12 @@ const TeamSection = () => {
   return (
     <Container>
       <FadeIn>
-        <div className="mt-16 bg-blue-400 min-h-screen py-12 px-4 sm:px-6 lg:px-8 ">
+        <div className="mt-16 bg-blue-400 rounded-sm min-h-screen py-12 px-4 sm:px-6 lg:px-8 ">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-              Our Team
+            <h2 className="text-3xl font-extrabold text-slate-100 text-center mb-12">
+              Our Team Members
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
               {teamMembers.map((member) => (
                 <div
                   key={member.id}
@@ -114,10 +52,13 @@ const TeamSection = () => {
                     />
                   )}
                   <div className="p-4">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-bold text-gray-900">
                       {member.name}
                     </h3>
-                    <p className="text-gray-600">{member.position}</p>
+                    <p className="text-gray-500 font-semibold">
+                      {member.position}
+                    </p>
+                    <p className="text-gray-500 font-semibold ">{member.key}</p>
                   </div>
                 </div>
               ))}
