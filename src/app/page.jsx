@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import ContactSection from "@/components/ContactSection";
 import Faq from "@/components/Faq";
 import Testimonial from "@/components/Testimonial";
+import { FeaturesSectionDemo } from "@/components/FeatureSection";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           </p>
         </FadeIn>
       </Container>
+      <FeaturesSectionDemo />
       <Clients />
       <Testimonials
         className="mt-24 sm:mt-32 lg:mt-40"
