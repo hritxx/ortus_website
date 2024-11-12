@@ -37,12 +37,12 @@ const ContactForm = () => {
                 value="25"
               />
               <RadioInput
-                label="₹20 Lakhs – ₹50 Lakhs"
+                label="₹21 Lakhs – ₹50 Lakhs"
                 name="budget"
                 value="50"
               />
               <RadioInput
-                label="₹50 Lakhs – ₹1 Crore"
+                label="₹51 Lakhs – ₹1 Crore"
                 name="budget"
                 value="100"
               />
