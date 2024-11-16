@@ -20,7 +20,7 @@ export const teamMembers = [
   {
     id: 2,
     name: "Nabanil Debbarma",
-    position: "CFO",
+    position: "Chief Financial Officer (CFO)",
     key: "",
     image: "/images/team/nabanil.jpg", // Path to local image
     bio: "",
@@ -31,7 +31,7 @@ export const teamMembers = [
   {
     id: 3,
     name: "Rahul Mog",
-    position: "COO",
+    position: "Chief Operating Officer (COO)",
     key: "",
     image: "/images/team/rahul.jpg", // Path to local image
     bio: "",
