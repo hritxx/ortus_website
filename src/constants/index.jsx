@@ -10,7 +10,7 @@ export const teamMembers = [
   {
     id: 1,
     name: "Prantik Deb",
-    position: "Co-Founder & CEO",
+    position: "Founder & CEO",
     image: "/images/team/prantik.jpg", // Path to local image
     bio: "",
     email: "jortusfinance.invest@gmail.com",
@@ -20,7 +20,7 @@ export const teamMembers = [
   {
     id: 2,
     name: "Nabanil Debbarma",
-    position: "Co-Founder & CFO",
+    position: "CFO",
     key: "",
     image: "/images/team/nabanil.jpg", // Path to local image
     bio: "",
@@ -31,7 +31,7 @@ export const teamMembers = [
   {
     id: 3,
     name: "Rahul Mog",
-    position: "Co-Founder & COO",
+    position: "COO",
     key: "",
     image: "/images/team/rahul.jpg", // Path to local image
     bio: "",
