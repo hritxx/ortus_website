@@ -1,6 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { BsFacebook, BsTwitter, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import Button from "./Button";
 
 export const SocialMediaProfiles = [
   {
@@ -41,6 +42,11 @@ const SocialMedia = ({ className, invert = false }) => {
           </Link>
         </li>
       ))}
+      <li>
+        <Button href={"/signin"} invert={invert}>
+          Admin
+        </Button>
+      </li>
     </ul>
   );
 };

@@ -1,13 +1,9 @@
+"use client";
 import RootLayout from "@/components/RootLayout";
 import { Analytics } from "@vercel/analytics/react";
-import "./globals.css";
+import { SessionProvider } from "next-auth/react";
 
-export const metadata = {
-  title: {
-    template: "Business Portfolio",
-    default: "Ortus Finance - Business Portfolio",
-  },
-};
+import "./globals.css";
 
 export default function Layout({ children }) {
   return (
@@ -16,8 +12,11 @@ export default function Layout({ children }) {
       suppressHydrationWarning={true}
       className="h-full bg-blue-900 text-base antialiased text-neutral-100"
     >
+      <title>Ortus Finance - Business Portfolio</title>
       <body className="flex min-h-full flex-col">
-        <RootLayout>{children}</RootLayout>
+        <RootLayout>
+          <SessionProvider>{children}</SessionProvider>
+        </RootLayout>
         <Analytics />
       </body>
     </html>

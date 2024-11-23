@@ -4,6 +4,7 @@ import React from "react";
 
 import Certificate1 from "@/images/certificates/Certificate2.png";
 import Certificate2 from "@/images/certificates/Certificate1.png";
+import Certificate4 from "@/images/certificates/Certificate3.png";
 
 import Certificate3 from "@/images/certificates/Approval Letter1.png";
 
@@ -38,6 +39,12 @@ const BlogPage = () => {
             link={Certificate2}
             heading="NISM Certified Professional"
             subHeading="Nabanil Debbarma, certified on October 15, 2024, under NISM Reg. No. NISM20240000048038."
+            size="small"
+          />
+          <Certificate
+            link={Certificate4}
+            heading="Certificate of Completion"
+            subHeading="Awarded by the National Institute of Securities Markets (NISM)."
             size="small"
           />
         </div>
