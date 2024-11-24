@@ -1,150 +1,155 @@
-const fs = require("fs");
+// import fs from "fs";
 
-// Example names inspired by North and South Tripura regions
-const tripuraNames = [
-  "Arindam Das",
-  "Rituparna Dey",
-  "Subhendu Bhattacharjee",
-  "Pranab Ghosh",
-  "Mithun Debnath",
-  "Anjana Paul",
-  "Rajib Choudhury",
-  "Srijita Saha",
-  "Dipankar Dutta",
-  "Rina Sarkar",
-  "Debojit Nath",
-  "Suchitra Sen",
-  "Partha Barman",
-  "Anupam Chakraborty",
-  "Manish Deb",
-  "Bikramjit Roy",
-  "Sneha Biswas",
-  "Raktim Pal",
-  "Riya Dutta",
-  "Sourav Debbarma",
-  "Kaushik Bhattacharjee",
-  "Ananya Ghosh",
-  "Somnath Bhowmik",
-  "Arpita Dasgupta",
-  "Bishwajit Nath",
-  "Payel Chowdhury",
-  "Arindam Saha",
-  "Preeti Ranjan",
-  "Sujit Das",
-  "Sampurna Choudhury",
-  "Ranjan Chakraborty",
-  "Rahul Sen",
-  "Sayantan Sarkar",
-  "Meenakshi Debnath",
-  "Arnab Ghosh",
-  "Nirmalya Roy",
-  "Priyanka Das",
-  "Avijit Bhowmik",
-  "Sharmila Paul",
-  "Rajashree Debbarma",
-  "Pranjal Nath",
-  "Chayanika Sen",
-  "Anindita Roy",
-  "Rupam Bhowmick",
-  "Kaushiki Dutta",
-  "Bibek Das",
-  "Sudipta Choudhury",
-  "Souradip Roy",
-  "Mousumi Saha",
-  "Pritam Das",
-  "Manoj Debbarma",
-  "Mriganka Nath",
-  "Trina Sinha",
-  "Subhajit Roy",
-  "Ankita Debnath",
-  "Sanjoy Dutta",
-  "Anamika Chakraborty",
-  "Aritra Sarkar",
-  "Chiranjib Das",
-  "Tanmay Ghosh",
-  "Moumita Saha",
-  "Kaushik Bhowmik",
-  "Payel Paul",
-  "Aniket Choudhury",
-  "Shibashish Roy",
-  "Sumana Sen",
-  "Tamal Deb",
-  "Sukanya Sarkar",
-  "Rajnandini Nath",
-  "Puja Choudhury",
-  "Sourish Bhattacharjee",
-  "Tithi Roy",
-  "Rishabh Das",
-  "Reshmi Dutta",
-  "Prakash Choudhury",
-  "Tanisha Das",
-  "Ayan Debnath",
-  "Suman Sarkar",
-  "Debashree Nath",
-  "Rahul Paul",
-  "Sunanda Sen",
-  "Pritam Roy",
-  "Shrabanti Saha",
-  "Sarthak Ghosh",
-  "Piyali Bhowmik",
-  "Debraj Das",
-  "Amrita Paul",
-  "Arjun Dutta",
-  "Saikat Nath",
-  "Poulami Das",
-  "Sayan Debnath",
-  "Abhishek Sen",
-  "Debjani Choudhury",
-  "Pradip Saha",
-  "Aritra Bhattacharjee",
-  "Sayani Das",
-];
+// // Example names inspired by North and South Tripura regions
+// // const tripuraNames = [
+// //   "Arindam Das",
+// //   "Rituparna Dey",
+// //   "Subhendu Bhattacharjee",
+// //   "Pranab Ghosh",
+// //   "Mithun Debnath",
+// //   "Anjana Paul",
+// //   "Rajib Choudhury",
+// //   "Srijita Saha",
+// //   "Dipankar Dutta",
+// //   "Rina Sarkar",
+// //   "Debojit Nath",
+// //   "Suchitra Sen",
+// //   "Partha Barman",
+// //   "Anupam Chakraborty",
+// //   "Manish Deb",
+// //   "Bikramjit Roy",
+// //   "Sneha Biswas",
+// //   "Raktim Pal",
+// //   "Riya Dutta",
+// //   "Sourav Debbarma",
+// //   "Kaushik Bhattacharjee",
+// //   "Ananya Ghosh",
+// //   "Somnath Bhowmik",
+// //   "Arpita Dasgupta",
+// //   "Bishwajit Nath",
+// //   "Payel Chowdhury",
+// //   "Arindam Saha",
+// //   "Preeti Ranjan",
+// //   "Sujit Das",
+// //   "Sampurna Choudhury",
+// //   "Ranjan Chakraborty",
+// //   "Rahul Sen",
+// //   "Sayantan Sarkar",
+// //   "Meenakshi Debnath",
+// //   "Arnab Ghosh",
+// //   "Nirmalya Roy",
+// //   "Priyanka Das",
+// //   "Avijit Bhowmik",
+// //   "Sharmila Paul",
+// //   "Rajashree Debbarma",
+// //   "Pranjal Nath",
+// //   "Chayanika Sen",
+// //   "Anindita Roy",
+// //   "Rupam Bhowmick",
+// //   "Kaushiki Dutta",
+// //   "Bibek Das",
+// //   "Sudipta Choudhury",
+// //   "Souradip Roy",
+// //   "Mousumi Saha",
+// //   "Pritam Das",
+// //   "Manoj Debbarma",
+// //   "Mriganka Nath",
+// //   "Trina Sinha",
+// //   "Subhajit Roy",
+// //   "Ankita Debnath",
+// //   "Sanjoy Dutta",
+// //   "Anamika Chakraborty",
+// //   "Aritra Sarkar",
+// //   "Chiranjib Das",
+// //   "Tanmay Ghosh",
+// //   "Moumita Saha",
+// //   "Kaushik Bhowmik",
+// //   "Payel Paul",
+// //   "Aniket Choudhury",
+// //   "Shibashish Roy",
+// //   "Sumana Sen",
+// //   "Tamal Deb",
+// //   "Sukanya Sarkar",
+// //   "Rajnandini Nath",
+// //   "Puja Choudhury",
+// //   "Sourish Bhattacharjee",
+// //   "Tithi Roy",
+// //   "Rishabh Das",
+// //   "Reshmi Dutta",
+// //   "Prakash Choudhury",
+// //   "Tanisha Das",
+// //   "Ayan Debnath",
+// //   "Suman Sarkar",
+// //   "Debashree Nath",
+// //   "Rahul Paul",
+// //   "Sunanda Sen",
+// //   "Pritam Roy",
+// //   "Shrabanti Saha",
+// //   "Sarthak Ghosh",
+// //   "Piyali Bhowmik",
+// //   "Debraj Das",
+// //   "Amrita Paul",
+// //   "Arjun Dutta",
+// //   "Saikat Nath",
+// //   "Poulami Das",
+// //   "Sayan Debnath",
+// //   "Abhishek Sen",
+// //   "Debjani Choudhury",
+// //   "Pradip Saha",
+// //   "Aritra Bhattacharjee",
+// //   "Sayani Das",
+// // ];
 
-// Generate random clients
-const clients = [];
-for (let i = 0; i < 100; i++) {
-  const name = tripuraNames[Math.floor(Math.random() * tripuraNames.length)];
-  const email = `${name.toLowerCase().replace(/ /g, "")}${Math.floor(
-    Math.random() * (Math.floor(983) - Math.ceil(11)) + Math.ceil(11)
-  )}@gmail.com`;
-  const amount =
-    Math.floor(Math.random() * ((140000 - 60000) / 1000 + 1)) * 1000 + 60000;
-  const interestRate = 12; // Random interest rate between 5.5% and 9.0%
-  const duration = Math.floor(Math.random() * (36 - 12 + 1)) + 12; // Random duration between 12 and 36 months
+// // Generate random clients
+// // const clients = [];
+// // let regNoCounter = 111; // Start from 111
 
-  clients.push({
-    name,
-    email,
-    investment_type: "One-time",
-    transactions: [
-      {
-        amount,
-        interest_rate: parseFloat(interestRate.toFixed(1)),
-        duration,
-      },
-    ],
-  });
-}
+// // for (let i = 0; i < 100; i++) {
+// //   const name = tripuraNames[Math.floor(Math.random() * tripuraNames.length)];
+// //   const email = `${name.toLowerCase().replace(/ /g, "")}${Math.floor(
+// //     Math.random() * (983 - 11) + 11
+// //   )}@gmail.com`;
+// //   const amount =
+// //     Math.floor(Math.random() * ((140000 - 60000) / 1000 + 1)) * 1000 + 60000;
+// //   const interestRate = 15; // Random interest rate
+// //   const duration = Math.floor(Math.random() * (36 - 12 + 1)) + 12; // Random duration
 
-// Convert the clients array to a string with export syntax
-const fileContent = `const clients = ${JSON.stringify(
-  clients,
-  null,
-  2
-)};\n\nexport default clients;`;
+// //   clients.push({
+// //     reg_no: `24ORTUS${regNoCounter}`, // Add registration number
+// //     name,
+// //     email,
+// //     investment_type: "One-time",
+// //     transactions: [
+// //       {
+// //         amount,
+// //         interest_rate: parseFloat(interestRate.toFixed(1)),
+// //         duration,
+// //       },
+// //     ],
+// //   });
 
-// Write to client.js file
-fs.writeFile("customers.js", fileContent, (err) => {
-  if (err) {
-    console.error("Error writing to file:", err);
-  } else {
-    console.log("client.js file has been created successfully!");
-  }
-});
+// //   regNoCounter++; // Increment the registration number
+// // }
 
-// const fs = require("fs");
+// // // Convert the clients array to a string with export syntax
+// // const fileContent = `const clients = ${JSON.stringify(
+// //   clients,
+// //   null,
+// //   2
+// // )};\n\nexport default clients;`;
 
-// // Extended list of names inspired by North and South Tripura regions
+// // // Write to client.js file
+// // fs.writeFile("customers.js", fileContent, (err) => {
+// //   if (err) {
+// //     console.error("Error writing to file:", err);
+// //   } else {
+// //     console.log("client.js file has been created successfully!");
+// //   }
+// // });
+
+// // const fs = require("fs");
+
+// // // Extended list of names inspired by North and South Tripura regions
 // const tripuraNames = [
 //   "Arindam Das",
 //   "Rituparna Dey",
@@ -382,17 +387,19 @@ fs.writeFile("customers.js", fileContent, (err) => {
 
 // // Generate random SIP clients
 // const sipClients = [];
+// let sipRegNoCounter = 211; // Start from 211
 // for (let i = 0; i < 200; i++) {
 //   const name = tripuraNames[Math.floor(Math.random() * tripuraNames.length)];
 //   const email = `${name.toLowerCase().replace(/ /g, "")}${Math.floor(
 //     Math.random() * (Math.floor(983) - Math.ceil(11)) + Math.ceil(11)
 //   )}@gmail.com`;
 //   const amount =
-//     Math.floor(Math.random() * ((40000 - 20000) / 1000 + 1)) * 1000 + 20000;
-//   const interestRate = 10; // Random interest rate between 6.0% and 8.0%
+//     Math.floor(Math.random() * ((40000 - 20000) / 5000 + 1)) * 5000 + 20000;
+//   const interestRate = 12; // Random interest rate between 6.0% and 8.0%
 //   const duration = Math.floor(Math.random() * (60 - 12 + 1)) + 12; // Random duration between 12 and 60 months
 
 //   sipClients.push({
+//     reg_no: `24ORTUS${sipRegNoCounter}`, // Add registration number
 //     name,
 //     email,
 //     investment_type: "SIP",
@@ -404,6 +411,7 @@ fs.writeFile("customers.js", fileContent, (err) => {
 //       },
 //     ],
 //   });
+//   sipRegNoCounter++; // Increment the registration number
 // }
 
 // // Convert the SIP clients array to a string with export syntax

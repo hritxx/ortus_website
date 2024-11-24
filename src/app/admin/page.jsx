@@ -38,20 +38,19 @@ export default function Admin() {
       <table className="table-auto border-collapse w-3/4 mb-4">
         <thead>
           <tr>
-            <th className="border border-black px-4 py-2 bg-gray-200">S.No</th>
-            <th className="border border-black px-4 py-2 bg-gray-200">Name</th>
-            <th className="border border-black px-4 py-2 bg-gray-200">Email</th>
-            <th className="border border-black px-4 py-2 bg-gray-200">
+            <th className="border border-black px-4 py-2 bg-blue-300">S.No</th>
+            <th className="border border-black px-4 py-2 bg-green-300">Name</th>
+            <th className="border border-black px-4 py-2 bg-yellow-300">
+              reg_no
+            </th>
+            <th className="border border-black px-4 py-2 bg-red-300">
               Investment Type
             </th>
-            <th className="border border-black px-4 py-2 bg-gray-200">
+            <th className="border border-black px-4 py-2 bg-purple-300">
               Transaction Amount
             </th>
-            <th className="border border-black px-4 py-2 bg-gray-200">
-              Interest Rate
-            </th>
-            <th className="border border-black px-4 py-2 bg-gray-200">
-              Duration
+            <th className="border border-black px-4 py-2 bg-pink-300">
+              Interest Rate(%)
             </th>
           </tr>
         </thead>
@@ -68,7 +67,7 @@ export default function Admin() {
                 {client.name}
               </td>
               <td className="border border-black px-4 py-2 text-center align-middle">
-                {client.email}
+                {client.reg_no}
               </td>
               <td className="border border-black px-4 py-2 text-center align-middle">
                 {client.investment_type}
@@ -78,9 +77,6 @@ export default function Admin() {
               </td>
               <td className="border border-black px-4 py-2 text-center align-middle">
                 {client.transactions[0].interest_rate}
-              </td>
-              <td className="border border-black px-4 py-2 text-center align-middle">
-                {client.transactions[0].duration}
               </td>
             </tr>
           ))}
