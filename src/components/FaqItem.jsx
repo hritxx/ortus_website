@@ -7,12 +7,12 @@ const FaqItem = ({ title, answer }) => {
     <div className="mt-6 py-2 pb-4">
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
-        className="text-gray-100 flex justify-between w-full"
+        className="text-black flex justify-between w-full"
       >
         <span>{title}</span>
         {/* {accordionOpen ? <span>-</span> : <span>+</span>} */}
         <svg
-          className="fill-indigo-500 shrink-0 ml-8"
+          className="fill-white shrink-0 ml-8"
           width="16"
           height="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +44,8 @@ const FaqItem = ({ title, answer }) => {
             : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="mt-4 text-xl font-semibold text-yellow-300 overflow-hidden ">
-          {answer}
+        <div className="mt-4 text-xl font-semibold text-white overflow-hidden ">
+          - {answer}
         </div>
       </div>
     </div>

@@ -13,6 +13,71 @@ const clientsData = [
     ],
   },
   {
+    reg_no: "24ORTUS338",
+    name: "Suman Tripura",
+    email: "sumantripura76@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 940000,
+        interest_rate: 14,
+        duration: 24,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS316",
+    name: "Rina Deb",
+    email: "rinadeb93@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 720000,
+        interest_rate: 13,
+        duration: 18,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS329",
+    name: "Manik Reang",
+    email: "manikreang54@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 810000,
+        interest_rate: 15,
+        duration: 30,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS348",
+    name: "Soma Debnath",
+    email: "soma.debnath@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 660000,
+        interest_rate: 12,
+        duration: 24,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS343",
+    name: "Rupam Deb",
+    email: "rupam.deb@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 870000,
+        interest_rate: 13,
+        duration: 36,
+      },
+    ],
+  },
+  {
     reg_no: "24ORTUS112",
     name: "Rishabh Das",
     email: "rishabhdas161@gmail.com",
@@ -256,6 +321,84 @@ const clientsData = [
         amount: 136000,
         interest_rate: 15,
         duration: 15,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS341",
+    name: "Debashree Debnath",
+    email: "debashree.debnath@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 720000,
+        interest_rate: 14,
+        duration: 21,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS328",
+    name: "Pranab Debbarma",
+    email: "pranab.deb@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 900000,
+        interest_rate: 16,
+        duration: 24,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS320",
+    name: "Amit Barman",
+    email: "amitbarman@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 670000,
+        interest_rate: 15,
+        duration: 18,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS349",
+    name: "Rimjhim Das",
+    email: "rimjhimdas@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 750000,
+        interest_rate: 12,
+        duration: 30,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS326",
+    name: "Nandini Reang",
+    email: "nandini.reang@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 870000,
+        interest_rate: 14,
+        duration: 36,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS350",
+    name: "Pallavi Debbarma",
+    email: "pallavi.db@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 680000,
+        interest_rate: 15,
+        duration: 27,
       },
     ],
   },
@@ -698,6 +841,59 @@ const clientsData = [
         amount: 82000,
         interest_rate: 15,
         duration: 21,
+      },
+    ],
+  },
+
+  {
+    reg_no: "24ORTUS335",
+    name: "Anjan Das",
+    email: "anjandas123@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 800000,
+        interest_rate: 14,
+        duration: 18,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS345",
+    name: "Sukanya Debbarma",
+    email: "sukanya.d@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 920000,
+        interest_rate: 13,
+        duration: 24,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS317",
+    name: "Rajib Reang",
+    email: "rajibreang98@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 600000,
+        interest_rate: 12,
+        duration: 36,
+      },
+    ],
+  },
+  {
+    reg_no: "24ORTUS327",
+    name: "Bikash Tripura",
+    email: "bikasht89@gmail.com",
+    investment_type: "One-time",
+    transactions: [
+      {
+        amount: 850000,
+        interest_rate: 15,
+        duration: 30,
       },
     ],
   },

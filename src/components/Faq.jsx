@@ -10,7 +10,7 @@ const Faq = () => {
   return (
     <Container>
       <FadeIn>
-        <div className="mt-16 p-4 bg-blue-900  rounded-4xl">
+        <div className="mt-16 p-4 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 rounded-xl">
           <h2 className="mt-10 text-slate-200 text-center text-2xl font-bold sm:text-3xl ">
             Frequently Asked Questions
           </h2>

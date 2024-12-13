@@ -42,7 +42,7 @@ Assurance "
         <StatList>
           <StatListItem value="360" label="Clients" />
           {/* <StatListItem value="52" label="Placed clients" /> */}
-          <StatListItem value="₹85 Lakhs+ " label="Available Funds" />
+          <StatListItem value="₹2.3 Crores " label="Available Funds" />
         </StatList>
       </Container>
       <TeamSection />

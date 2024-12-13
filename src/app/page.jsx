@@ -1,7 +1,7 @@
 import Clients from "@/components/Clients";
 import Container from "@/components/Container";
 import FadeIn from "@/components/FadeIn";
-import logoPhobiaDark from "@/images/clients/phobia/logo-dark.svg";
+
 import Testimonials from "@/components/Testimonials";
 import Services from "@/components/Services";
 import ContactSection from "@/components/ContactSection";
@@ -32,11 +32,10 @@ export default function Home() {
       <Clients />
       <Testimonials
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: "Bijaya Deb", logo: logoPhobiaDark }}
+        client={{ name: "Bijaya Deb", logo: "logoPhobiaDark" }}
       >
-        I&apos;ve experienced exceptional growth with ORTUS FINANCE. Their low
-        fees and expert guidance have made a significant difference in my
-        financial planning.
+        আমি ORTUS FINANCE-এর সাথে অসাধারণ উন্নতি অর্জন করেছি। তাদের কম ফি এবং
+        বিশেষজ্ঞ পরামর্শ আমার আর্থিক পরিকল্পনায় গুরুত্বপূর্ণ পরিবর্তন এনেছে।
       </Testimonials>
       <Services />
       <Testimonial />

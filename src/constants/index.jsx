@@ -64,9 +64,31 @@ export const teamMembers = [
   {
     id: 6,
     name: "Ishak Debbarma",
-    position: "Jr. Eqity Research Analyst",
+    position: "Jr. Equity Research Analyst",
     key: "(Trader/Investor) ",
     image: "/images/team/ishak.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 7,
+    name: "Bikramjit Nath",
+    position: "Chief Marketing Officer(CMO)",
+    key: "(CMO) ",
+    image: "/images/team/bikram.jpg", // Path to local image
+    bio: "",
+    email: "ortusfinance.invest@gmail.com",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 8,
+    name: "Hriteek Roy",
+    position: "Chief Technical Officer(CTO)",
+    key: "(CTO) ",
+    image: "/images/team/hriteek.jpeg", // Path to local image
     bio: "",
     email: "ortusfinance.invest@gmail.com",
     linkedin: "https://www.facebook.com/profile.php?id=61566181745108",

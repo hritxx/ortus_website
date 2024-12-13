@@ -26,45 +26,77 @@ const TeamSection = () => {
   return (
     <Container>
       <FadeIn>
-        <div className="mt-16 bg-blue-400 rounded-sm min-h-screen py-12 px-4 sm:px-6 lg:px-8 ">
+        <div className="mt-16rounded-sm min-h-screen py-12 px-4 sm:px-6 lg:px-8 ">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-extrabold text-slate-100 text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-700 text-center mb-12">
               Our Team Members
             </h2>
-            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member) => (
                 <div
                   key={member.id}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+                  className="relative group p-1"
                   onClick={() => openModal(member)}
                   onKeyDown={(e) => e.key === "Enter" && openModal(member)}
                   tabIndex={0}
                   role="button"
                   aria-label={`View details for ${member.name}`}
                 >
-                  {isClient && (
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={500} // Adjust width as needed
-                      height={400} // Adjust height as needed
-                      className="w-full h-64 object-cover"
-                    />
-                  )}
-                  <div className="p-4">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {member.name}
-                    </h3>
-                    <p className="text-gray-500 font-semibold">
-                      {member.position}
-                    </p>
-                    <p className="text-gray-500 font-semibold ">{member.key}</p>
+                  {/* Gradient border */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-red-400 via-yellow-400 to-blue-500 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+                    style={{
+                      backgroundSize: "200% 200%",
+                      animation: "gradient-xy 3s linear infinite",
+                    }}
+                  ></div>
+
+                  {/* Card content */}
+                  <div className="relative px-7 py-6 bg-gray-200 rounded-xl leading-none flex items-center justify-center space-x-6">
+                    <div className="w-full max-w-sm rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                      <div className="relative p-6 space-y-6">
+                        {/* Profile image */}
+                        <div className="flex justify-center">
+                          {isClient && (
+                            <Image
+                              src={member.image}
+                              alt={`Profile picture of ${member.name}`}
+                              width={128}
+                              height={128}
+                              className="w-32 h-32 rounded-full ring-4 ring-cyan-400 object-cover bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500"
+                            />
+                          )}
+                        </div>
+
+                        {/* Member details */}
+                        <div className="text-center space-y-3">
+                          <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                            {member.name}
+                          </h3>
+                          <p className="text-cyan-400 font-semibold">
+                            {member.position}
+                          </p>
+                          <p className="text-gray-400 text-sm">{member.bio}</p>
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="flex justify-center space-x-4">
+                          <button className="px-6 py-2.5 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 text-white rounded-lg hover:opacity-90 transition duration-300 font-semibold">
+                            Contact
+                          </button>
+                          <button className="px-6 py-2.5 border-2 border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition duration-300 font-semibold">
+                            View Profile
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* Modal */}
           {selectedMember && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
               <div
@@ -92,8 +124,8 @@ const TeamSection = () => {
                     <Image
                       src={selectedMember.image}
                       alt={selectedMember.name}
-                      width={500} // Adjust width as needed
-                      height={400} // Adjust height as needed
+                      width={500}
+                      height={400}
                       className="w-full h-64 object-cover rounded-lg mb-4"
                     />
                   )}

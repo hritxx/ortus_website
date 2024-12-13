@@ -37,10 +37,10 @@ const Certificate = ({ link, heading, subHeading, size }) => {
         >
           <Image
             src={link}
-            height={isBig ? 3000 : 2000}
-            width={isBig ? 2250 : 1500}
-            className={`object-cover rounded-xl group-hover/card:shadow-xl ${
-              isBig ? "h-80" : "h-60"
+            height={isBig ? 300 : 200}
+            width={isBig ? 450 : 300}
+            className={`object-contain rounded-xl group-hover/card:shadow-xl ${
+              isBig ? "h-80 w-full" : "h-60 w-full"
             }`}
             alt="thumbnail"
           />

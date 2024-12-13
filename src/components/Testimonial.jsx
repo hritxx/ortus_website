@@ -30,8 +30,10 @@ const Testimonial = () => {
     <Container>
       <CenterAligner className="mt-12  bg-blue-900  rounded-4xl">
         <h1 className="text-slate-200 text-center text-2xl font-bold sm:text-3xl pb-8">
-          Customers love{" "}
-          <strong className="font-semibold text-blue-200">ORTUS FINANCE</strong>{" "}
+          Customers 🤍{" "}
+          <strong className="font-semibold bg-gradient-to-r from-red-500 via-green-400 to-yellow-500 bg-clip-text text-transparent">
+            ORTUS FINANCE
+          </strong>
         </h1>
         {/* Container for the slider */}
         <section className="max-w-[1100px] mx-auto rounded-xl relative overflow-hidden  ">

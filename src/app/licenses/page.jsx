@@ -4,9 +4,13 @@ import React from "react";
 
 import Certificate1 from "@/images/certificates/Certificate2.png";
 import Certificate2 from "@/images/certificates/Certificate1.png";
-import Certificate4 from "@/images/certificates/Certificate3.png";
-
 import Certificate3 from "@/images/certificates/Approval Letter1.png";
+import Certificate4 from "@/images/certificates/Certificate3.png";
+import Certificate5 from "@/images/certificates/c5.png";
+import Certificate6 from "@/images/certificates/c6.png";
+import Certificate7 from "@/images/certificates/c7.png";
+import Certificate8 from "@/images/certificates/c8.png";
+import Certificate9 from "@/images/certificates/c9.png";
 
 import FadeIn from "@/components/FadeIn";
 
@@ -35,6 +39,7 @@ const BlogPage = () => {
             subHeading="Prantik Deb, certified on October 20, 2024, under NISM Reg. No. NISM20240000049614."
             size="small"
           />
+
           <Certificate
             link={Certificate2}
             heading="NISM Certified Professional"
@@ -47,12 +52,45 @@ const BlogPage = () => {
             subHeading="Awarded by the National Institute of Securities Markets (NISM)."
             size="small"
           />
+          <Certificate
+            link={Certificate5}
+            heading="Certificate of Achievement"
+            subHeading="Recognizing Excellence in Completing the Course: “Understanding Mutual Funds and the Role of a Transfer Agency”."
+            size="small"
+          />
+          <Certificate
+            link={Certificate6}
+            heading="Certificate of Excellence"
+            subHeading="Awarded for Successfully Completing the Program in Financial Services Excellence."
+            size="small"
+          />
+          <Certificate
+            link={Certificate7}
+            heading="Certificate of Completion"
+            subHeading="E-Learning Course on Listing on Stock Exchanges."
+            size="small"
+          />
+          <Certificate
+            link={Certificate8}
+            heading="Certificate of Completion"
+            subHeading="HP LIFE Online Course: Basics of Finance."
+            size="small"
+          />
+          <Certificate
+            link={Certificate9}
+            heading="Certificate of Participation"
+            subHeading="Online Skilling Course: Branch Banking Executive."
+            size="small"
+          />
         </div>
         <PageIntro
           eyebrow=""
-          title="Our Organisation's Professional Credentials"
+          title="Professional Credentials of Our Organization"
         >
-          <p>Explore the professional certifications of our Company!</p>
+          <p>
+            Discover the various professional certifications and credentials
+            that showcase the expertise and industry recognition of our company!
+          </p>
         </PageIntro>
         <div>
           <Certificate
