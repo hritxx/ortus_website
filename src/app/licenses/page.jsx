@@ -1,6 +1,6 @@
 import Certificate from "@/components/Certificate";
 import PageIntro from "@/components/PageIntro";
-import React from "react";
+import FadeIn from "@/components/FadeIn";
 
 import Certificate1 from "@/images/certificates/Certificate2.png";
 import Certificate2 from "@/images/certificates/Certificate1.png";
@@ -11,8 +11,9 @@ import Certificate6 from "@/images/certificates/c6.png";
 import Certificate7 from "@/images/certificates/c7.png";
 import Certificate8 from "@/images/certificates/c8.png";
 import Certificate9 from "@/images/certificates/c9.png";
-
-import FadeIn from "@/components/FadeIn";
+import Certificate10 from "@/images/certificates/c10.png";
+import Certificate11 from "@/images/certificates/c11.png";
+import Certificate12 from "@/images/certificates/c12.png";
 
 const BlogPage = () => {
   return (
@@ -53,6 +54,18 @@ const BlogPage = () => {
             size="small"
           />
           <Certificate
+            link={Certificate11}
+            heading="Certificate of Completion"
+            subHeading="Completed E-Learning course on Listing on Stock Exchange by NISM.”."
+            size="small"
+          />
+          <Certificate
+            link={Certificate10}
+            heading="Certificate of Completion"
+            subHeading="Completed E-Learning course on Financial Literacy by NISM.”."
+            size="small"
+          />
+          <Certificate
             link={Certificate5}
             heading="Certificate of Achievement"
             subHeading="Recognizing Excellence in Completing the Course: “Understanding Mutual Funds and the Role of a Transfer Agency”."
@@ -68,6 +81,12 @@ const BlogPage = () => {
             link={Certificate7}
             heading="Certificate of Completion"
             subHeading="E-Learning Course on Listing on Stock Exchanges."
+            size="small"
+          />
+          <Certificate
+            link={Certificate12}
+            heading="Certificate of Completion"
+            subHeading="E-Learning course on Financial Planning by NISM.”."
             size="small"
           />
           <Certificate

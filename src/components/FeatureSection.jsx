@@ -1,13 +1,9 @@
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
   IconHeart,
   IconHelp,
   IconRouteAltLeft,
-  IconTerminal2,
+  IconCurrencyRupee,
 } from "@tabler/icons-react";
 
 export const FeaturesSectionDemo = () => {
@@ -16,7 +12,7 @@ export const FeaturesSectionDemo = () => {
       title: "Higher Returns",
       description:
         "Earn up to 25% p.a., surpassing traditional investment options.",
-      icon: <IconCurrencyDollar />,
+      icon: <IconCurrencyRupee />,
     },
     // {
     //   title: "Customized Strategies",

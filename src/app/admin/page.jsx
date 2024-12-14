@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import clientsData from "../../constants/client2.js";
@@ -31,10 +31,15 @@ export default function Admin() {
 
   const totalPages = Math.ceil(clientsData.length / itemsPerPage);
 
+  const handleLogout = () => {
+    signOut({ callbackUrl: "/" });
+  };
+
   return (
-    <div className="flex flex-col items-center">
+    <div className="mt-4 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4">Admin Page</h1>
       <p className="mb-4">Only accessible to authenticated admins.</p>
+
       <table className="table-auto border-collapse w-3/4 mb-4">
         <thead>
           <tr>
@@ -86,7 +91,7 @@ export default function Admin() {
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className={`bg-black text-white px-4 py-2 ${
+          className={`bg-black text-white px-4 py-2 rounded-xl ${
             currentPage === 1 ? "cursor-not-allowed" : "cursor-pointer"
           }`}
         >
@@ -98,11 +103,17 @@ export default function Admin() {
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className={`bg-black text-white px-4 py-2 ${
+          className={`bg-black text-white px-4 py-2 rounded-xl ${
             currentPage === totalPages ? "cursor-not-allowed" : "cursor-pointer"
           }`}
         >
           Next
+        </button>
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 text-white px-4 py-2  mb-4 rounded-xl"
+        >
+          Logout
         </button>
       </div>
     </div>
