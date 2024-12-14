@@ -56,19 +56,19 @@ const BlogPage = () => {
           <Certificate
             link={Certificate11}
             heading="Certificate of Completion"
-            subHeading="Completed E-Learning course on Listing on Stock Exchange by NISM.”."
+            subHeading="Completed E-Learning course on Listing on Stock Exchange by NISM."
             size="small"
           />
           <Certificate
             link={Certificate10}
             heading="Certificate of Completion"
-            subHeading="Completed E-Learning course on Financial Literacy by NISM.”."
+            subHeading="Completed E-Learning course on Financial Literacy by NISM."
             size="small"
           />
           <Certificate
             link={Certificate5}
             heading="Certificate of Achievement"
-            subHeading="Recognizing Excellence in Completing the Course: “Understanding Mutual Funds and the Role of a Transfer Agency”."
+            subHeading="Recognizing Excellence in Completing the Course: “Understanding Mutual Funds and the Role of a Transfer Agency.”"
             size="small"
           />
           <Certificate

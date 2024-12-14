@@ -75,7 +75,7 @@ export const teamMembers = [
   {
     id: 7,
     name: "Bikramjit Nath",
-    position: "Chief Marketing Officer(CMO)",
+    position: "Chief Marketing Officer (CMO)",
     key: "(CMO) ",
     image: "/images/team/bikram.jpg", // Path to local image
     bio: "",
@@ -86,7 +86,7 @@ export const teamMembers = [
   {
     id: 8,
     name: "Hriteek Roy",
-    position: "Chief Technical Officer(CTO)",
+    position: "Chief Technical Officer (CTO)",
     key: "(CTO) ",
     image: "/images/team/hriteek.jpeg", // Path to local image
     bio: "",
