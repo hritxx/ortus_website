@@ -44,7 +44,7 @@ const SocialMedia = ({ className, invert = false }) => {
       ))}
       <li>
         <Button href={"/signin"} invert={invert}>
-          Admin
+          Login
         </Button>
       </li>
     </ul>

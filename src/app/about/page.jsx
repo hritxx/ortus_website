@@ -15,7 +15,10 @@ const AboutPage = () => {
 Assurance "
       >
         <p>
-          <strong className="font-semibold text-blue-800">ORTUS FINANCE</strong>{" "}
+          At
+          <strong className="font-semibold text-blue-800">
+            ORTUS FINANCE
+          </strong>{" "}
           , we specialize in turning your financial aspirations into reality.
           Our investment firm pools resources from investors like you,
           strategically allocating funds across the stock market and other

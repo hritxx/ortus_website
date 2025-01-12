@@ -8,6 +8,7 @@ import ContactSection from "@/components/ContactSection";
 import Faq from "@/components/Faq";
 import Testimonial from "@/components/Testimonial";
 import { FeaturesSectionDemo } from "@/components/FeatureSection";
+import InvestmentPlans from "@/components/InvestmentPlans";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
         আমি ORTUS FINANCE-এর সাথে অসাধারণ উন্নতি অর্জন করেছি। তাদের কম ফি এবং
         বিশেষজ্ঞ পরামর্শ আমার আর্থিক পরিকল্পনায় গুরুত্বপূর্ণ পরিবর্তন এনেছে।
       </Testimonials>
+      <InvestmentPlans />
       <Services />
       <Testimonial />
       <Faq />

@@ -15,7 +15,7 @@ const Button = ({ invert, href, className, children, ...props }) => {
   if (children === "Contact Us") {
     inner = (
       <>
-        <span className=" sm:hidden flex flex-col items-center">
+        <span className="sm:hidden flex flex-col items-center">
           <span>Contact</span>
           <span>Us</span>
         </span>
@@ -26,13 +26,25 @@ const Button = ({ invert, href, className, children, ...props }) => {
     inner = <span>{children}</span>;
   }
 
+  // Check if the button text is "Register" and set the href accordingly
+  if (children === "Register") {
+    href = "http://localhost:3001"; // Replace with the desired URL
+  }
+
   if (href) {
     return (
-      <Link href={href} className={className} {...props}>
+      <a
+        href={href}
+        className={className}
+        {...props}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {inner}
-      </Link>
+      </a>
     );
   }
+
   return (
     <button className={className} {...props}>
       {inner}

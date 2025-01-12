@@ -7,7 +7,7 @@ const FaqItem = ({ title, answer }) => {
     <div className="mt-6 py-2 pb-4">
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
-        className="text-black flex justify-between w-full"
+        className="text-black flex justify-between w-full font-bold"
       >
         <span>{title}</span>
         {/* {accordionOpen ? <span>-</span> : <span>+</span>} */}
