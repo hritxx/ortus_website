@@ -100,7 +100,7 @@ export default function InvestmentPlans() {
 
         <div className="text-center mt-16">
           <Link
-            href="https://ortusfinance.in"
+            href="https://app.ortusfinance.in"
             className="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors animate__animated animate__pulse animate__infinite"
           >
             Get Started Now
