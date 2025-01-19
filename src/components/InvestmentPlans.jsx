@@ -21,8 +21,8 @@ export default function InvestmentPlans() {
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-2">6-Month Lump Sum</h3>
               <div className="text-blue-500 mb-6">
+                <span className="text-2xl">Starting From {"   "}</span>
                 <span className="text-4xl font-bold">₹5,000</span>
-                <span className="text-xl">/min</span>
               </div>
               <div className="border-t border-neutral-700 pt-6">
                 <ul className="space-y-4">
@@ -30,7 +30,7 @@ export default function InvestmentPlans() {
                     <span>Duration: 6 Months</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <span>Targeted Returns: 8-10%</span>
+                    <span>Targeted Returns: 6-8%</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <span>Simple Portfolio Management</span>
@@ -48,8 +48,8 @@ export default function InvestmentPlans() {
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-2">Monthly SIP Plan</h3>
               <div className="text-blue-500 mb-6">
+                <span className="text-2xl">Starting From {"   "}</span>
                 <span className="text-4xl font-bold">₹200</span>
-                <span className="text-xl">/min</span>
               </div>
               <div className="border-t border-neutral-700 pt-6">
                 <ul className="space-y-4">
@@ -60,7 +60,7 @@ export default function InvestmentPlans() {
                     <span>Flexible Investment Amount</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <span>Targeted Returns: 9-12%</span>
+                    <span>Targeted Returns: 10-12%</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <span>Portfolio Customization Available</span>
@@ -75,8 +75,8 @@ export default function InvestmentPlans() {
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-2">1-Year Lump Sum</h3>
               <div className="text-blue-500 mb-6">
+                <span className="text-2xl">Starting From {"   "}</span>
                 <span className="text-4xl font-bold">₹10,000</span>
-                <span className="text-xl">/min</span>
               </div>
               <div className="border-t border-neutral-700 pt-6">
                 <ul className="space-y-4">
@@ -84,7 +84,7 @@ export default function InvestmentPlans() {
                     <span>Duration: 1 Year</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <span>Targeted Returns: 12-15%</span>
+                    <span>Targeted Returns: 10-12%</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <span>Advanced Portfolio Management</span>
@@ -106,7 +106,7 @@ export default function InvestmentPlans() {
             Get Started Now
           </Link>
           <p className="mt-4 text-gray-400">
-            *Returns are subject to market conditions and not guaranteed
+            Returns are subject to market conditions and not guaranteed
           </p>
         </div>
       </div>

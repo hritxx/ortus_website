@@ -5,6 +5,7 @@ import {
   IconRouteAltLeft,
   IconCurrencyRupee,
 } from "@tabler/icons-react";
+import { StatListItem } from "./StatList";
 
 export const FeaturesSectionDemo = () => {
   const features = [
