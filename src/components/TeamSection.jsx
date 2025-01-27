@@ -44,7 +44,7 @@ const TeamSection = () => {
                 >
                   {/* Gradient border */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-r from-red-400 via-yellow-400 to-blue-500 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+                    className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-200 rounded-xl blur-sm opacity-75 shadow-md group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
                     style={{
                       backgroundSize: "200% 200%",
                       animation: "gradient-xy 3s linear infinite",
@@ -52,7 +52,7 @@ const TeamSection = () => {
                   ></div>
 
                   {/* Card content */}
-                  <div className="relative px-7 py-6 bg-gray-200 rounded-xl leading-none flex items-center justify-center space-x-6">
+                  <div className="relative px-7 py-6 bg-blue-900 rounded-xl leading-none flex items-center justify-center space-x-6">
                     <div className="w-full max-w-sm rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
                       <div className="relative p-6 space-y-6">
                         {/* Profile image */}
@@ -70,7 +70,7 @@ const TeamSection = () => {
 
                         {/* Member details */}
                         <div className="text-center space-y-3">
-                          <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                          <h3 className="text-2xl font-bold bg-white bg-clip-text text-transparent">
                             {member.name}
                           </h3>
                           <p className="text-cyan-400 font-semibold">
