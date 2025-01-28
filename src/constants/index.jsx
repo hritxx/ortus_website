@@ -86,8 +86,8 @@ export const teamMembers = [
   {
     id: 8,
     name: "Hriteek Roy",
-    position: "Chief Technical Officer (CTO)",
-    key: "(CTO) ",
+    position: "Software Developer",
+    key: "(Developer)",
     image: "/images/team/hriteek.jpeg", // Path to local image
     bio: "",
     email: "ortusfinance.invest@gmail.com",
