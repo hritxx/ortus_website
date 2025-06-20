@@ -130,54 +130,73 @@ export default function Testimonial() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+      "“অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Rakhi Deb",
     title: "Purbasha, Dhaleshwar Agartala",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+      "“অর্থুস ফাইন্যান্স”-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Smriti Deb",
     title: "Halhali, Dhalai Tripura",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
+    quote:
+      "ব্যাংকের থেকে অনেক ভালো রিটার্ন আমি এখানে পাচ্ছি। খুব সহজে আমি আমার পোর্টফোলিও ট্র্যাক করতে পারি। ধন্যবাদ অর্থুস টিমকে!",
     name: "Hena Biswas",
     title: "Santibazar, Dhalai Tripura",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Rajib Das",
     title: "Bordowali, Agartala Tripura",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "অর্থুস ফাইন্যান্স”-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Mani Saha",
     title: "Jogendranagar, Agartala Tripura",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Raju Saha",
     title: "Chandrapur, Agartala Tripura",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "অর্থুস ফাইন্যান্স”-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Laxmi Pal",
     title: "Durgachowmuhani, Agartala Tripura",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "I’ve tried different investment options, but none compare to the consistent and impressive returns I’ve received from ORTUS FINANCE. Truly a game-changer!",
     name: "Bikas Deb",
     title: "Halhali, Dhalai Tripura",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+      "ORTUS FINANCE stands out with its integrity and commitment to clients. I feel confident knowing my investments are in safe hands with experienced professionals.",
+    name: "Dr. Rupak Deb",
+    title: "Kulai, Ambassa ",
+  },
+  {
+    quote:
+      "I was initially cautious about investing, but ORTUS FINANCE earned my trust with their impressive returns and hassle-free process. Highly recommended!",
+    name: "Manik Lal Das (SP Post Office Tripura)",
+    title: "Badharghat, Agartala Tripura",
+  },
+  {
+    quote:
+      "“অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
+    name: "Sounak Sur",
+    title: "Siddhiashram, Agartala Tripura",
+  },
+  {
+    quote:
+      "“অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Kanika Deb",
     title: "Aparaskar, Dhalai Tripura",
   },
