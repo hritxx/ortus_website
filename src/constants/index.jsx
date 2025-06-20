@@ -12,20 +12,20 @@ export const teamMembers = [
     name: "Prantik Deb",
     position: "Founder & CEO",
     image: "/images/team/prantik.jpg", // Path to local image
-    bio: "",
-    email: "jortusfinance.invest@gmail.com",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    bio: "Founder of a pioneering company in Northeast India, dedicated to simplifying stock trading accessibility.",
+    email: "admin@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
   {
     id: 2,
     name: "Nabanil Debbarma",
     position: "Chief Financial Officer (CFO)",
-    key: "",
+    key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
     image: "/images/team/nabanil.jpg", // Path to local image
-    bio: "",
-    email: "ortusfinance.invest@gmail.com",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    bio: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
+    email: "finance@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
   {
@@ -41,24 +41,46 @@ export const teamMembers = [
   },
   {
     id: 4,
-    name: "Saugat Debbarma",
-    position: "Equity Research Analyst",
-    key: "(Trader/Investor)",
-    image: "/images/team/saugat.jpg", // Path to local image
-    bio: "",
-    email: "ortusfinance.invest@gmail.com",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    name: "Om Prakash Badal",
+    position: "HR Manager (MD)",
+    key: "(HR) ",
+    image: "/images/team/om.png", // Path to local image
+    bio: "Intern at SBI|MBA(Finance & Business intelligence and analytics)|Ex-intern(LIC)|Ex-intern(Royal enfield)|BBA(Finance)",
+    email: "support@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/om-prakash-badal-75a445267/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
   {
     id: 5,
+    name: "Samrat Dasgupta",
+    position: "Managing Director (MD)",
+    key: "(MD) ",
+    image: "/images/team/samrat.jpeg", // Path to local image
+    bio: "",
+    email: "manager@ortusfinance.in",
+    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
+  {
+    id: 6,
+    name: "Ravinder Kumar",
+    position: "Lead Research Analyst",
+    key: "(Research Analyst) ",
+    image: "/images/team/ravinder.png", // Path to local image
+    bio: "As an MBA student at Chandigarh University specializing in Finance & Marketing, I bring a unique fusion of analytical and creative talents to the table. My education in the arts at PDUSU has instilled in me a deep understanding of diverse cultural and media landscapes, which I leverage to add depth to our financial strategies and marketing initiatives.",
+    email: "research@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/ravinderkc/",
+    twitter: "https://twitter.com/sarahlee",
+  },
+  {
+    id: 7,
     name: "Sajib Debbarma",
     position: "Technical Analyst",
     key: "(Trader)",
     image: "/images/team/sajib.jpg", // Path to local image
-    bio: "",
-    email: "ortusfinance.invest@gmail.com",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    bio: "I have successfully completed my BBA in finance and gained valuable work experience | Ex-Tripura State Co-operative Bank Intern | Ex- TalkEng Intern.",
+    email: "analyst@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/sajib-debbarma-114ab7159/",
     twitter: "https://twitter.com/sarahlee",
   },
   // {
@@ -73,25 +95,26 @@ export const teamMembers = [
   //   twitter: "https://www.instagram.com/0rtusfinance/",
   // },
   {
-    id: 7,
+    id: 8,
     name: "Bikramjit Nath",
     position: "Chief Marketing Officer (CMO)",
     key: "(CMO) ",
     image: "/images/team/bikram.jpg", // Path to local image
-    bio: "",
-    email: "ortusfinance.invest@gmail.com",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    bio: "UG Student @ The ICFAI University, Tripura || Python || SQL|| Machine learning || Data Science || Digital Marketing",
+    email: "marketing@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/bikramjit03/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
   {
-    id: 8,
+    id: 9,
     name: "Hriteek Roy",
     position: "Software Developer",
     key: "(Developer)",
     image: "/images/team/hriteek.jpeg", // Path to local image
-    bio: "",
-    email: "ortusfinance.invest@gmail.com",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
+    bio: "Software Engineer | Machine Learning & Full-Stack Development Enthusiast | Passionate Problem Solver | CSE Student at ICFAI University Tripura",
+    email: "digital@ortusfinance.in",
+    linkedin:
+      "https://www.linkedin.com/in/hriteek-roy-4215091a4/?trk=opento_sprofile_details",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
 ];
@@ -128,39 +151,39 @@ export const navigation = [
 export const data = [
   {
     id: 1,
-    question: "How do I invest with ORTUS FINANCE?",
+    question: "What is the investment process at Ortus Finance?",
     answer:
-      "To invest, simply contact us to discuss your goals. We’ll create a tailored investment plan. Once you approve, we’ll handle the documentation and initiate your investment.",
+      "Investing with us is simple. Contact our team to discuss your financial goals. Based on your inputs, we'll design a customized investment plan. Once approved, we'll handle the documentation and begin the investment process seamlessly.",
   },
   {
     id: 2,
-    question: "How does ORTUS FINANCE manage investment risks?",
+    question: "How does Ortus Finance manage investment risks?",
     answer:
-      "We employ structured asset allocation and thorough market analysis to minimize risks while maximizing growth. Our expert team continually monitors your portfolio to adjust strategies as needed.",
+      "We use a structured asset allocation model backed by in-depth market research and analysis. Our expert team constantly monitors your portfolio and makes strategic adjustments to balance risk and growth.",
   },
   {
     id: 3,
-    question: "What fees does ORTUS FINANCE charge?",
+    question: "What fees does Ortus Finance charge?",
     answer:
-      "We pride ourselves on minimal management fees, allowing you to keep more of your returns. Detailed fee structures will be provided during your consultation.",
+      "We follow a minimal fee structure to ensure you retain the maximum portion of your returns. A detailed fee breakdown will be shared during your consultation.",
   },
   {
     id: 4,
     question: "How can I withdraw my investments?",
     answer:
-      "Withdrawal requests can be initiated at any time. We’ll guide you through the process, ensuring a smooth experience. Please note that withdrawal terms may vary based on your investment tier and agreement.",
+      "You can initiate a withdrawal anytime, and we’ll assist you throughout the process for a smooth exit. Do note, withdrawal terms may vary depending on your investment tier and the agreed terms.",
   },
   {
     id: 5,
-    question: "Are my investments safe with ORTUS FINANCE?",
+    question: "Are my investments safe with Ortus Finance?",
     answer:
-      "Yes, your investments are managed by experienced professionals, and we maintain transparency in all operations. Our risk management strategies are designed to protect your capital while seeking optimal returns.",
+      "Yes, your investments are managed by professionals with over 10 years of experience. We ensure transparency, and our risk management framework is designed to protect your capital while aiming for consistent growth.",
   },
   {
     id: 6,
     question: "Can I change my investment strategy later?",
     answer:
-      "Absolutely! We encourage regular reviews of your investment strategy to ensure it aligns with your financial goals. Our team is here to assist you with any changes you wish to make.",
+      "Absolutely! We encourage regular reviews of your strategy to ensure it aligns with your evolving goals. Our team is always available to assist with modifications.",
   },
 ];
 

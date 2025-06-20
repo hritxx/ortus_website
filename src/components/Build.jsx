@@ -8,10 +8,12 @@ const Build = () => {
     <Section title="Risk Assessment" image={{ src: imageCharts, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          During the risk assessment phase, we conduct a detailed analysis of
-          market volatility, interest rates, and other key factors. This
-          analysis, of course, is peppered with enough jargon to make sure you
-          nod along without asking too many questions.
+          Our team performs thorough{" "}
+          <strong className="font-semibold text-neutral-950">
+            risk evaluations{" "}
+          </strong>{" "}
+          based on market conditions, economic indicators, and client profiles
+          to protect your capital and ensure stability.
         </p>
         <p>
           Every client is assigned a dedicated risk analyst who specializes in

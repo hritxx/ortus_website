@@ -12,9 +12,9 @@ const WorkPage = () => {
 Assurance"
       >
         <p>
-          Our vision is to be a trusted investment leader, offering innovative
-          solutions and superior returns through expert, transparent,and
-          customer-focused management.
+          To become a trusted investment leader by delivering innovative
+          financial solutions and superior returns through expert, transparent,
+          and customer-centric management.
         </p>
       </PageIntro>
       ;

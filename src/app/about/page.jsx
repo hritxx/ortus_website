@@ -16,26 +16,29 @@ Assurance "
       >
         <p>
           At{" "}
-          <strong className="font-semibold text-blue-800">ORTUS FINANCE</strong>{" "}
-          , we specialize in turning your financial aspirations into reality.
-          Our investment firm pools resources from investors like you,
-          strategically allocating funds across the stock market and other
-          lucrative securities.
+          <strong className="font-semibold text-blue-800">
+            Ortus Finance Private Limited
+          </strong>{" "}
+          , we are committed to empowering your financial journey with smart,
+          compliant, and growth-oriented investment solutions. As a{" "}
+          <strong className="font-semibold">
+            government-registered private limited company
+          </strong>
+          ,{""}
+          we act as a financial facilitator—helping individuals and businesses
+          make informed investment decisions.
         </p>
-        <div className="mt-10 max-w-2xl space-y-6 text-base">
+        <div className="mt-10 max-w-2xl space-y-6 ">
           <p>
-            <strong className="font-semibold text-blue-800">
-              ORTUS FINANCE
+            We focus on{" "}
+            <strong className="font-semibold">
+              structured asset allocation
             </strong>{" "}
-            Pvt. Ltd. is a government-registered investment firm led by
-            co-founders from Tripura who bring extensive knowledge in business
-            administration, along with proven expertise as seasoned traders and
-            fund mangers having experience of more than 10 years.
-          </p>
-          <p>
-            With a focus on delivering attractive returns, we offer a structured
-            asset allocation that carefully balances risk and growth, ensuring
-            your investments are secure and profitable.
+            across regulated financial instruments such as equities, mutual
+            funds, and other securities, in line with market conditions and
+            client risk profiles. Our goal is to deliver consistent and
+            sustainable returns while strictly adhering to applicable financial
+            laws and regulations.
           </p>
         </div>
       </PageIntro>

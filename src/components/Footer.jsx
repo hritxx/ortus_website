@@ -57,24 +57,24 @@ const Footer = () => {
       <FadeIn>
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           <FooterNavigation />
-          <div className="flex lg:justify-end">
+          <div className="flex lg:justify-end justify-center">
             <NewsletterForm />
           </div>
         </div>
-        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12 sm:grid-cols-1 sm:items-center">
+        <div className="mb-20 mt-24 flex flex-col sm:flex-row sm:items-end sm:justify-between items-center justify-center gap-y-4 gap-x-6 border-t border-neutral-950/10 pt-12 text-center sm:text-left">
           <Link href={"/"} aria-label="Home">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center sm:flex-row sm:items-center">
               <Image
-                src="/images/logo.png" // Replace with the actual path to your logo image
+                src="/images/logo.png"
                 alt="ORTUS Logo"
-                width={100} // Adjust width as needed
-                height={100} // Adjust height as needed
-                className="mb-2 sm:"
+                width={100}
+                height={100}
+                className="mb-2 sm:mb-0 sm:mr-4"
               />
               <Logo className="h-8">ORTUS FINANCE </Logo>
             </div>
           </Link>
-          <p className="text-sm text-neutral-700 sm:mt-4">
+          <p className="text-sm text-neutral-700 mt-4 sm:mt-0">
             © Ortus Finance Pvt. Ltd. {new Date().getFullYear()}
           </p>
         </div>

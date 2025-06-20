@@ -11,11 +11,12 @@ const Deliver = () => {
     >
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Performance tracking at ORTUS FINANCE begins with a thorough review of
-          each portfolio, ensuring that every{" "}
-          <strong className="font-semibold text-neutral-950">investment</strong>{" "}
-          is performing optimally. Our team closely monitors market conditions
-          and adjusts your holdings as necessary.
+          We implement{" "}
+          <strong className="font-semibold text-neutral-950">
+            regular portfolio reviews
+          </strong>{" "}
+          and performance monitoring to identify opportunities, enhance returns,
+          and adapt to market changes in real-time.
         </p>
         <p>
           While our daily updates cover all relevant metrics, most of the{" "}

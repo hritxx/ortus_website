@@ -11,10 +11,12 @@ const Discover = () => {
     >
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We dive deep into the financial markets to conduct thorough{" "}
-          <strong className="font-semibold text-neutral-950">research</strong>{" "}
-          and analysis, ensuring every investment decision is backed by data and
-          insight.
+          We conduct{" "}
+          <strong className="font-semibold text-neutral-950">
+            in-depth market research
+          </strong>{" "}
+          and data-driven analysis to ensure every investment decision is
+          well-informed and aligned with current trends.
         </p>
         <p>
           Our team of analysts spends weeks staring at charts, pretending to
@@ -23,7 +25,7 @@ const Discover = () => {
           influencers.
         </p>
         <p>
-          Once the research phase is complete, we compile everything into a
+          Once the research phase is complete, we compile everything into a{" "}
           <strong className="font-semibold text-neutral-950">report</strong>{" "}
           that looks more impressive than it actually is, making sure to
           highlight the &quot;key findings&quot; that justify our
