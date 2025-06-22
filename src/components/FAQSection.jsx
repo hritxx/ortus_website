@@ -3,7 +3,7 @@
 import React from "react";
 import FaqItem from "./FaqItem";
 import Container from "./Container";
-import { data } from "@/constants";
+import { courseData } from "@/constants";
 import FadeIn from "./FadeIn";
 
 const Faq = () => {
@@ -44,12 +44,12 @@ const Faq = () => {
           {/* FAQ Items Container */}
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">
-              {data.map((item, index) => (
+              {courseData.map((item, index) => (
                 <FaqItem
                   key={index}
                   index={index}
-                  title={item.question}
-                  answer={item.answer}
+                  title={item.q}
+                  answer={item.a}
                 />
               ))}
             </div>
@@ -82,7 +82,6 @@ const Faq = () => {
                     </svg>
                     Contact Support
                   </button>
-                  
                 </div>
               </div>
             </div>

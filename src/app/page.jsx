@@ -12,6 +12,7 @@ import InvestmentPlans from "@/components/InvestmentPlans";
 import { StatList, StatListItem } from "@/components/StatList";
 import SipCalculator from "@/components/SipCalculator";
 
+
 export default function Home() {
   return (
     <main className="text-black">
@@ -48,13 +49,6 @@ export default function Home() {
       <FeaturesSectionDemo />
       <SipCalculator />
       <Clients />
-      <Testimonials
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: "Bijaya Deb", logo: "logoPhobiaDark" }}
-      >
-        আমি ORTUS FINANCE-এর সাথে অসাধারণ উন্নতি অর্জন করেছি। তাদের কম ফি এবং
-        বিশেষজ্ঞ পরামর্শ আমার আর্থিক পরিকল্পনায় গুরুত্বপূর্ণ পরিবর্তন এনেছে।
-      </Testimonials>
       <InvestmentPlans />
       <Services />
       <Testimonial />

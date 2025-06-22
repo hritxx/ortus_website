@@ -73,7 +73,7 @@ const Header = ({
 
 const NavigationRow = ({ children }) => {
   return (
-    <div className="even:mt-px sm:bg-neutral-950">
+    <div className="mt-px sm:bg-neutral-950">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2">{children}</div>
       </Container>
@@ -99,11 +99,15 @@ const Navigation = () => {
         <NavigationItem href={"/work"}>Our Work</NavigationItem>
         <NavigationItem href={"/about"}>About Us</NavigationItem>
       </NavigationRow>
+       <NavigationRow>
+        <NavigationItem href={"/careers"}>Careers</NavigationItem>
+        <NavigationItem href={"/courses"}>Courses</NavigationItem>
+      </NavigationRow>
       <NavigationRow>
         <NavigationItem href={"/process"}>Our Process</NavigationItem>
         <NavigationItem href={"/licenses"}>Licenses</NavigationItem>
-        
       </NavigationRow>
+     
     </nav>
   );
 };

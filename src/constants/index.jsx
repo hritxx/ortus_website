@@ -187,6 +187,39 @@ export const data = [
   },
 ];
 
+export const courseData = [
+  {
+    id: 1,
+    q: "Do I need prior trading knowledge?",
+    a: "No, our beginner courses are designed for absolute newcomers. Advanced courses specify prerequisites.",
+  },
+  {
+    id: 2,
+    q: "Are these courses live or recorded?",
+    a: "Most courses are recorded for flexible learning. Some include live Q&A sessions.",
+  },
+  {
+    id: 3,
+    q: "Can I access the course after payment forever?",
+    a: "Yes, you get lifetime access to all purchased courses and materials.",
+  },
+  {
+    id: 4,
+    q: "Do you provide certificates?",
+    a: "Yes, a certificate is awarded upon successful completion of each course.",
+  },
+  {
+    id: 5,
+    q: "What payment methods do you accept?",
+    a: "We accept various payment methods including credit/debit cards, UPI, and bank transfers for your convenience.",
+  },
+  {
+    id: 6,
+    q: "Is there a money-back guarantee?",
+    a: "Yes, we offer a 7-day money-back guarantee if you're not satisfied with the course content.",
+  }
+];
+
 export const reviews = [
   {
     image: Customer1,

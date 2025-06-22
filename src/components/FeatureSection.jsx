@@ -12,7 +12,7 @@ export const FeaturesSectionDemo = () => {
     {
       title: "Higher Returns",
       description:
-        "Earn up to 25% p.a., surpassing traditional investment options.",
+        "Earn up to 15% p.a., surpassing traditional investment options.",
       icon: <IconCurrencyRupee />,
     },
     // {
