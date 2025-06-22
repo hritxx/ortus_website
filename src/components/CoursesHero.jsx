@@ -17,7 +17,7 @@ export default function CoursesHero() {
             Premium Financial Education
           </span>
         </div>
-        
+      
         <div className="grid grid-cols-3 md:grid-cols-3 gap-6 mb-12">
           {stats.map((stat, idx) => (
             <div
