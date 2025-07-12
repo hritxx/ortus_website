@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Prantik Deb",
     position: "Founder & CEO",
     image: "/images/team/prantik.jpg", // Path to local image
-    bio: "Founder of a pioneering company in Northeast India, dedicated to simplifying stock trading accessibility.",
+    bio: "I'm a B.Tech CSE graduate and now the CMO at Ortus Finance.in, where I craft marketing strategies that bring people, technology, and growth together. I'm passionate about innovation, emerging tech, and making finance feel simple and accessible to everyone.",
     email: "admin@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -32,9 +32,9 @@ export const teamMembers = [
     id: 3,
     name: "Rahul Mog",
     position: "Chief Operating Officer (COO)",
-    key: "",
+    key: "(COO) ",
     image: "/images/team/rahul.jpg", // Path to local image
-    bio: "",
+    bio: "Attended National Institute of Technology Agartala (NITA) | B.Tech in Mechanical Engineering |",
     email: "ortusfinance.invest@gmail.com",
     linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -56,10 +56,10 @@ export const teamMembers = [
     position: "Managing Director (MD)",
     key: "(MD) ",
     image: "/images/team/samrat.jpeg", // Path to local image
-    bio: "",
+    bio: "I am a BBA graduate with a specialization in Finance and Marketing. I have a keen interest in the financial markets and am dedicated to helping clients achieve their financial goals through strategic investment planning.",
     email: "manager@ortusfinance.in",
-    linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-    twitter: "https://www.instagram.com/0rtusfinance/",
+    linkedin: "",
+    twitter: "",
   },
   {
     id: 6,
