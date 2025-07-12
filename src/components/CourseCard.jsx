@@ -11,13 +11,11 @@ const CourseCard = React.memo(function CourseCard({ course, index }) {
 
   return (
     <div
-      className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden"
+      className="group relative rounded-2xl border border-gray-200/20 bg-white/5 overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div
-        className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${course.color} z-10`}
-      >
+      <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-slate-600 to-slate-700 z-10">
         {course.level}
       </div>
       <div className="relative w-full h-48 overflow-hidden">
@@ -42,7 +40,7 @@ const CourseCard = React.memo(function CourseCard({ course, index }) {
       <div className="p-5">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center space-x-3">
-            <div className={`p-2 rounded-xl bg-gradient-to-r ${course.color}`}>
+            <div className="p-2 rounded-xl bg-gradient-to-r from-slate-500 to-slate-600">
               <IconComponent className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -74,7 +72,7 @@ const CourseCard = React.memo(function CourseCard({ course, index }) {
           {course.features.map((feature, idx) => (
             <span
               key={idx}
-              className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-200 border border-white/20"
+              className="px-2 py-1 bg-slate-600/20 rounded-full text-xs text-gray-200 border border-slate-500/30"
             >
               {feature}
             </span>
@@ -82,14 +80,14 @@ const CourseCard = React.memo(function CourseCard({ course, index }) {
         </div>
         <div className="flex space-x-3">
           <button
-            className={`flex-1 py-2 px-3 bg-gradient-to-r ${course.color} text-white font-bold rounded-lg hover:opacity-90 transition`}
+            className="flex-1 py-2 px-3 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-bold rounded-lg hover:from-slate-700 hover:to-slate-800 transition-all duration-200"
           >
             <span className="flex items-center justify-center space-x-2">
               <span>Enroll Now</span>
               <ChevronRight className="w-4 h-4" />
             </span>
           </button>
-          <button className="px-3 py-2 border border-white/20 text-white font-bold rounded-lg hover:bg-white/10 transition">
+          <button className="px-3 py-2 border border-slate-500/30 text-white font-bold rounded-lg hover:bg-slate-600/20 transition">
             Preview
           </button>
         </div>

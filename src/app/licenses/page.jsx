@@ -48,7 +48,7 @@ const BlogPage = () => {
             size="small"
           />
           <Certificate
-            link={Certificate4}
+            link={Certificate12}
             heading="Certificate of Completion"
             subHeading="Awarded by the National Institute of Securities Markets (NISM)."
             size="small"
@@ -84,7 +84,7 @@ const BlogPage = () => {
             size="small"
           />
           <Certificate
-            link={Certificate12}
+            link={Certificate4}
             heading="Certificate of Completion"
             subHeading="E-Learning course on Financial Planning by NISM.”."
             size="small"

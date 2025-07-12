@@ -14,6 +14,7 @@ import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
 import Image from "next/image";
+import { StickyBannerDemo } from "./StickyBanner";
 
 const Header = ({
   panelId,
@@ -223,7 +224,8 @@ const RootLayoutInner = ({ children }) => {
 
 const RootLayout = ({ children }) => {
   const pathname = usePathname();
-  return <RootLayoutInner key={pathname}>{children}</RootLayoutInner>;
+  return <RootLayoutInner key={pathname}>
+    {children}</RootLayoutInner>;
 };
 
 export default RootLayout;

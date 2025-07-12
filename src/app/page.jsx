@@ -16,6 +16,7 @@ import SipCalculator from "@/components/SipCalculator";
 export default function Home() {
   return (
     <main className="text-black">
+      
       <Container className="mt-24 sm:mt-32">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
@@ -40,9 +41,9 @@ export default function Home() {
             data-backed insights.
           </p>
           <StatList className="mt-12 mb-16">
-            <StatListItem value="360" label="Clients" />
+            <StatListItem value="450+" label="Clients" />
             {/* <StatListItem value="52" label="Placed clients" /> */}
-            <StatListItem value="₹2.3 Crores " label="Available Funds" />
+            <StatListItem value="₹3 Crores " label="Available Funds" />
           </StatList>
         </FadeIn>
       </Container>

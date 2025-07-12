@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 export default function CoursesCTA() {
   return (
     <div className="mt-16 text-center">
-      <div className="inline-block p-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl">
+      <div className="inline-block p-1 bg-gradient-to-r from-slate-600 to-slate-700 rounded-2xl">
         <button className="px-8 py-4 bg-black rounded-2xl text-white font-bold text-lg hover:bg-transparent transition-all duration-300 transform hover:scale-105">
           <span className="flex items-center space-x-2">
             <span>Start Your Journey Today</span>
