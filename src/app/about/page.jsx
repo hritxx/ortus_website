@@ -44,9 +44,9 @@ Assurance "
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="360" label="Clients" />
+          <StatListItem value="450" label="Clients" />
           {/* <StatListItem value="52" label="Placed clients" /> */}
-          <StatListItem value="₹2.3 Crores " label="Available Funds" />
+          <StatListItem value="₹3 Crores " label="Available Funds" />
         </StatList>
       </Container>
       <TeamSection />

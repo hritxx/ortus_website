@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Prantik Deb",
     position: "Founder & CEO",
     image: "/images/team/prantik.jpg", // Path to local image
-    bio: "I'm a B.Tech CSE graduate and now the CMO at Ortus Finance.in, where I craft marketing strategies that bring people, technology, and growth together. I'm passionate about innovation, emerging tech, and making finance feel simple and accessible to everyone.",
+    bio: "Founder of a pioneering company in Northeast India, dedicated to simplifying stock trading accessibility.",
     email: "admin@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
