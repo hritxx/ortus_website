@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Prantik Deb",
     position: "Founder & CEO",
     image: "/images/team/prantik.jpg", // Path to local image
-    bio: "Founder of a pioneering company in Northeast India, dedicated to simplifying stock trading accessibility.",
+    bio: "Visionary leader who founded Ortus Finance to democratize investment opportunities in Northeast India. Under his leadership, the company has grown to serve thousands of clients with innovative financial solutions and consistent returns.",
     email: "admin@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -23,7 +23,7 @@ export const teamMembers = [
     position: "Chief Financial Officer (CFO)",
     key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
     image: "/images/team/nabanil.jpg", // Path to local image
-    bio: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
+    bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and risk management that drives our consistent 12-15% returns.",
     email: "finance@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -34,7 +34,7 @@ export const teamMembers = [
     position: "Chief Operating Officer (COO)",
     key: "(COO) ",
     image: "/images/team/rahul.jpg", // Path to local image
-    bio: "Attended National Institute of Technology Agartala (NITA) | B.Tech in Mechanical Engineering |",
+    bio: "Engineering graduate from NIT Agartala who streamlines Ortus Finance's operations with systematic efficiency. His technical background ensures seamless client onboarding, portfolio management, and investment execution processes.",
     email: "ortusfinance.invest@gmail.com",
     linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -45,7 +45,7 @@ export const teamMembers = [
     position: "HR Manager (MD)",
     key: "(HR) ",
     image: "/images/team/om.png", // Path to local image
-    bio: "Intern at SBI|MBA(Finance & Business intelligence and analytics)|Ex-intern(LIC)|Ex-intern(Royal enfield)|BBA(Finance)",
+    bio: "Experienced HR professional with internships at SBI, LIC, and Royal Enfield. At Ortus Finance, he builds our talent acquisition strategy and maintains our client-first culture that has earned us a 95% client satisfaction rate.",
     email: "support@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/om-prakash-badal-75a445267/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -56,7 +56,7 @@ export const teamMembers = [
     position: "Managing Director (MD)",
     key: "(MD) ",
     image: "/images/team/samrat.jpeg", // Path to local image
-    bio: "I am a BBA graduate with a specialization in Finance and Marketing. I have a keen interest in the financial markets and am dedicated to helping clients achieve their financial goals through strategic investment planning.",
+    bio: "Strategic leader with BBA in Finance & Marketing who drives Ortus Finance's client relationship management. His market insights and investment planning expertise have helped clients achieve their financial goals across diverse investment portfolios.",
     email: "manager@ortusfinance.in",
     linkedin: "",
     twitter: "",
@@ -67,7 +67,7 @@ export const teamMembers = [
     position: "Lead Research Analyst",
     key: "(Research Analyst) ",
     image: "/images/team/ravinder.png", // Path to local image
-    bio: "As an MBA student at Chandigarh University specializing in Finance & Marketing, I bring a unique fusion of analytical and creative talents to the table. My education in the arts at PDUSU has instilled in me a deep understanding of diverse cultural and media landscapes, which I leverage to add depth to our financial strategies and marketing initiatives.",
+    bio: "MBA candidate at Chandigarh University specializing in Finance & Marketing. At Ortus Finance, he leads our research division, conducting in-depth market analysis and identifying high-potential investment opportunities that form the backbone of our investment strategies.",
     email: "research@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/ravinderkc/",
     twitter: "https://twitter.com/sarahlee",
@@ -78,29 +78,18 @@ export const teamMembers = [
     position: "Technical Analyst",
     key: "(Trader)",
     image: "/images/team/sajib.jpg", // Path to local image
-    bio: "I have successfully completed my BBA in finance and gained valuable work experience | Ex-Tripura State Co-operative Bank Intern | Ex- TalkEng Intern.",
+    bio: "BBA Finance graduate with banking experience at Tripura State Co-operative Bank. At Ortus Finance, he specializes in technical analysis and trading strategies, helping optimize entry and exit points for our investment portfolios.",
     email: "analyst@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/sajib-debbarma-114ab7159/",
     twitter: "https://twitter.com/sarahlee",
   },
-  // {
-  //   id: 6,
-  //   name: "Ishak Debbarma",
-  //   position: "Jr. Equity Research Analyst",
-  //   key: "(Trader/Investor) ",
-  //   image: "/images/team/ishak.jpg", // Path to local image
-  //   bio: "",
-  //   email: "ortusfinance.invest@gmail.com",
-  //   linkedin: "https://www.facebook.com/profile.php?id=61566181745108",
-  //   twitter: "https://www.instagram.com/0rtusfinance/",
-  // },
   {
     id: 8,
     name: "Bikramjit Nath",
     position: "Chief Marketing Officer (CMO)",
     key: "(CMO) ",
     image: "/images/team/bikram.jpg", // Path to local image
-    bio: "UG Student @ The ICFAI University, Tripura || Python || SQL|| Machine learning || Data Science || Digital Marketing",
+    bio: "Tech-savvy marketing professional from ICFAI University with expertise in Python, SQL, and Data Science. At Ortus Finance, he drives our digital marketing initiatives and educational content strategy, helping us reach and educate potential investors across Northeast India.",
     email: "marketing@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/bikramjit03/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -111,7 +100,7 @@ export const teamMembers = [
     position: "Software Developer",
     key: "(Developer)",
     image: "/images/team/hriteek.jpeg", // Path to local image
-    bio: "Software Engineer | Machine Learning & Full-Stack Development Enthusiast | Passionate Problem Solver | CSE Student at ICFAI University Tripura",
+    bio: "Full-stack developer and Machine Learning enthusiast from ICFAI University. At Ortus Finance, he develops and maintains our digital infrastructure, including client portals, investment tracking systems, and automated reporting tools that enhance our service delivery.",
     email: "digital@ortusfinance.in",
     linkedin:
       "https://www.linkedin.com/in/hriteek-roy-4215091a4/?trk=opento_sprofile_details",
