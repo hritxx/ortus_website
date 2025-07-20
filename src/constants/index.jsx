@@ -86,10 +86,10 @@ export const teamMembers = [
   {
     id: 8,
     name: "Bikramjit Nath",
-    position: "Chief Marketing Officer (CMO)",
-    key: "(CMO) ",
-    image: "/images/team/bikram.jpg", // Path to local image
-    bio: "Tech-savvy marketing professional from ICFAI University with expertise in Python, SQL, and Data Science. At Ortus Finance, he drives our digital marketing initiatives and educational content strategy, helping us reach and educate potential investors across Northeast India.",
+    position: "Chief Technical Officer (CTO)",
+    key: "(CTO) ",
+    image: "/images/team/bikram.jpeg", // Path to local image
+    bio: "He oversees the company's tech team, ensuring seamless digital operations and platform development. Alongside, he manages ground operations, client onboarding, relationship management, and daily process execution.",
     email: "marketing@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/bikramjit03/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -100,7 +100,7 @@ export const teamMembers = [
     position: "Software Developer",
     key: "(Developer)",
     image: "/images/team/hriteek.jpeg", // Path to local image
-    bio: "Full-stack developer and Machine Learning enthusiast from ICFAI University. At Ortus Finance, he develops and maintains our digital infrastructure, including client portals, investment tracking systems, and automated reporting tools that enhance our service delivery.",
+    bio: "He is the Tech Lead at Ortus Finance, a Full-stack developer and Machine Learning enthusiast. At Ortus Finance, he develops and maintains our digital infrastructure, including client portals, investment tracking systems, and automated reporting tools that enhance our service delivery.",
     email: "digital@ortusfinance.in",
     linkedin:
       "https://www.linkedin.com/in/hriteek-roy-4215091a4/?trk=opento_sprofile_details",
