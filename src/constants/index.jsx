@@ -88,7 +88,7 @@ export const teamMembers = [
     name: "Bikramjit Nath",
     position: "Chief Technical Officer (CTO)",
     key: "(CTO) ",
-    image: "/images/team/bikram.jpeg", // Path to local image
+    image: "/images/team/bikram.png", // Path to local image
     bio: "He oversees the company's tech team, ensuring seamless digital operations and platform development. Alongside, he manages ground operations, client onboarding, relationship management, and daily process execution.",
     email: "marketing@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/bikramjit03/",
