@@ -50,19 +50,19 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/om-prakash-badal-75a445267/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
+  // {
+  //   id: 5,
+  //   name: "Samrat Dasgupta",
+  //   position: "Managing Director (MD)",
+  //   key: "(MD) ",
+  //   image: "/images/team/samrat.jpeg", // Path to local image
+  //   bio: "Strategic leader with BBA in Finance & Marketing who drives Ortus Finance's client relationship management. His market insights and investment planning expertise have helped clients achieve their financial goals across diverse investment portfolios.",
+  //   email: "manager@ortusfinance.in",
+  //   linkedin: "",
+  //   twitter: "",
+  // },
   {
     id: 5,
-    name: "Samrat Dasgupta",
-    position: "Managing Director (MD)",
-    key: "(MD) ",
-    image: "/images/team/samrat.jpeg", // Path to local image
-    bio: "Strategic leader with BBA in Finance & Marketing who drives Ortus Finance's client relationship management. His market insights and investment planning expertise have helped clients achieve their financial goals across diverse investment portfolios.",
-    email: "manager@ortusfinance.in",
-    linkedin: "",
-    twitter: "",
-  },
-  {
-    id: 6,
     name: "Ravinder Kumar",
     position: "Lead Research Analyst",
     key: "(Research Analyst) ",
@@ -73,7 +73,7 @@ export const teamMembers = [
     twitter: "https://twitter.com/sarahlee",
   },
   {
-    id: 7,
+    id: 6,
     name: "Sajib Debbarma",
     position: "Technical Analyst",
     key: "(Trader)",
@@ -84,7 +84,7 @@ export const teamMembers = [
     twitter: "https://twitter.com/sarahlee",
   },
   {
-    id: 8,
+    id: 7,
     name: "Bikramjit Nath",
     position: "Chief Technical Officer (CTO)",
     key: "(CTO) ",
@@ -95,7 +95,7 @@ export const teamMembers = [
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
   {
-    id: 9,
+    id: 8,
     name: "Hriteek Roy",
     position: "Software Developer",
     key: "(Developer)",
