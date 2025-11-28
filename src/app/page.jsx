@@ -11,6 +11,7 @@ import { FeaturesSectionDemo } from "@/components/FeatureSection";
 import InvestmentPlans from "@/components/InvestmentPlans";
 import { StatList, StatListItem } from "@/components/StatList";
 import SipCalculator from "@/components/SipCalculator";
+import StartupCertificate from "@/components/StartupCertificate";
 
 
 export default function Home() {
@@ -48,10 +49,11 @@ export default function Home() {
         </FadeIn>
       </Container>
       <FeaturesSectionDemo />
-      <SipCalculator />
-      <Clients />
-      <InvestmentPlans />
+      <StartupCertificate />
       <Services />
+      <SipCalculator />
+      <InvestmentPlans />
+      <Clients />
       <Testimonial />
       <Faq />
       <ContactSection />
