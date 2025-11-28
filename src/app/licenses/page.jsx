@@ -14,6 +14,7 @@ import Certificate9 from "@/images/certificates/c9.png";
 import Certificate10 from "@/images/certificates/c10.png";
 import Certificate11 from "@/images/certificates/c11.png";
 import Certificate12 from "@/images/certificates/c12.png";
+import Certificate13 from "@/images/certificates/startup.png";
 
 const BlogPage = () => {
   return (
@@ -68,7 +69,7 @@ const BlogPage = () => {
           <Certificate
             link={Certificate5}
             heading="Certificate of Achievement"
-            subHeading="Recognizing Excellence in Completing the Course: “Understanding Mutual Funds and the Role of a Transfer Agency.”"
+            subHeading="Recognizing Excellence in Completing the Course: 'Understanding Mutual Funds and the Role of a Transfer Agency.'"
             size="small"
           />
           <Certificate
@@ -86,7 +87,7 @@ const BlogPage = () => {
           <Certificate
             link={Certificate4}
             heading="Certificate of Completion"
-            subHeading="E-Learning course on Financial Planning by NISM.”."
+            subHeading="E-Learning course on Financial Planning by NISM."
             size="small"
           />
           <Certificate
@@ -111,10 +112,16 @@ const BlogPage = () => {
             that showcase the expertise and industry recognition of our company!
           </p>
         </PageIntro>
-        <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-center justify-center">
+          <Certificate
+            link={Certificate13}
+            heading="Registration Certificate Under Tripura Start-Up Policy"
+            subHeading="This is to certify that Ortus Finance Pvt Ltd incorporated as a Pvt. Ltd Company is 'REGISTERED' as a Start-Up by the Directorate of Information Technology, Govt. of Tripura."
+            size="big"
+          />
           <Certificate
             link={Certificate3}
-            heading="  Certificate of Incorporation"
+            heading="Certificate of Incorporation"
             subHeading="ORTUS FINANCE PRIVATE LIMITED is officially registered under the Companies Act, 2013 on 5th August 2024."
             size="big"
           />
