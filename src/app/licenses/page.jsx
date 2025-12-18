@@ -15,11 +15,48 @@ import Certificate10 from "@/images/certificates/c10.png";
 import Certificate11 from "@/images/certificates/c11.png";
 import Certificate12 from "@/images/certificates/c12.png";
 import Certificate13 from "@/images/certificates/startup.png";
+import Certificate14 from "@/images/certificates/c13.png";
+import Certificate15 from "@/images/certificates/c14.png";
 
 const BlogPage = () => {
   return (
     <>
       <FadeIn>
+        <PageIntro
+          eyebrow=""
+          title="Professional Credentials of Our Organization"
+        >
+          <p>
+            Discover the various professional certifications and credentials
+            that showcase the expertise and industry recognition of our company!
+          </p>
+        </PageIntro>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-center justify-center">
+          <Certificate
+            link={Certificate13}
+            heading="Registration Certificate Under Tripura Start-Up Policy"
+            subHeading="This is to certify that Ortus Finance Pvt Ltd incorporated as a Pvt. Ltd Company is 'REGISTERED' as a Start-Up by the Directorate of Information Technology, Govt. of Tripura."
+            size="big"
+          />
+          <Certificate
+            link={Certificate15}
+            heading="AMFI Registration Number (ARN) Certificate"
+            subHeading="Prantik Deb has been issued ARN-347142 by AMFI (Association of Mutual Funds in India) on 04-Dec-2025, authorizing him as a registered Mutual Fund Distributor."
+            size="big"
+          />
+          {/* <Certificate
+            link={Certificate15}
+            heading="AMFI Registration Number (ARN) Certificate"
+            subHeading="Prantik Deb has been issued ARN-347142 by AMFI (Association of Mutual Funds in India) on 04-Dec-2025, authorizing him as a registered Mutual Fund Distributor."
+            size="big"
+          /> */}
+          <Certificate
+            link={Certificate3}
+            heading="Certificate of Incorporation"
+            subHeading="ORTUS FINANCE PRIVATE LIMITED is officially registered under the Companies Act, 2013 on 5th August 2024."
+            size="big"
+          />
+        </div>
         <PageIntro
           eyebrow="Expert Certifications"
           title="Our Team's Professional Credentials"
@@ -43,11 +80,19 @@ const BlogPage = () => {
           />
 
           <Certificate
+            link={Certificate14}
+            heading="NISM-Series-V-A: Mutual Fund Distributors Certification"
+            subHeading="Prantik Deb has successfully completed the NISM-Series-V-A: Mutual Fund Distributors Certification Examination as required under SEBI (Certification of Associated Persons in the Securities Markets) Regulations, 2007."
+            size="small"
+          />
+
+          <Certificate
             link={Certificate2}
             heading="NISM Certified Professional"
             subHeading="Nabanil Debbarma, certified on October 15, 2024, under NISM Reg. No. NISM20240000048038."
             size="small"
           />
+
           <Certificate
             link={Certificate12}
             heading="Certificate of Completion"
@@ -101,29 +146,6 @@ const BlogPage = () => {
             heading="Certificate of Participation"
             subHeading="Online Skilling Course: Branch Banking Executive."
             size="small"
-          />
-        </div>
-        <PageIntro
-          eyebrow=""
-          title="Professional Credentials of Our Organization"
-        >
-          <p>
-            Discover the various professional certifications and credentials
-            that showcase the expertise and industry recognition of our company!
-          </p>
-        </PageIntro>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-center justify-center">
-          <Certificate
-            link={Certificate13}
-            heading="Registration Certificate Under Tripura Start-Up Policy"
-            subHeading="This is to certify that Ortus Finance Pvt Ltd incorporated as a Pvt. Ltd Company is 'REGISTERED' as a Start-Up by the Directorate of Information Technology, Govt. of Tripura."
-            size="big"
-          />
-          <Certificate
-            link={Certificate3}
-            heading="Certificate of Incorporation"
-            subHeading="ORTUS FINANCE PRIVATE LIMITED is officially registered under the Companies Act, 2013 on 5th August 2024."
-            size="big"
           />
         </div>
       </FadeIn>
