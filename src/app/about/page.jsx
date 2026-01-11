@@ -43,11 +43,11 @@ Assurance "
         </div>
       </PageIntro>
       <Container className="mt-16">
-        <StatList>
+        {/* <StatList>
           <StatListItem value="450+" label="Clients" />
-          {/* <StatListItem value="52" label="Placed clients" /> */}
+          <StatListItem value="52" label="Placed clients" />
           <StatListItem value="₹3 Crores+" label="Available Funds" />
-        </StatList>
+        </StatList> */}
       </Container>
       <TeamSection />
       <Cultures />

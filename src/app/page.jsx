@@ -41,11 +41,12 @@ export default function Home() {
             suitable investment avenues through strategic guidance and
             data-backed insights.
           </p>
-          <StatList className="mt-12 mb-16">
+          {/* <StatList className="mt-12 mb-16">
             <StatListItem value="450+" label="Clients" />
-            {/* <StatListItem value="52" label="Placed clients" /> */}
+            <StatListItem value="52" label="Placed clients" />
             <StatListItem value="₹3 Crores " label="Available Funds" />
-          </StatList>
+          </StatList> */}
+
         </FadeIn>
       </Container>
       <FeaturesSectionDemo />

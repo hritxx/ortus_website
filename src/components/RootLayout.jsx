@@ -97,18 +97,18 @@ const Navigation = () => {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href={"/work"}>Our Work</NavigationItem>
+        {/* <NavigationItem href={"/work"}>Our Work</NavigationItem> */}
         <NavigationItem href={"/about"}>About Us</NavigationItem>
+        <NavigationItem href={"/careers"}>Careers</NavigationItem>
       </NavigationRow>
-       <NavigationRow>
+      {/* <NavigationRow>
         <NavigationItem href={"/careers"}>Careers</NavigationItem>
         <NavigationItem href={"/courses"}>Courses</NavigationItem>
-      </NavigationRow>
+      </NavigationRow> */}
       <NavigationRow>
         <NavigationItem href={"/process"}>Our Process</NavigationItem>
         <NavigationItem href={"/licenses"}>Licenses</NavigationItem>
       </NavigationRow>
-     
     </nav>
   );
 };
