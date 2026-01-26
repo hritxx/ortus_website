@@ -17,17 +17,17 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
-  {
-    id: 2,
-    name: "Nabanil Debbarma",
-    position: "Chief Financial Officer (CFO)",
-    key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
-    image: "/images/team/nabanil.jpg", // Path to local image
-    bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and risk management that drives our consistent 12-15% returns.",
-    email: "finance@ortusfinance.in",
-    linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
-    twitter: "https://www.instagram.com/0rtusfinance/",
-  },
+  // {
+  //   id: 2,
+  //   name: "Nabanil Debbarma",
+  //   position: "Chief Financial Officer (CFO)",
+  //   key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
+  //   image: "/images/team/nabanil.jpg", // Path to local image
+  //   bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and risk management that drives our consistent 12-15% returns.",
+  //   email: "finance@ortusfinance.in",
+  //   linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
+  //   twitter: "https://www.instagram.com/0rtusfinance/",
+  // },
   {
     id: 3,
     name: "Rahul Mog",
@@ -42,7 +42,7 @@ export const teamMembers = [
   {
     id: 4,
     name: "Om Prakash Badal",
-    position: "HR Manager (MD)",
+    position: "Chief Financial Officer (CFO) & HR Manager (MD)",
     key: "(HR) ",
     image: "/images/team/om.png", // Path to local image
     bio: "Experienced HR professional with internships at SBI, LIC, and Royal Enfield. At Ortus Finance, he builds our talent acquisition strategy and maintains our client-first culture that has earned us a 95% client satisfaction rate.",
