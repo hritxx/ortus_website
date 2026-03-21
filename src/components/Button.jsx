@@ -28,7 +28,7 @@ const Button = ({ invert, href, className, children, ...props }) => {
 
   // Check if the button text is "Register" and set the href accordingly
   if (children === "Register") {
-    href = "http://app.ortusfinance.in"; // Replace with the desired URL
+    href = "https://elevate.ortusfinance.in"; // Replace with the desired URL
   }
 
   if (href) {

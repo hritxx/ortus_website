@@ -18,28 +18,28 @@ import { useRouter } from "next/navigation";
 
 const interns = [
   {
-    name: "Aditi Sharma",
-    institute: "IIT Kharagpur",
+    name: "To Be Announced",
+    institute: "University / Institute",
     image: "/api/placeholder/150/150",
-    program: "Equity Research Internship",
-    duration: "12 weeks",
-    performance: "Outstanding",
+    program: "Upcoming Internship Program",
+    duration: "TBD",
+    performance: "TBD",
   },
   {
-    name: "Rahul Das",
-    institute: "IIM Calcutta",
+    name: "To Be Announced",
+    institute: "University / Institute",
     image: "/api/placeholder/150/150",
-    program: "Portfolio Analytics Internship",
-    duration: "10 weeks",
-    performance: "Excellent",
+    program: "Upcoming Internship Program",
+    duration: "TBD",
+    performance: "TBD",
   },
   {
-    name: "Priya Sen",
-    institute: "NIT Agartala",
+    name: "To Be Announced",
+    institute: "University / Institute",
     image: "/api/placeholder/150/150",
-    program: "FinTech Development Internship",
-    duration: "8 weeks",
-    performance: "Outstanding",
+    program: "Upcoming Internship Program",
+    duration: "TBD",
+    performance: "TBD",
   },
 ];
 

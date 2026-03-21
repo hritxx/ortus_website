@@ -17,17 +17,17 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
   },
-  // {
-  //   id: 2,
-  //   name: "Nabanil Debbarma",
-  //   position: "Chief Financial Officer (CFO)",
-  //   key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
-  //   image: "/images/team/nabanil.jpg", // Path to local image
-  //   bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and risk management that drives our consistent 12-15% returns.",
-  //   email: "finance@ortusfinance.in",
-  //   linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
-  //   twitter: "https://www.instagram.com/0rtusfinance/",
-  // },
+  {
+    id: 2,
+    name: "Nabanil Debbarma",
+    position: "Chief Financial Officer (CFO)",
+    key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
+    image: "/images/nabanil.jpg", // Path to local image
+    bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and risk management that drives our consistent 12-15% returns.",
+    email: "finance@ortusfinance.in",
+    linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
+    twitter: "https://www.instagram.com/0rtusfinance/",
+  },
   {
     id: 3,
     name: "Rahul Mog",
