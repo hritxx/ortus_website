@@ -10,9 +10,9 @@ import { StatListItem } from "./StatList";
 export const FeaturesSectionDemo = () => {
   const features = [
     {
-      title: "Higher Returns",
+      title: "Market-Linked Growth",
       description:
-        "Earn up to 15% p.a., surpassing traditional investment options.",
+        "Potential for long-term wealth creation through SEBI-regulated mutual fund schemes.",
       icon: <IconCurrencyRupee />,
     },
     // {
@@ -40,9 +40,9 @@ export const FeaturesSectionDemo = () => {
       icon: <IconHeart />,
     },
     {
-      title: "Experienced Traders",
+      title: "Certified Professionals",
       description:
-        "Over 10 years of experience in the market, ensuring expertise in every move.",
+        "NISM-certified team with hands-on experience in financial services and capital markets.",
       icon: <IconHelp />,
     },
     // {

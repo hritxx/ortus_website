@@ -17,17 +17,17 @@ const Cultures = () => {
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them
-            are allowed to have LinkedIn profiles.
+          <GridListItem title="Integrity" invert>
+            We operate with complete transparency in every client interaction,
+            fee disclosure, and investment recommendation.
           </GridListItem>
-          <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
-            every waking second.
+          <GridListItem title="Continuous Learning" invert>
+            Our team holds NISM certifications and stays updated with evolving
+            market regulations and investment strategies.
           </GridListItem>
-          <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make
-            sure to never find out.
+          <GridListItem title="Client-Centricity" invert>
+            Every decision we make is guided by what&apos;s best for our
+            clients&apos; long-term financial well-being.
           </GridListItem>
         </GridList>
       </Container>

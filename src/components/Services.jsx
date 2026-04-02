@@ -17,9 +17,9 @@ reality."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          Our vision is to be a trusted investment leader, offering innovative
-          solutions and superior returns through expert, transparent, and
-          customer-focused management.
+          Our vision is to be a trusted investment facilitator, offering
+          accessible financial solutions through expert, transparent, and
+          customer-focused service.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -35,19 +35,19 @@ reality."
           </div>
           {/*LIST ITEMS */}
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Portfolio Management">
-              Our experienced team crafts and manages personalized portfolios
-              based on your financial goals, ensuring a balance of growth and
-              risk management.
+            <ListItem title="Mutual Fund Distribution">
+              As an AMFI-registered distributor (ARN-347142), we help you invest
+              in SEBI-regulated mutual fund schemes suited to your financial
+              goals and risk profile.
             </ListItem>
             <ListItem title="Tax Planning">
               We offer comprehensive tax-saving strategies to help you maximize
               gains while staying compliant with regulatory requirements.
             </ListItem>
-            <ListItem title="Investment Advisory">
-              We provide expert advice to guide you through various investment
-              opportunities, including stocks, bonds, and other securities,
-              tailored to your risk appetite and return expectations.
+            <ListItem title="Financial Education & Awareness">
+              We help individuals understand various investment avenues,
+              including mutual funds, equities, and fixed income instruments,
+              through educational content and awareness programs.
             </ListItem>
             <ListItem title="Risk Management">
               Through structured asset allocation, we minimize risk while

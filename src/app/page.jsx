@@ -35,14 +35,12 @@ export default function Home() {
             <strong className="font-semibold text-blue-800">
               ORTUS FINANCE Pvt. Ltd.
             </strong>{" "}
-            is co-founded by finance professionals from Tripura who bring{" "}
+            is founded by NISM-certified finance professionals from Tripura with{" "}
             <strong className="font-semibold">
-              over a decade of expertise{" "}
+              backgrounds in business administration and capital markets
             </strong>
-            in trading, portfolio analysis, and fund management. With a
-            background in business administration and hands-on experience in the
-            capital markets, our leadership ensures a disciplined, transparent,
-            and ethical approach to financial services.
+            . Our AMFI-registered team (ARN-347142) ensures a disciplined, transparent,
+            and ethical approach to mutual fund distribution.
           </p>
           <p className="mt-4 text-xl text-neutral-600 leading-relaxed">
             We prioritize investor education and assist clients in identifying

@@ -2,35 +2,25 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import ujjivanFinance from "../images/clients/ujjain-finance/ujjivan.png";
-import tataAig from "../images/clients/tata-aig/tata-aig.png";
-import hdfc from "../images/clients/hdfc/hdfc.png";
-import sbi from "../images/clients/sbi/sbi.png";
-
 import Container from "./Container";
 import FadeIn, { FadeInStagger } from "./FadeIn";
-import Button from "./Button";
 
-const clients = [
+const platforms = [
   {
-    name: "State Bank of India",
-    logo: sbi,
-    description: "India's largest public sector bank",
+    name: "BSE StAR MF",
+    description: "BSE's mutual fund distribution platform",
   },
   {
-    name: "Ujjivan Finance",
-    logo: ujjivanFinance,
-    description: "Leading microfinance institution",
+    name: "MF Utilities",
+    description: "Industry-owned transaction platform",
   },
   {
-    name: "Tata AIG",
-    logo: tataAig,
-    description: "Insurance and financial services",
+    name: "AMFI Registered",
+    description: "ARN-347142 certified distributor",
   },
   {
-    name: "HDFC Bank",
-    logo: hdfc,
-    description: "Premier banking solutions",
+    name: "NISM Certified",
+    description: "Qualified investment professionals",
   },
 ];
 
@@ -44,41 +34,46 @@ const Clients = () => {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-              Trusted by Industry Leaders
+              Our Partners & Platforms
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We&apos;re proud to partner with leading organizations who trust
-              us with their most important projects
+              We distribute mutual fund schemes through SEBI-regulated platforms
+              and work with AMCs registered with SEBI.
             </p>
           </div>
         </FadeIn>
 
-        {/* Clients Grid */}
+        {/* Platforms Grid */}
         <FadeInStagger>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {clients.map((client) => (
-              <FadeIn key={client.name}>
+            {platforms.map((platform) => (
+              <FadeIn key={platform.name}>
                 <div className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 p-8">
                   <div className="flex flex-col items-center text-center space-y-4">
-                    {/* Logo Container with consistent sizing */}
-                    <div className="w-32 h-20 flex items-center justify-center bg-gray-50 rounded-xl p-4 group-hover:bg-gray-100 transition-colors duration-300">
-                      <Image
-                        src={client.logo}
-                        alt={`${client.name} logo`}
-                        width={120}
-                        height={80}
-                        className="max-w-full max-h-full object-contain transition-all duration-300"
-                        unoptimized
-                      />
+                    {/* Icon Container */}
+                    <div className="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors duration-300">
+                      <svg
+                        className="w-8 h-8 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        />
+                      </svg>
                     </div>
 
-                    {/* Client Info */}
+                    {/* Platform Info */}
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        {client.name}
+                        {platform.name}
                       </h3>
                       <p className="text-sm text-gray-600">
-                        {client.description}
+                        {platform.description}
                       </p>
                     </div>
                   </div>
@@ -94,7 +89,7 @@ const Clients = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-blue-600 mb-2">
-                  300+
+                  450+
                 </div>
                 <div className="text-gray-600">Happy Clients</div>
               </div>
@@ -103,8 +98,8 @@ const Clients = () => {
                 <div className="text-gray-600">Client Satisfaction</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">5+</div>
-                <div className="text-gray-600">Years Experience</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">Est. 2024</div>
+                <div className="text-gray-600">Founded in Tripura</div>
               </div>
             </div>
           </div>
@@ -114,11 +109,11 @@ const Clients = () => {
         <FadeIn>
           <div className="text-center mt-16">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Ready to join our success stories?
+              Ready to start your investment journey?
             </h3>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how we can help your business achieve its goals
-              with our proven expertise and dedicated support.
+              Let&apos;s discuss how we can help you achieve your financial goals
+              through SEBI-regulated mutual fund schemes.
             </p>
             <button
               className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors duration-200 shadow-sm"
@@ -137,7 +132,7 @@ const Clients = () => {
                   d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>
-              Start a Conversation
+              Book a Free Consultation
             </button>
           </div>
         </FadeIn>

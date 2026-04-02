@@ -19,17 +19,17 @@ const Discover = () => {
           well-informed and aligned with current trends.
         </p>
         <p>
-          Our team of analysts spends weeks staring at charts, pretending to
-          understand market trends while frantically Googling buzzwords.
-          Meanwhile, our interns scour social media for any hot stock tips from
-          influencers.
+          Our NISM-certified team analyzes market conditions, economic
+          indicators, and fund performance metrics to identify suitable
+          investment opportunities for your portfolio.
         </p>
         <p>
-          Once the research phase is complete, we compile everything into a{" "}
-          <strong className="font-semibold text-neutral-950">report</strong>{" "}
-          that looks more impressive than it actually is, making sure to
-          highlight the &quot;key findings&quot; that justify our
-          recommendations — and, of course, our fees.
+          We compile our findings into comprehensive{" "}
+          <strong className="font-semibold text-neutral-950">
+            recommendations
+          </strong>{" "}
+          that are easy to understand, helping you make informed decisions about
+          your investments.
         </p>
       </div>
     </Section>

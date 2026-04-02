@@ -16,17 +16,14 @@ const Build = () => {
           to protect your capital and ensure stability.
         </p>
         <p>
-          Every client is assigned a dedicated risk analyst who specializes in
-          delivering worst-case scenarios. Their role is to expertly divert your
-          attention from potential gains by focusing exclusively on the
-          hypothetical losses that could occur in extreme situations.
+          We assess your risk tolerance and investment horizon to recommend
+          mutual fund schemes that align with your financial goals, whether
+          you&apos;re seeking growth, income, or capital preservation.
         </p>
         <p>
-          Our team schedules risk review calls at inconvenient times, ensuring
-          you are either too distracted or too tired to fully understand the
-          results. Afterward, we send you a report full of cryptic graphs and
-          percentages that no one outside of a PhD program could decipher,
-          giving the illusion of thoroughness.
+          Regular portfolio reviews help ensure your investments stay on track,
+          with clear explanations and actionable insights that empower you to
+          make confident decisions.
         </p>
       </div>
       <Blockquote

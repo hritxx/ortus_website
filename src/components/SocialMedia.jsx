@@ -1,6 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
-import { BsFacebook, BsTwitter, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import Button from "./Button";
 
 export const SocialMediaProfiles = [
@@ -14,7 +14,6 @@ export const SocialMediaProfiles = [
     href: "https://www.instagram.com/0rtusfinance/",
     icon: BsInstagram,
   },
-  { title: "Twitter", href: "https://twitter.com", icon: BsTwitter },
   { title: "WhatsApp", href: "https://wa.me/9366038055", icon: BsWhatsapp },
 ];
 

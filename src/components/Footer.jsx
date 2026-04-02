@@ -26,8 +26,8 @@ const NewsletterForm = () => {
         Sign up for our newsletter
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
+        Subscribe to get financial insights, market updates, and investment
+        education content.
       </p>
       <div className="relative mt-6">
         <input
@@ -61,7 +61,7 @@ const Footer = () => {
             <NewsletterForm />
           </div>
         </div>
-        <div className="mb-20 mt-24 flex flex-col sm:flex-row sm:items-end sm:justify-between items-center justify-center gap-y-4 gap-x-6 border-t border-neutral-950/10 pt-12 text-center sm:text-left">
+        <div className="mb-8 mt-24 flex flex-col sm:flex-row sm:items-end sm:justify-between items-center justify-center gap-y-4 gap-x-6 border-t border-neutral-950/10 pt-12 text-center sm:text-left">
           <Link href={"/"} aria-label="Home">
             <div className="flex flex-col items-center sm:flex-row sm:items-center">
               <Image
@@ -77,6 +77,25 @@ const Footer = () => {
           <p className="text-sm text-neutral-700 mt-4 sm:mt-0">
             © Ortus Finance Pvt. Ltd. {new Date().getFullYear()}
           </p>
+        </div>
+        {/* Regulatory Disclaimer */}
+        <div className="mb-20 text-center border-t border-neutral-950/10 pt-8">
+          <p className="text-xs text-neutral-600 mb-2">
+            <strong>Ortus Finance Pvt. Ltd.</strong> | CIN: U66190TR2024PTC018133 | AMFI ARN: 347142
+          </p>
+          <p className="text-xs text-neutral-500 max-w-4xl mx-auto mb-4">
+            Mutual fund investments are subject to market risks. Read all scheme-related documents
+            carefully before investing. Past performance is not indicative of future returns.
+          </p>
+          <div className="flex justify-center gap-4 text-xs">
+            <Link href="/privacy-policy" className="text-blue-600 hover:text-blue-800 transition">
+              Privacy Policy
+            </Link>
+            <span className="text-neutral-400">|</span>
+            <Link href="/terms-of-service" className="text-blue-600 hover:text-blue-800 transition">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </FadeIn>
     </Container>

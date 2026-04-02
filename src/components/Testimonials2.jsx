@@ -30,74 +30,38 @@ export default function Testimonial() {
 const testimonials = [
   {
     quote:
-      "“অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
+      "অর্থুস ফাইন্যান্স-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Rakhi Deb",
     title: "Purbasha, Dhaleshwar Agartala",
   },
   {
     quote:
-      "“অর্থুস ফাইন্যান্স”-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
+      "অর্থুস ফাইন্যান্স-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
     name: "Smriti Deb",
     title: "Halhali, Dhalai Tripura",
   },
   {
     quote:
-      "ব্যাংকের থেকে অনেক ভালো রিটার্ন আমি এখানে পাচ্ছি। খুব সহজে আমি আমার পোর্টফোলিও ট্র্যাক করতে পারি। ধন্যবাদ অর্থুস টিমকে!",
+      "Ortus Finance-এর সার্ভিস অনেক ভালো। খুব সহজে আমি আমার পোর্টফোলিও ট্র্যাক করতে পারি। ধন্যবাদ অর্থুস টিমকে!",
     name: "Hena Biswas",
     title: "Santibazar, Dhalai Tripura",
   },
   {
     quote:
-      "অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
-    name: "Rajib Das",
-    title: "Bordowali, Agartala Tripura",
-  },
-  {
-    quote:
-      "অর্থুস ফাইন্যান্স”-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
-    name: "Mani Saha",
-    title: "Jogendranagar, Agartala Tripura",
-  },
-  {
-    quote:
-      "অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
-    name: "Raju Saha",
-    title: "Chandrapur, Agartala Tripura",
-  },
-  {
-    quote:
-      "অর্থুস ফাইন্যান্স”-এর মাধ্যমে আমি প্রথমবার SIP শুরু করি। ওদের গাইডেন্স খুব পরিষ্কার এবং পেশাদার ছিল। এখন আমি আমার ভবিষ্যৎ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
-    name: "Laxmi Pal",
-    title: "Durgachowmuhani, Agartala Tripura",
-  },
-  {
-    quote:
-      "I’ve tried different investment options, but none compare to the consistent and impressive returns I’ve received from ORTUS FINANCE. Truly a game-changer!",
-    name: "Bikas Deb",
-    title: "Halhali, Dhalai Tripura",
-  },
-  {
-    quote:
-      "ORTUS FINANCE stands out with its integrity and commitment to clients. I feel confident knowing my investments are in safe hands with experienced professionals.",
+      "ORTUS FINANCE stands out with its integrity and commitment to clients. I feel confident knowing my investments are in safe hands with certified professionals.",
     name: "Dr. Rupak Deb",
-    title: "Kulai, Ambassa ",
+    title: "Kulai, Ambassa",
   },
   {
     quote:
-      "I was initially cautious about investing, but ORTUS FINANCE earned my trust with their impressive returns and hassle-free process. Highly recommended!",
-    name: "Manik Lal Das (SP Post Office Tripura)",
+      "I was initially cautious about investing, but ORTUS FINANCE earned my trust with their professional guidance and hassle-free process. Highly recommended!",
+    name: "Manik Lal Das",
     title: "Badharghat, Agartala Tripura",
   },
   {
     quote:
-      "“অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
-    name: "Sounak Sur",
-    title: "Siddhiashram, Agartala Tripura",
-  },
-  {
-    quote:
-      "“অর্থুস ফাইন্যান্স”-এর সাথে আমার অভিজ্ঞতা অসাধারণ। ওদের টিম খুবই পেশাদার এবং সাহায্যকারী। আমি এখন আমার বিনিয়োগ নিয়ে অনেক বেশি আত্মবিশ্বাসী।",
-    name: "Kanika Deb",
-    title: "Aparaskar, Dhalai Tripura",
+      "The team at Ortus Finance truly understands the needs of investors in Northeast India. Their personalized approach makes all the difference.",
+    name: "Bikas Deb",
+    title: "Halhali, Dhalai Tripura",
   },
 ];

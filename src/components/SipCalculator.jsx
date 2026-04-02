@@ -512,7 +512,7 @@ export default function SipCalculator() {
               </li>
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-2 mt-0.5">✓</span>
-                <span className="text-slate-600">High growth potential (8-15% returns)</span>
+                <span className="text-slate-600">Potential for long-term wealth creation</span>
               </li>
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-2 mt-0.5">✓</span>

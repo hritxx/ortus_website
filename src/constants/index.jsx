@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Prantik Deb",
     position: "Founder & CEO",
     image: "/images/team/prantik.jpg", // Path to local image
-    bio: "Visionary leader who founded Ortus Finance to democratize investment opportunities in Northeast India. Under his leadership, the company has grown to serve thousands of clients with innovative financial solutions and consistent returns.",
+    bio: "Visionary leader who founded Ortus Finance to democratize investment opportunities in Northeast India. Under his leadership, the company has grown to serve hundreds of clients with accessible financial solutions and personalized guidance.",
     email: "admin@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/prantik-deb-53485925a/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -22,8 +22,8 @@ export const teamMembers = [
     name: "Nabanil Debbarma",
     position: "Chief Financial Officer (CFO)",
     key: "MBA-Finance & Data Analytics | BBA-Finance (Gold Medalist) | Ex-Intern at Tripura Gramin Bank",
-    image: "/images/nabanil.jpg", // Path to local image
-    bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and risk management that drives our consistent 12-15% returns.",
+    image: "/images/team/nabanil.jpg", // Path to local image
+    bio: "Brings exceptional financial expertise to Ortus Finance with his MBA in Finance & Data Analytics and Gold Medal BBA. His banking experience at Tripura Gramin Bank enables strategic financial planning and disciplined portfolio management.",
     email: "finance@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/nabanil-debbarma-692152279/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -45,7 +45,7 @@ export const teamMembers = [
     position: "Chief Financial Officer (CFO) & HR Manager (MD)",
     key: "(HR) ",
     image: "/images/team/om.png", // Path to local image
-    bio: "Experienced HR professional with internships at SBI, LIC, and Royal Enfield. At Ortus Finance, he builds our talent acquisition strategy and maintains our client-first culture that has earned us a 95% client satisfaction rate.",
+    bio: "HR and operations professional with exposure to banking, insurance, and corporate sectors during his academic career. At Ortus Finance, he builds our talent acquisition strategy and maintains our client-first culture.",
     email: "support@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/om-prakash-badal-75a445267/",
     twitter: "https://www.instagram.com/0rtusfinance/",
@@ -129,6 +129,8 @@ export const navigation = [
       { title: "Process", href: "/process" },
       { title: "Licenses", href: "/licenses" },
       { title: "Contact us", href: "/contact" },
+      { title: "Privacy Policy", href: "/privacy-policy" },
+      { title: "Terms of Service", href: "/terms-of-service" },
     ],
   },
   {
@@ -166,7 +168,7 @@ export const data = [
     id: 5,
     question: "Are my investments safe with Ortus Finance?",
     answer:
-      "Yes, your investments are managed by professionals with over 10 years of experience. We ensure transparency, and our risk management framework is designed to protect your capital while aiming for consistent growth.",
+      "Your investments are facilitated through SEBI-regulated platforms by NISM-certified professionals. We ensure transparency in all transactions, and our disciplined approach focuses on helping you achieve your financial goals.",
   },
   {
     id: 6,
@@ -214,7 +216,7 @@ export const reviews = [
     image: Customer1,
     name: "Rajib Das",
     quote:
-      "I’ve tried different investment options, but none compare to the consistent and impressive returns I’ve received from ORTUS FINANCE. Truly a game-changer!",
+      "I've tried different investment options, but none compare to the professional guidance and service I've received from ORTUS FINANCE. Truly a game-changer!",
   },
   {
     image: Customer3,
@@ -236,40 +238,3 @@ export const reviews = [
   },
 ];
 
-export const tableData = [
-  {
-    id: "",
-    ortus: "Guaranteed",
-    gov: "Upto",
-    nonGov: "Upto",
-    smallBanks: "Upto",
-  },
-  {
-    id: "1 Lakhs to 4.99 Lakhs",
-    ortus: "12%✅",
-    gov: "7%",
-    nonGov: "7.75%",
-    smallBanks: "8.5%",
-  },
-  {
-    id: "5 Lakhs to 20 Lakhs",
-    ortus: "13%✅",
-    gov: "7%",
-    nonGov: "7.75%",
-    smallBanks: "8.5%",
-  },
-  {
-    id: "21 Lakhs to 50 Lakhs",
-    ortus: "14%✅",
-    gov: "7%",
-    nonGov: "7.75%",
-    smallBanks: "8.5%",
-  },
-  {
-    id: "51 Lakhs to 1 Crore",
-    ortus: "15%✅",
-    gov: "7%",
-    nonGov: "7.75%",
-    smallBanks: "8.5%",
-  },
-];

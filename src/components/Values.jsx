@@ -28,29 +28,28 @@ const Values = () => {
       <Container className="mt-24">
         <GridList>
           <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+            Every investment recommendation is backed by thorough research and
+            data analysis to ensure it aligns with your financial objectives.
           </GridListItem>
           <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+            We streamline the investment process so you can focus on your goals,
+            not paperwork. Quick onboarding, seamless transactions.
           </GridListItem>
           <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+            Your financial plan evolves as your life does — we adjust strategies
+            to match your changing goals and circumstances.
           </GridListItem>
           <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+            Complete transparency in fees, risks, and expected outcomes. No
+            hidden charges, no surprises — just clear communication.
           </GridListItem>
           <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+            We build long-term relationships, guiding you through every market
+            cycle with consistent support and trusted advice.
           </GridListItem>
           <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+            We leverage technology to make investing accessible across Northeast
+            India through our mobile app and digital platforms.
           </GridListItem>
         </GridList>
       </Container>
