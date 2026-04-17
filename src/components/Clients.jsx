@@ -16,7 +16,7 @@ const platforms = [
   },
   {
     name: "AMFI Registered",
-    description: "ARN-347142 certified distributor",
+    description: "ARN-351189 certified distributor",
   },
   {
     name: "NISM Certified",

@@ -44,7 +44,7 @@ const TermsOfServicePage = () => {
               </h2>
               <p className="text-neutral-600 leading-relaxed">
                 Ortus Finance Pvt. Ltd. is an AMFI-registered Mutual Fund Distributor
-                (ARN-347142). Our services include:
+                (ARN-351189). Our services include:
               </p>
               <ul className="list-disc pl-6 text-neutral-600 mt-4 space-y-2">
                 <li>Distribution of SEBI-regulated mutual fund schemes</li>
@@ -251,7 +251,7 @@ const TermsOfServicePage = () => {
                   CIN: U66190TR2024PTC018133
                 </p>
                 <p className="text-neutral-600">
-                  AMFI ARN: 347142
+                  AMFI ARN: 351189
                 </p>
                 <p className="text-neutral-600 mt-2">
                   Email: admin@ortusfinance.in

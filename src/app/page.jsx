@@ -13,6 +13,7 @@ import InvestmentPlans from "@/components/InvestmentPlans";
 import { StatList, StatListItem } from "@/components/StatList";
 // Removed SipCalculator as it's now a standalone page
 import StartupCertificate from "@/components/StartupCertificate";
+import Universities from "@/components/Universities";
 import Link from "next/link";
 import { ArrowRight, Smartphone, Calendar } from "lucide-react";
 
@@ -39,7 +40,7 @@ export default function Home() {
             <strong className="font-semibold">
               backgrounds in business administration and capital markets
             </strong>
-            . Our AMFI-registered team (ARN-347142) ensures a disciplined, transparent,
+            . Our AMFI-registered team (ARN-351189) ensures a disciplined, transparent,
             and ethical approach to mutual fund distribution.
           </p>
           <p className="mt-4 text-xl text-neutral-600 leading-relaxed">
@@ -90,6 +91,7 @@ export default function Home() {
       <Services />
       <InvestmentPlans />
       <Clients />
+      <Universities />
       <Testimonial />
       <Faq />
       <ContactSection />

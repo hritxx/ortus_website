@@ -42,7 +42,7 @@ export const teamMembers = [
   {
     id: 4,
     name: "Om Prakash Badal",
-    position: "Chief Financial Officer (CFO) & HR Manager (MD)",
+    position: "HR Manager (MD)",
     key: "(HR) ",
     image: "/images/team/om.png", // Path to local image
     bio: "HR and operations professional with exposure to banking, insurance, and corporate sectors during his academic career. At Ortus Finance, he builds our talent acquisition strategy and maintains our client-first culture.",
@@ -64,25 +64,25 @@ export const teamMembers = [
   {
     id: 5,
     name: "Ravinder Kumar",
-    position: "Lead Research Analyst",
-    key: "(Research Analyst) ",
+    position: "Chief Market Research Analyst",
+    key: "(Chief Market Research Analyst) ",
     image: "/images/team/ravinder.png", // Path to local image
     bio: "MBA candidate at Chandigarh University specializing in Finance & Marketing. At Ortus Finance, he leads our research division, conducting in-depth market analysis and identifying high-potential investment opportunities that form the backbone of our investment strategies.",
     email: "research@ortusfinance.in",
     linkedin: "https://www.linkedin.com/in/ravinderkc/",
     twitter: "https://twitter.com/sarahlee",
   },
-  {
-    id: 6,
-    name: "Sajib Debbarma",
-    position: "Technical Analyst",
-    key: "(Trader)",
-    image: "/images/team/sajib.jpg", // Path to local image
-    bio: "BBA Finance graduate with banking experience at Tripura State Co-operative Bank. At Ortus Finance, he specializes in technical analysis and trading strategies, helping optimize entry and exit points for our investment portfolios.",
-    email: "analyst@ortusfinance.in",
-    linkedin: "https://www.linkedin.com/in/sajib-debbarma-114ab7159/",
-    twitter: "https://twitter.com/sarahlee",
-  },
+  // {
+  //   id: 6,
+  //   name: "Sajib Debbarma",
+  //   position: "Technical Analyst",
+  //   key: "(Trader)",
+  //   image: "/images/team/sajib.jpg", // Path to local image
+  //   bio: "BBA Finance graduate with banking experience at Tripura State Co-operative Bank. At Ortus Finance, he specializes in technical analysis and trading strategies, helping optimize entry and exit points for our investment portfolios.",
+  //   email: "analyst@ortusfinance.in",
+  //   linkedin: "https://www.linkedin.com/in/sajib-debbarma-114ab7159/",
+  //   twitter: "https://twitter.com/sarahlee",
+  // },
   {
     id: 7,
     name: "Bikramjit Nath",

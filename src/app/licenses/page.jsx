@@ -17,6 +17,7 @@ import Certificate12 from "@/images/certificates/c12.png";
 import Certificate13 from "@/images/certificates/startup.png";
 import Certificate14 from "@/images/certificates/c13.png";
 import Certificate15 from "@/images/certificates/c14.png";
+import Certificate16 from "@/images/certificates/amfi.png";
 
 const BlogPage = () => {
   return (
@@ -42,6 +43,12 @@ const BlogPage = () => {
             link={Certificate15}
             heading="AMFI Registration Number (ARN) Certificate"
             subHeading="Prantik Deb has been issued ARN-347142 by AMFI (Association of Mutual Funds in India) on 04-Dec-2025, authorizing him as a registered Mutual Fund Distributor."
+            size="big"
+          />
+          <Certificate
+            link={Certificate16}
+            heading="AMFI Registration Number (ARN) Certificate"
+            subHeading="Ortus Finance Pvt Ltd has been issued ARN-351189 by AMFI (Association of Mutual Funds in India) on 19-Jan-2026, authorizing it as a registered Mutual Fund Distributor."
             size="big"
           />
           {/* <Certificate

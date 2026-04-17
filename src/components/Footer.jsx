@@ -81,7 +81,7 @@ const Footer = () => {
         {/* Regulatory Disclaimer */}
         <div className="mb-20 text-center border-t border-neutral-950/10 pt-8">
           <p className="text-xs text-neutral-600 mb-2">
-            <strong>Ortus Finance Pvt. Ltd.</strong> | CIN: U66190TR2024PTC018133 | AMFI ARN: 347142
+            <strong>Ortus Finance Pvt. Ltd.</strong> | CIN: U66190TR2024PTC018133 | AMFI ARN: 351189
           </p>
           <p className="text-xs text-neutral-500 max-w-4xl mx-auto mb-4">
             Mutual fund investments are subject to market risks. Read all scheme-related documents

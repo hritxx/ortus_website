@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, ArrowRight, Shield, TrendingUp, Users } from "lucide-react";
+import { Calendar, ArrowRight, Shield, TrendingUp, Users, BarChart3, Wallet, Scale, PiggyBank } from "lucide-react";
 
 export default function InvestmentPlans() {
   return (
@@ -12,7 +12,7 @@ export default function InvestmentPlans() {
           <h2 className="text-4xl font-bold mb-4 text-white">Start Your Investment Journey</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             We help you invest in SEBI-regulated mutual fund schemes through systematic investment
-            plans (SIPs) and lump sum investments. As an AMFI-registered distributor (ARN-347142),
+            plans (SIPs) and lump sum investments. As an AMFI-registered distributor (ARN-351189),
             we guide you through the right fund selection based on your goals.
           </p>
         </div>
@@ -60,25 +60,33 @@ export default function InvestmentPlans() {
         <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 mb-12">
           <h3 className="text-2xl font-bold text-center mb-8">Investment Options We Facilitate</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-4">
-              <div className="text-3xl mb-2">📈</div>
-              <h4 className="font-semibold mb-1">Equity Funds</h4>
-              <p className="text-sm text-gray-400">For long-term growth</p>
+            <div className="bg-neutral-700/50 rounded-xl p-6 border border-neutral-600 hover:border-blue-500/50 transition-colors">
+              <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <BarChart3 className="w-6 h-6 text-blue-400" />
+              </div>
+              <h4 className="font-semibold mb-2 text-center">Equity Funds</h4>
+              <p className="text-sm text-gray-400 text-center">Capital appreciation through diversified stock portfolios</p>
             </div>
-            <div className="text-center p-4">
-              <div className="text-3xl mb-2">🛡️</div>
-              <h4 className="font-semibold mb-1">Debt Funds</h4>
-              <p className="text-sm text-gray-400">For stable returns</p>
+            <div className="bg-neutral-700/50 rounded-xl p-6 border border-neutral-600 hover:border-green-500/50 transition-colors">
+              <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <Shield className="w-6 h-6 text-green-400" />
+              </div>
+              <h4 className="font-semibold mb-2 text-center">Debt Funds</h4>
+              <p className="text-sm text-gray-400 text-center">Stable returns through fixed-income securities</p>
             </div>
-            <div className="text-center p-4">
-              <div className="text-3xl mb-2">⚖️</div>
-              <h4 className="font-semibold mb-1">Hybrid Funds</h4>
-              <p className="text-sm text-gray-400">Balanced approach</p>
+            <div className="bg-neutral-700/50 rounded-xl p-6 border border-neutral-600 hover:border-purple-500/50 transition-colors">
+              <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <Scale className="w-6 h-6 text-purple-400" />
+              </div>
+              <h4 className="font-semibold mb-2 text-center">Hybrid Funds</h4>
+              <p className="text-sm text-gray-400 text-center">Balanced allocation across equity and debt</p>
             </div>
-            <div className="text-center p-4">
-              <div className="text-3xl mb-2">💰</div>
-              <h4 className="font-semibold mb-1">ELSS Funds</h4>
-              <p className="text-sm text-gray-400">Tax-saving option</p>
+            <div className="bg-neutral-700/50 rounded-xl p-6 border border-neutral-600 hover:border-amber-500/50 transition-colors">
+              <div className="w-12 h-12 bg-amber-600/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <PiggyBank className="w-6 h-6 text-amber-400" />
+              </div>
+              <h4 className="font-semibold mb-2 text-center">ELSS Funds</h4>
+              <p className="text-sm text-gray-400 text-center">Tax benefits under Section 80C with growth potential</p>
             </div>
           </div>
         </div>

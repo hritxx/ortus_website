@@ -31,7 +31,7 @@ const WorkPage = () => {
                   Mutual Fund Distribution
                 </h3>
                 <p className="text-neutral-600">
-                  As an AMFI-registered distributor (ARN-347142), we help you
+                  As an AMFI-registered distributor (ARN-351189), we help you
                   invest in a wide range of SEBI-regulated mutual fund schemes
                   suited to your goals.
                 </p>

@@ -36,7 +36,7 @@ reality."
           {/*LIST ITEMS */}
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Mutual Fund Distribution">
-              As an AMFI-registered distributor (ARN-347142), we help you invest
+              As an AMFI-registered distributor (ARN-351189), we help you invest
               in SEBI-regulated mutual fund schemes suited to your financial
               goals and risk profile.
             </ListItem>

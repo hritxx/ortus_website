@@ -12,6 +12,8 @@ import {
   Star,
   Building,
   GraduationCap,
+  ExternalLink,
+  Trophy,
 } from "lucide-react";
 import PageIntro from "@/components/PageIntro";
 import { useRouter } from "next/navigation";
@@ -90,49 +92,88 @@ const programs = [
 
 const jobOpenings = [
   {
-    title: "Mobile App Developer",
-    location: "Remote / Hybrid",
-    type: "Full-time",
-    department: "Technology",
-    experience: "5-8 years",
-    salary: "Not Disclosed",
-    description:
-      "Lead the development of cutting-edge financial technology solutions and mentor junior developers.",
-    requirements: [
-      "React, Node.js expertise",
-      "Financial domain knowledge",
-      "Team leadership experience",
-    ],
-  },
-  {
-    title: "Quantitative Analyst",
-    location: "Mumbai, India",
+    title: "NISM Certified Research Analyst",
+    location: "Agartala / Remote",
     type: "Full-time",
     department: "Research",
-    experience: "3-5 years",
-    salary: "Not Disclosed",
+    experience: "1-3 years",
+    salary: "As per industry standards",
     description:
-      "Develop sophisticated financial models and risk assessment frameworks for institutional clients.",
+      "Conduct in-depth market research and analysis to provide investment recommendations for our clients.",
     requirements: [
-      "Python, R proficiency",
-      "Financial modeling",
-      "Statistics background",
+      "NISM Series XV (Research Analyst) certification",
+      "Strong analytical and research skills",
+      "Knowledge of equity and debt markets",
     ],
   },
   {
-    title: "Product Manager",
-    location: "Bangalore, India",
+    title: "NISM Certified Investment Adviser (Series A & B)",
+    location: "Agartala / Remote",
     type: "Full-time",
-    department: "Product",
-    experience: "4-6 years",
-    salary: "Not Disclosed",
+    department: "Advisory",
+    experience: "2-5 years",
+    salary: "As per industry standards",
     description:
-      "Drive product strategy and execution for our flagship financial technology platforms.",
+      "Provide personalized investment advice to clients based on their financial goals and risk profile.",
     requirements: [
-      "Product management experience",
-      "FinTech background",
-      "Agile methodology",
+      "NISM Series X-A and X-B certification",
+      "Experience in client advisory",
+      "Strong communication skills",
     ],
+  },
+  {
+    title: "Quant Financial Analyst",
+    location: "Remote / Hybrid",
+    type: "Full-time",
+    department: "Research",
+    experience: "2-4 years",
+    salary: "As per industry standards",
+    description:
+      "Develop quantitative models and data-driven strategies for portfolio optimization and risk management.",
+    requirements: [
+      "Python, R, or MATLAB proficiency",
+      "Statistical modeling expertise",
+      "Finance/Mathematics background",
+    ],
+  },
+  {
+    title: "Sales and Marketing (Relationship Manager)",
+    location: "Agartala / Field",
+    type: "Full-time",
+    department: "Sales",
+    experience: "1-3 years",
+    salary: "As per industry standards + Incentives",
+    description:
+      "Build and maintain client relationships, drive business growth, and promote our financial services.",
+    requirements: [
+      "Excellent interpersonal skills",
+      "Sales/Marketing experience",
+      "Knowledge of mutual funds preferred",
+    ],
+  },
+];
+
+const studentAchievements = [
+  {
+    name: "Coming Soon",
+    college: "University Name",
+    role: "Role Title",
+    type: "placement",
+    image: null,
+  },
+  {
+    name: "Coming Soon",
+    college: "University Name",
+    role: "Role Title",
+    type: "internship",
+    image: null,
+  },
+  {
+    name: "Coming Soon",
+    college: "University Name",
+    role: "Role Title",
+    type: "placement",
+    image: null,
   },
 ];
 
@@ -215,6 +256,11 @@ const Careers = () => {
                 id: "programs",
                 label: "Development Programs",
                 icon: <Award className="w-4 h-4" />,
+              },
+              {
+                id: "achievements",
+                label: "Student Achievements",
+                icon: <Trophy className="w-4 h-4" />,
               },
               {
                 id: "interns",
@@ -394,6 +440,115 @@ const Careers = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {/* Student Achievements */}
+          {activeTab === "achievements" && (
+            <div className="space-y-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                  Student Achievements
+                </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Celebrating our students who have been placed or completed
+                  internships with us
+                </p>
+              </div>
+
+              {/* Internship Application CTA */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 mb-12">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="text-white">
+                    <h3 className="text-2xl font-bold mb-2">
+                      Interested in an Internship?
+                    </h3>
+                    <p className="text-blue-100">
+                      Apply for our internship programs and kickstart your
+                      career in finance
+                    </p>
+                  </div>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeCcgggoEb98fpvu_iMNW1OwHJzukigsI8wB1IQxnK6xjALnw/viewform?usp=dialog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300"
+                  >
+                    <ExternalLink className="w-5 h-5 mr-2" />
+                    Apply for Internship
+                  </a>
+                </div>
+              </div>
+
+              {/* Placements Section */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <Trophy className="w-6 h-6 text-yellow-500 mr-2" />
+                  Placements
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {studentAchievements
+                    .filter((student) => student.type === "placement")
+                    .map((student, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-14 h-14 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                            {student.name.charAt(0)}
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900">
+                              {student.name}
+                            </h4>
+                            <p className="text-sm text-gray-600">
+                              {student.college}
+                            </p>
+                            <p className="text-sm text-blue-600 font-medium">
+                              {student.role}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
+              {/* Internships Section */}
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <GraduationCap className="w-6 h-6 text-blue-500 mr-2" />
+                  Internships
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {studentAchievements
+                    .filter((student) => student.type === "internship")
+                    .map((student, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-lg">
+                            {student.name.charAt(0)}
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900">
+                              {student.name}
+                            </h4>
+                            <p className="text-sm text-gray-600">
+                              {student.college}
+                            </p>
+                            <p className="text-sm text-purple-600 font-medium">
+                              {student.role}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
               </div>
             </div>
           )}
