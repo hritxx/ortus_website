@@ -16,11 +16,14 @@ import StartupCertificate from "@/components/StartupCertificate";
 import Universities from "@/components/Universities";
 import Link from "next/link";
 import { ArrowRight, Smartphone, Calendar } from "lucide-react";
+import FinancialSurvey from "@/components/survey/FinancialSurvey";
 
 
 export default function Home() {
   return (
     <main className="text-black">
+      {/* Financial Health Checkup Survey — modal overlay + FAB */}
+      <FinancialSurvey />
       
       <Container className="mt-24 sm:mt-32">
         <FadeIn className="max-w-4xl">

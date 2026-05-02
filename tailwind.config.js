@@ -71,12 +71,18 @@ module.exports = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        "fab-ping": {
+          "0%": { transform: "scale(1)", opacity: "0.4" },
+          "50%": { transform: "scale(1.6)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "fab-ping": "fab-ping 2s ease-in-out infinite",
       },
     },
   },
