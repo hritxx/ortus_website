@@ -110,16 +110,14 @@ export const teamMembers = [
 
 export const navigation = [
   {
-    title: "Work",
+    title: "Tools",
     links: [
-      {
-        title: (
-          <>
-            See all <span aria-hidden="true">&rarr;</span>
-          </>
-        ),
-        href: "/work",
-      },
+      { title: "All Calculators", href: "/tools" },
+      { title: "FD Calculator", href: "/tools/fd-calculator" },
+      { title: "NSC Calculator", href: "/tools/nsc-calculator" },
+      { title: "HRA Calculator", href: "/tools/hra-calculator" },
+      { title: "MF Calculator", href: "/tools/mf-calculator" },
+      { title: "SSY Calculator", href: "/tools/ssy-calculator" },
     ],
   },
   {

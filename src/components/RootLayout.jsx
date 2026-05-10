@@ -101,12 +101,11 @@ const Navigation = () => {
         <NavigationItem href={"/about"}>About Us</NavigationItem>
         <NavigationItem href={"/careers"}>Careers</NavigationItem>
       </NavigationRow>
-      {/* <NavigationRow>
-        <NavigationItem href={"/careers"}>Careers</NavigationItem>
-        <NavigationItem href={"/courses"}>Courses</NavigationItem>
-      </NavigationRow> */}
       <NavigationRow>
+        <NavigationItem href={"/tools"}>Tools</NavigationItem>
         <NavigationItem href={"/process"}>Our Process</NavigationItem>
+      </NavigationRow>
+      <NavigationRow>
         <NavigationItem href={"/licenses"}>Licenses</NavigationItem>
       </NavigationRow>
     </nav>
