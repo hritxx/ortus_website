@@ -85,7 +85,7 @@ export default function FinancialSurvey() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] flex items-start justify-center px-3 pb-3 pt-20 sm:items-center sm:p-4"
           >
             {/* Backdrop */}
             <motion.div
@@ -97,9 +97,9 @@ export default function FinancialSurvey() {
             />
 
             {/* Scrollable content area */}
-            <div className="relative z-10 w-full max-h-[90vh] overflow-y-auto overscroll-contain
+            <div className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
                             scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-300
-                            rounded-2xl">
+                            rounded-t-3xl rounded-b-2xl sm:max-h-[90vh] sm:rounded-2xl">
               <AnimatePresence mode="wait">
                 {phase === "invite" && (
                   <SurveyInvite

@@ -40,7 +40,7 @@ export default function MetricCards() {
           key={i}
           variants={itemVariants}
           whileHover={{ y: -5, scale: 1.02, transition: { duration: 0.2 } }}
-          className="flex items-center gap-3 sm:gap-4 bg-white/70 backdrop-blur-xl border border-white shadow-sm rounded-2xl p-3 sm:p-5 transition-all hover:shadow-lg hover:shadow-blue-900/5 cursor-default group"
+          className="flex items-center gap-3 sm:gap-4 bg-white/90 border border-white/80 shadow-sm rounded-2xl p-3 sm:p-5 transition-all hover:shadow-lg hover:shadow-blue-900/5 cursor-default group transform-gpu will-change-transform"
         >
           <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shrink-0 transition-colors ${item.bg} group-hover:bg-white`}>
             <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
