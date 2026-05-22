@@ -1,64 +1,31 @@
 /**
- * Section 4: Debt & Liabilities — 3 questions, max 20 points
+ * Section 4: Debt Check — 2 questions, max 12 points
  */
 export const debtQuestions = [
-  {
-    id: "debt_loans",
-    sectionId: "debt",
-    question: {
-      en: "Do you currently have any loans or EMIs?",
-      bn: "আপনার কি বর্তমানে কোনো ঋণ বা EMI আছে?",
-      as: "আপোনাৰ বৰ্তমানে কোনো ঋণ বা EMI আছে নে?",
-      mni: "নহাক্কী হৌজিক মতমদা লোন নত্রগা EMI অমহেক্তা লৈবা?",
-      ne: "तपाईंसँग अहिले कुनै ऋण वा EMI छ?",
-      lus: "Naktuk ah bat emaw EMI emaw i nei em?",
-      kha: "Phi don katto katto ka bat ne EMI mynta?",
-      grt: "Nangni matni kuno loan ba EMI donga?",
-      nag: "Apne laga etu kono loan ba EMI ase?",
-      trp: "Nwngni bortomane kono rin ba EMI ase?",
-      brx: "नोंथांनि दानैजों गोनो रिं एबा EMI दं?",
-    },
-    options: [
-      {
-        label: {
-          en: "Yes", bn: "হ্যাঁ", as: "হয়", mni: "হোই", ne: "छ",
-          lus: "Aw", kha: "Hooid", grt: "On·a", nag: "Hoi", trp: "Hoi", brx: "गोजौ",
-        },
-        score: 0,
-      },
-      {
-        label: {
-          en: "No", bn: "না", as: "নহয়", mni: "নত্তে", ne: "छैन",
-          lus: "Aih", kha: "Bam", grt: "An·cha", nag: "Nai", trp: "Dakha", brx: "नङा",
-        },
-        score: 8,
-      },
-    ],
-  },
   {
     id: "debt_emi_pct",
     sectionId: "debt",
     question: {
-      en: "Are your EMIs:",
-      bn: "আপনার EMI গুলি:",
-      as: "আপোনাৰ EMI সমূহ:",
-      mni: "নহাক্কী EMI শিং:",
-      ne: "तपाईंको EMI हरू:",
-      lus: "I EMI te hi:",
-      kha: "Ka EMI phi:",
-      grt: "Nangni EMI gula:",
-      nag: "Apne EMI khan:",
-      trp: "Nwngni EMI guli:",
-      brx: "नोंथांनि EMI आव:",
+      en: "Your monthly EMIs/loan payments are:",
+      bn: "আপনার মাসিক EMI বা ঋণের কিস্তি কত:",
+      as: "আপোনাৰ মাহিলী EMI বা ঋণৰ কিস্তি কিমান:",
+      mni: "নহাক্কী থা খুদিংগী EMI লোন পেমেন্টশিং:",
+      ne: "तपाईंको मासिक EMI वा ऋणको भुक्तानी कति छ:",
+      lus: "Thla tin i EMI neih te hi:",
+      kha: "Ka EMI bad pisa ram ba phi siew man ka bnai ka long:",
+      grt: "Nangni maina maina EMI ba loan pema:",
+      nag: "Apne laga mohina EMI ba loan payment khan:",
+      trp: "Nwngni maashik EMI ba rin-er kisti koto:",
+      brx: "नोंथांनि दाननि EMI एबा रिं होनायया:",
     },
     options: [
       {
         label: {
-          en: "Less than 30% of income", bn: "আয়ের ৩০% এর কম", as: "আয়ৰ ৩০%তকৈ কম",
-          mni: "ইনকমগী ৩০% দগী হন্থনা", ne: "आम्दानीको ३०% भन्दा कम",
-          lus: "Sum lakluh 30% aih hnuai", kha: "30% bnai income",
-          grt: "Income ni 30% gimin kham", nag: "Income laga 30% kum te",
-          trp: "Aay-er 30% theke kom", brx: "जागायनायनि 30% निफ्राय गोजौ",
+          en: "No EMIs / Less than 30% of income", bn: "কোনো EMI নেই / আয়ের ৩০% এর কম", as: "কোনো EMI নাই / আয়ৰ ৩০%তকৈ কম",
+          mni: "EMI লৈতবা / ইনকমগী ৩০% দগী হন্থনা", ne: "कुनै EMI छैन / आम्दानीको ३०% भन्दा कम",
+          lus: "Bat ka nei lo / Sum lakluh 30% aih hnuai", kha: "Ym don EMI / 30% bnai income",
+          grt: "EMI dong·ja / Income ni 30% gimin kham", nag: "EMI nai / Income laga 30% kum te",
+          trp: "Kono EMI khaila / Aay-er 30% theke kom", brx: "EMI गैया / जागायनायनि 30% निफ्राय गोजौ",
         },
         score: 6,
       },
@@ -78,7 +45,7 @@ export const debtQuestions = [
           mni: "ইনকমগী ৫০% দগী হেনবা", ne: "आम्दानीको ५०% भन्दा बढी",
           lus: "Sum lakluh 50% aia", kha: "50% bah income",
           grt: "Income ni 50% gimin bisi", nag: "Income laga 50% te bisi",
-          trp: "Aay-er 50% theke besi", brx: "जागायनायनि 50% निफ्राय गोबां",
+          trp: "Aay-er 50% theke besi", brx: "जागायনাयनि 50% निफ्राय गोबां",
         },
         score: 0,
       },
@@ -88,19 +55,30 @@ export const debtQuestions = [
     id: "debt_creditcard",
     sectionId: "debt",
     question: {
-      en: "Do you use credit cards and:",
-      bn: "আপনি কি ক্রেডিট কার্ড ব্যবহার করেন এবং:",
-      as: "আপুনি ক্ৰেডিট কাৰ্ড ব্যৱহাৰ কৰে আৰু:",
-      mni: "নহাক্না ক্রেডিট কার্ড শিজিন্নবা অমসুং:",
-      ne: "तपाईं क्रेडिट कार्ड प्रयोग गर्नुहुन्छ र:",
-      lus: "Credit card i hmang a, leh:",
-      kha: "Phi pyndonkam credit card aro:",
-      grt: "Nangni credit card use on·anga aro:",
-      nag: "Apne credit card use kore aru:",
-      trp: "Nwngni credit card byabohar koro aar:",
-      brx: "नोंथां क्रेडिट कार्ड बाहायो आरो:",
+      en: "Credit card usage:",
+      bn: "ক্রেডিট কার্ড ব্যবহার:",
+      as: "ক্ৰেডিট কাৰ্ড ব্যৱহাৰ:",
+      mni: "ক্রেডিট কার্ড শিজিন্নবা:",
+      ne: "क्रेडिट कार्ड प्रयोग:",
+      lus: "Credit card hman dan:",
+      kha: "Jingpyndonkam credit card:",
+      grt: "Credit card use on·a:",
+      nag: "Credit card use kora:",
+      trp: "Credit card byabohar:",
+      brx: "क्रेडिट कार्ड बाहायनाय:",
     },
     options: [
+      {
+        label: {
+          en: "I don't use a credit card", bn: "আমি ক্রেডিট কার্ড ব্যবহার করি না",
+          as: "মই ক্ৰেডিট কাৰ্ড ব্যৱহাৰ নকৰোঁ",
+          mni: "ঐগী ক্রেডিট কার্ড শিজিন্নদে", ne: "म क्रेडिट कार्ड प्रयोग गर्दिन",
+          lus: "Credit card ka hmang lo", kha: "Ngi ym pyndonkam credit card",
+          grt: "Anga credit card use ong·ja", nag: "Mui credit card use nakore",
+          trp: "Ang credit card byabohar koriya", brx: "आं क्रेडिट कार्ड बाहाया",
+        },
+        score: 6,
+      },
       {
         label: {
           en: "Pay full bill every month", bn: "প্রতি মাসে পুরো বিল পরিশোধ করি",
@@ -108,9 +86,9 @@ export const debtQuestions = [
           mni: "থা খুদিংদা বিল পুম্নমক পায়", ne: "हरेक महिना पूरा बिल तिर्छु",
           lus: "Thla tin bill pum ka pek", kha: "Bnai bnai pisa full bill",
           grt: "Maina maina full bill pay on·a", nag: "Mohina mohina full bill pay kore",
-          trp: "Maash maash purno bill porishodh kori", brx: "दाननि-दाननि गासै बिल होनाय खालामो",
+          trp: "Maash maash purno bill porishodh kori", brx: "दाननि-দানनि गासै बिल होनाय खालामो",
         },
-        score: 6,
+        score: 5,
       },
       {
         label: {
@@ -121,7 +99,7 @@ export const debtQuestions = [
           grt: "Minimum due pay on·a", nag: "Minimum due pay kore",
           trp: "Minimum due porishodh kori", brx: "गोजौआव गोजौ होनाय खालामो",
         },
-        score: 3,
+        score: 2,
       },
       {
         label: {

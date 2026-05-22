@@ -1,29 +1,77 @@
 "use client";
 /**
- * Section-specific SVG illustrations for the Financial Health Checkup.
- * Line-art style in blue tones with gentle float animation.
+ * Enterprise-grade, beautiful, multi-layered SVG illustrations with glowing filters 
+ * and self-contained CSS keyframe animations for Ortus Financial Survey.
  */
 
-const svgBase = "w-full h-full";
+const glowFilter = (
+  <defs>
+    <filter id="svg-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#60A5FA" />
+      <stop offset="100%" stopColor="#2563EB" />
+    </linearGradient>
+    <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#34D399" />
+      <stop offset="100%" stopColor="#059669" />
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FBBF24" />
+      <stop offset="100%" stopColor="#D97706" />
+    </linearGradient>
+    <linearGradient id="rose-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#F87171" />
+      <stop offset="100%" stopColor="#DC2626" />
+    </linearGradient>
+  </defs>
+);
+
+const svgBase = "w-full h-full drop-shadow-md select-none transition-transform duration-500 hover:scale-105";
 
 export function IncomeIllustration({ className = "" }) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={`${svgBase} ${className}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Wallet */}
-      <rect x="25" y="40" width="70" height="45" rx="8" stroke="currentColor" strokeWidth="2.5" opacity="0.8" />
-      <path d="M25 55h70" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-      <rect x="70" y="58" width="18" height="12" rx="4" stroke="currentColor" strokeWidth="2" opacity="0.6" />
-      <circle cx="79" cy="64" r="2.5" fill="currentColor" opacity="0.5" />
-      {/* Coins */}
-      <circle cx="38" cy="32" r="8" stroke="currentColor" strokeWidth="2" opacity="0.6" />
-      <text x="35" y="36" fontSize="10" fill="currentColor" opacity="0.6" fontFamily="sans-serif">₹</text>
-      <circle cx="55" cy="28" r="6" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-      {/* Arrow up */}
-      <path d="M85 35V18m0 0l-6 6m6-6l6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
-      {/* Growth dots */}
-      <circle cx="30" cy="95" r="2" fill="currentColor" opacity="0.3" />
-      <circle cx="50" cy="92" r="2" fill="currentColor" opacity="0.3" />
-      <circle cx="70" cy="88" r="2" fill="currentColor" opacity="0.3" />
+      <style>{`
+        @keyframes float-coin {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        @keyframes pulse-wallet {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.02); }
+        }
+        .anim-coin1 { animation: float-coin 3.5s ease-in-out infinite; transform-origin: 40px 30px; }
+        .anim-coin2 { animation: float-coin 4s ease-in-out infinite 1s; transform-origin: 80px 25px; }
+        .anim-wallet { animation: pulse-wallet 5s ease-in-out infinite; transform-origin: 60px 65px; }
+      `}</style>
+      {glowFilter}
+      
+      {/* Background Glow */}
+      <circle cx="60" cy="60" r="35" fill="url(#blue-grad)" opacity="0.08" filter="url(#svg-glow)" />
+
+      <g className="anim-wallet">
+        {/* Wallet Body */}
+        <rect x="25" y="45" width="70" height="45" rx="10" stroke="url(#blue-grad)" strokeWidth="2.5" fill="#171717" fillOpacity="0.8" filter="url(#svg-glow)" />
+        {/* Wallet Flap */}
+        <path d="M65 45h25v22c0 3-2 5-5 5H65V45z" fill="#262626" stroke="url(#blue-grad)" strokeWidth="2" />
+        <circle cx="78" cy="58" r="3" fill="#60A5FA" />
+      </g>
+
+      {/* Floating Holographic Coins */}
+      <g className="anim-coin1" filter="url(#svg-glow)">
+        <circle cx="42" cy="28" r="9" stroke="url(#gold-grad)" strokeWidth="2" fill="#171717" fillOpacity="0.9" />
+        <text x="37" y="32" fontSize="12" fontWeight="bold" fill="#FBBF24" fontFamily="sans-serif">₹</text>
+      </g>
+      <g className="anim-coin2" filter="url(#svg-glow)">
+        <circle cx="82" cy="22" r="7" stroke="url(#blue-grad)" strokeWidth="1.8" fill="#171717" fillOpacity="0.9" />
+        <text x="79" y="25" fontSize="9" fontWeight="bold" fill="#60A5FA" fontFamily="sans-serif">₹</text>
+      </g>
     </svg>
   );
 }
@@ -31,19 +79,37 @@ export function IncomeIllustration({ className = "" }) {
 export function SpendingIllustration({ className = "" }) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={`${svgBase} ${className}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Cart */}
-      <path d="M20 30h10l12 45h46l10-30H42" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
-      <circle cx="52" cy="85" r="5" stroke="currentColor" strokeWidth="2" opacity="0.6" />
-      <circle cx="80" cy="85" r="5" stroke="currentColor" strokeWidth="2" opacity="0.6" />
-      {/* Price tag */}
-      <rect x="72" y="18" width="28" height="18" rx="4" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-      <text x="78" y="31" fontSize="10" fill="currentColor" opacity="0.5" fontFamily="sans-serif">₹</text>
-      {/* Flow arrows */}
-      <path d="M55 50l8-8m0 0l8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
-      <path d="M63 42v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
-      {/* Coins floating */}
-      <circle cx="95" cy="50" r="4" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
-      <circle cx="15" cy="60" r="3" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+      <style>{`
+        @keyframes flow-cart {
+          0%, 100% { transform: translateX(0px); }
+          50% { transform: translateX(6px); }
+        }
+        @keyframes float-tag {
+          0%, 100% { transform: translateY(0px) rotate(-5deg); }
+          50% { transform: translateY(-4px) rotate(5deg); }
+        }
+        .anim-cart { animation: flow-cart 4s ease-in-out infinite; }
+        .anim-tag { animation: float-tag 3s ease-in-out infinite; transform-origin: 85px 25px; }
+      `}</style>
+      {glowFilter}
+
+      {/* Background Glow */}
+      <circle cx="60" cy="60" r="35" fill="url(#rose-grad)" opacity="0.06" filter="url(#svg-glow)" />
+
+      <g className="anim-cart">
+        {/* Shopping Cart */}
+        <path d="M20 32h12l10 38h42l10-26H46" stroke="url(#rose-grad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#svg-glow)" />
+        {/* Wheels */}
+        <circle cx="48" cy="80" r="6" stroke="url(#rose-grad)" strokeWidth="2" fill="#171717" />
+        <circle cx="78" cy="80" r="6" stroke="url(#rose-grad)" strokeWidth="2" fill="#171717" />
+      </g>
+
+      {/* Hanging Premium Price Tag */}
+      <g className="anim-tag" filter="url(#svg-glow)">
+        <rect x="75" y="16" width="26" height="18" rx="4" transform="rotate(10 75 16)" stroke="url(#gold-grad)" strokeWidth="2" fill="#171717" />
+        <circle cx="80" cy="22" r="1.5" fill="#FBBF24" />
+        <text x="86" y="29" fontSize="10" fontWeight="bold" fill="#FBBF24" fontFamily="sans-serif">₹</text>
+      </g>
     </svg>
   );
 }
@@ -51,12 +117,31 @@ export function SpendingIllustration({ className = "" }) {
 export function EmergencyIllustration({ className = "" }) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={`${svgBase} ${className}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Shield */}
-      <path d="M60 15L25 35v25c0 22 15 38 35 45 20-7 35-23 35-45V35L60 15z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" opacity="0.7" />
-      {/* Plus/cross */}
-      <path d="M60 45v30M45 60h30" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.6" />
-      {/* Pulse line */}
-      <path d="M15 100l20 0 5-10 8 20 6-15 5 5h46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.35" />
+      <style>{`
+        @keyframes pulse-shield {
+          0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(52,211,153,0.3)); }
+          50% { transform: scale(1.05); filter: drop-shadow(0 0 8px rgba(52,211,153,0.6)); }
+        }
+        @keyframes pulse-line {
+          0% { strokeDashoffset: 120; }
+          100% { strokeDashoffset: 0; }
+        }
+        .anim-shield { animation: pulse-shield 3.5s ease-in-out infinite; transform-origin: 60px 50px; }
+        .anim-pulse { strokeDasharray: 60 60; animation: pulse-line 4s linear infinite; }
+      `}</style>
+      {glowFilter}
+
+      {/* Background Glow */}
+      <circle cx="60" cy="50" r="30" fill="url(#emerald-grad)" opacity="0.08" filter="url(#svg-glow)" />
+
+      {/* High-Tech Shield */}
+      <g className="anim-shield" filter="url(#svg-glow)">
+        <path d="M60 16L28 32v24c0 18 13 32 32 38 19-6 32-20 32-38V32L60 16z" stroke="url(#emerald-grad)" strokeWidth="2.5" strokeLinejoin="round" fill="#171717" fillOpacity="0.8" />
+        <path d="M60 30v26M47 43h26" stroke="url(#emerald-grad)" strokeWidth="3.5" strokeLinecap="round" />
+      </g>
+
+      {/* Heartbeat EKG Life Line */}
+      <path d="M15 95h22l5-12 6 22 6-16 4 6h47" stroke="#34D399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="anim-pulse" opacity="0.6" />
     </svg>
   );
 }
@@ -64,19 +149,39 @@ export function EmergencyIllustration({ className = "" }) {
 export function DebtIllustration({ className = "" }) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={`${svgBase} ${className}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Credit card */}
-      <rect x="20" y="30" width="80" height="50" rx="8" stroke="currentColor" strokeWidth="2.5" opacity="0.7" />
-      <path d="M20 45h80" stroke="currentColor" strokeWidth="3" opacity="0.3" />
-      <rect x="30" y="55" width="25" height="4" rx="2" fill="currentColor" opacity="0.3" />
-      <rect x="30" y="63" width="15" height="4" rx="2" fill="currentColor" opacity="0.2" />
-      {/* Chain break */}
-      <circle cx="78" cy="63" r="6" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-      <circle cx="92" cy="63" r="6" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-      <path d="M84 63h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.4" strokeDasharray="2 2" />
-      {/* Arrow down */}
-      <path d="M60 90v15m0 0l-5-5m5 5l5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.4" />
-      {/* Warning */}
-      <path d="M95 20l5 10H90l5-10z" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
+      <style>{`
+        @keyframes float-card {
+          0%, 100% { transform: translateY(0px) rotate(-3deg); }
+          50% { transform: translateY(-5px) rotate(3deg); }
+        }
+        @keyframes snap-chain {
+          0%, 100% { transform: rotate(0deg); }
+          50% { transform: rotate(-8deg); }
+        }
+        .anim-card { animation: float-card 4.5s ease-in-out infinite; transform-origin: 60px 45px; }
+        .anim-chain { animation: snap-chain 3s ease-in-out infinite; transform-origin: 75px 70px; }
+      `}</style>
+      {glowFilter}
+
+      {/* Background Glow */}
+      <circle cx="60" cy="60" r="35" fill="url(#rose-grad)" opacity="0.06" filter="url(#svg-glow)" />
+
+      {/* Credit Card floating */}
+      <g className="anim-card" filter="url(#svg-glow)">
+        <rect x="22" y="24" width="76" height="46" rx="8" stroke="url(#rose-grad)" strokeWidth="2.5" fill="#171717" fillOpacity="0.85" />
+        {/* Magnet strip */}
+        <path d="M22 36h76" stroke="url(#rose-grad)" strokeWidth="2.5" opacity="0.4" />
+        {/* Hologram chip */}
+        <rect x="32" y="44" width="14" height="10" rx="2" fill="#FBBF24" opacity="0.8" />
+      </g>
+
+      {/* Snapped Chain of Debt */}
+      <g className="anim-chain" filter="url(#svg-glow)">
+        <circle cx="70" cy="80" r="6" stroke="url(#emerald-grad)" strokeWidth="2" fill="#171717" />
+        <circle cx="86" cy="80" r="6" stroke="url(#emerald-grad)" strokeWidth="2" fill="#171717" />
+        {/* The Snapped Link */}
+        <path d="M76 80h4M78 76l4 8" stroke="#34D399" strokeWidth="2" strokeLinecap="round" />
+      </g>
     </svg>
   );
 }
@@ -84,26 +189,42 @@ export function DebtIllustration({ className = "" }) {
 export function SavingsIllustration({ className = "" }) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={`${svgBase} ${className}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Piggy bank body */}
-      <ellipse cx="55" cy="65" rx="30" ry="25" stroke="currentColor" strokeWidth="2.5" opacity="0.7" />
-      {/* Ear */}
-      <ellipse cx="38" cy="48" rx="6" ry="8" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-      {/* Eye */}
-      <circle cx="42" cy="58" r="2.5" fill="currentColor" opacity="0.5" />
-      {/* Snout */}
-      <ellipse cx="28" cy="65" rx="5" ry="4" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-      {/* Coin slot */}
-      <path d="M48 40h14" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
-      {/* Legs */}
-      <path d="M40 88v8M50 88v8M60 88v8M70 88v8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
-      {/* Growth chart */}
-      <path d="M80 80l8-15 8-5 8-20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
-      <circle cx="88" cy="65" r="2" fill="currentColor" opacity="0.4" />
-      <circle cx="96" cy="60" r="2" fill="currentColor" opacity="0.4" />
-      <circle cx="104" cy="40" r="2" fill="currentColor" opacity="0.4" />
-      {/* Coin */}
-      <circle cx="55" cy="30" r="6" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
-      <text x="52" y="34" fontSize="8" fill="currentColor" opacity="0.4" fontFamily="sans-serif">₹</text>
+      <style>{`
+        @keyframes coin-drop {
+          0% { transform: translateY(-20px); opacity: 0; }
+          30% { opacity: 1; }
+          70%, 100% { transform: translateY(18px); opacity: 0; }
+        }
+        @keyframes pulse-piggy {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.03); }
+        }
+        .anim-piggy { animation: pulse-piggy 4s ease-in-out infinite; transform-origin: 60px 65px; }
+        .anim-drop { animation: coin-drop 3s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+      `}</style>
+      {glowFilter}
+
+      {/* Background Glow */}
+      <circle cx="60" cy="65" r="30" fill="url(#gold-grad)" opacity="0.08" filter="url(#svg-glow)" />
+
+      {/* Falling Coin */}
+      <g className="anim-drop" filter="url(#svg-glow)">
+        <circle cx="60" cy="32" r="6" stroke="url(#gold-grad)" strokeWidth="1.5" fill="#171717" />
+        <text x="57" y="36" fontSize="9" fontWeight="bold" fill="#FBBF24" fontFamily="sans-serif">₹</text>
+      </g>
+
+      {/* Piggy Bank Body */}
+      <g className="anim-piggy" filter="url(#svg-glow)">
+        <ellipse cx="60" cy="68" rx="26" ry="22" stroke="url(#gold-grad)" strokeWidth="2.5" fill="#171717" fillOpacity="0.8" />
+        {/* Snout */}
+        <path d="M34 65c-2 0-3 2-3 4s1 4 3 4" stroke="url(#gold-grad)" strokeWidth="2" />
+        {/* Ear */}
+        <path d="M46 50c-2-6-8-4-8-4s2 8 8 8" stroke="url(#gold-grad)" strokeWidth="2" />
+        {/* Eye */}
+        <circle cx="46" cy="62" r="2.5" fill="#FBBF24" />
+        {/* Slot */}
+        <path d="M54 49h12" stroke="url(#gold-grad)" strokeWidth="2.5" strokeLinecap="round" />
+      </g>
     </svg>
   );
 }
@@ -111,20 +232,36 @@ export function SavingsIllustration({ className = "" }) {
 export function GoalsIllustration({ className = "" }) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={`${svgBase} ${className}`} xmlns="http://www.w3.org/2000/svg">
-      {/* Target circles */}
-      <circle cx="60" cy="55" r="35" stroke="currentColor" strokeWidth="2" opacity="0.3" />
-      <circle cx="60" cy="55" r="25" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-      <circle cx="60" cy="55" r="15" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-      <circle cx="60" cy="55" r="5" fill="currentColor" opacity="0.6" />
-      {/* Arrow hitting target */}
-      <path d="M95 20L63 52" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.7" />
-      <path d="M95 20l-12 2 10 10 2-12z" fill="currentColor" opacity="0.5" />
-      {/* Flag */}
-      <path d="M30 95V100" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-      <path d="M30 95l15-5-15-5v10z" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.3" />
-      {/* Stars */}
-      <path d="M15 30l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1 2-4z" fill="currentColor" opacity="0.25" />
-      <path d="M100 75l1.5 3 3 .5-2 2 .5 3-3-1.5-3 1.5.5-3-2-2 3-.5 1.5-3z" fill="currentColor" opacity="0.2" />
+      <style>{`
+        @keyframes float-target {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-4px); }
+        }
+        @keyframes draw-arrow {
+          0% { transform: translate(15px, -15px); opacity: 0; }
+          100% { transform: translate(0, 0); opacity: 1; }
+        }
+        .anim-target { animation: float-target 5s ease-in-out infinite; transform-origin: 60px 60px; }
+        .anim-arrow { animation: draw-arrow 2.5s ease-out infinite; }
+      `}</style>
+      {glowFilter}
+
+      {/* Background Glow */}
+      <circle cx="60" cy="60" r="35" fill="url(#blue-grad)" opacity="0.08" filter="url(#svg-glow)" />
+
+      <g className="anim-target">
+        {/* Concentric Target Rings */}
+        <circle cx="60" cy="60" r="30" stroke="url(#blue-grad)" strokeWidth="2" fill="#171717" fillOpacity="0.8" filter="url(#svg-glow)" />
+        <circle cx="60" cy="60" r="20" stroke="url(#blue-grad)" strokeWidth="1.5" />
+        <circle cx="60" cy="60" r="10" stroke="url(#blue-grad)" strokeWidth="1.5" />
+        <circle cx="60" cy="60" r="4" fill="#60A5FA" />
+
+        {/* Dynamic Arrow hitting the Center */}
+        <g className="anim-arrow" filter="url(#svg-glow)">
+          <path d="M90 30L63 57" stroke="url(#gold-grad)" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M63 57l6-2-2-6-4 8z" fill="#FBBF24" />
+        </g>
+      </g>
     </svg>
   );
 }

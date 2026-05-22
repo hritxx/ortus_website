@@ -1,22 +1,23 @@
 import React from "react";
-import Clients from "@/components/Clients";
-import Container from "@/components/Container";
-import FadeIn from "@/components/FadeIn";
-
-import Testimonials from "@/components/Testimonials";
-import Services from "@/components/Services";
-import ContactSection from "@/components/ContactSection";
-import Faq from "@/components/Faq";
-import Testimonial from "@/components/Testimonial";
+import dynamic from "next/dynamic";
 import { FeaturesSectionDemo } from "@/components/FeatureSection";
-import InvestmentPlans from "@/components/InvestmentPlans";
-import { StatList, StatListItem } from "@/components/StatList";
-import StartupCertificate from "@/components/StartupCertificate";
-import Universities from "@/components/Universities";
-import Link from "next/link";
-import { ArrowRight, Smartphone, Calendar } from "lucide-react";
-import FinancialSurvey from "@/components/survey/FinancialSurvey";
-import HeroSection from "@/components/hero/HeroSection";
+
+const FinancialSurvey = dynamic(() => import("@/components/survey/FinancialSurvey"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const Clients = dynamic(() => import("@/components/Clients"));
+const InvestmentPlans = dynamic(() => import("@/components/InvestmentPlans"));
+const StartupCertificate = dynamic(() => import("@/components/StartupCertificate"));
+const Universities = dynamic(() => import("@/components/Universities"));
+const Testimonial = dynamic(() => import("@/components/Testimonial"));
+const Faq = dynamic(() => import("@/components/Faq"));
+const HeroSection = dynamic(() => import("@/components/hero/HeroSection"), {
+  loading: () => null,
+});
+const Services = dynamic(() => import("@/components/Services"));
+const ContactSection = dynamic(() => import("@/components/ContactSection"));
 
 export default function Home() {
   return (

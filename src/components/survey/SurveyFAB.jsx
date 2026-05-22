@@ -19,7 +19,7 @@ export default function SurveyFAB({ onClick, visible = true }) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 40, scale: 0.8 }}
         transition={{ delay: 4, duration: 0.5, type: "spring", stiffness: 200 }}
-        className="fixed bottom-6 right-6 z-50"
+        className="fixed bottom-6 right-6 z-30"
         style={{ perspective: "600px" }}
       >
         {/* Tooltip */}

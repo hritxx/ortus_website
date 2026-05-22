@@ -1,47 +1,14 @@
 /**
- * Section 5: Savings & Investments — 4 questions, max 20 points
+ * Section 5: Wealth Building — 2 questions, max 10 points
  */
 export const savingsQuestions = [
-  {
-    id: "savings_20pct",
-    sectionId: "savings",
-    question: {
-      en: "Do you save at least 20% of your income?",
-      bn: "আপনি কি আপনার আয়ের অন্তত ২০% সঞ্চয় করেন?",
-      as: "আপুনি আপোনাৰ আয়ৰ অন্ততঃ ২০% সঞ্চয় কৰে নে?",
-      mni: "নহাক্না নহাক্কী ইনকমগী ২০% ফাউবা সেভ তৌবা?",
-      ne: "तपाईं आफ्नो आम्दानीको कम्तीमा २०% बचत गर्नुहुन्छ?",
-      lus: "I sum lakluh 20% tal vel i khawl em?",
-      kha: "Phi save 20% ka income?",
-      grt: "Nangni income ni 20% save on·anga?",
-      nag: "Apne income laga 20% save kore?",
-      trp: "Nwngni aay-er 20% sonchoy koro?",
-      brx: "नोंथां जागायनायनि 20% गोजौआव दानथिनाय खालामो?",
-    },
-    options: [
-      {
-        label: {
-          en: "Yes", bn: "হ্যাঁ", as: "হয়", mni: "হোই", ne: "गर्छु",
-          lus: "Aw", kha: "Hooid", grt: "On·a", nag: "Hoi", trp: "Hoi", brx: "गोजौ",
-        },
-        score: 5,
-      },
-      {
-        label: {
-          en: "No", bn: "না", as: "নহয়", mni: "নত্তে", ne: "गर्दिन",
-          lus: "Aih", kha: "Bam", grt: "An·cha", nag: "Nai", trp: "Dakha", brx: "नङा",
-        },
-        score: 0,
-      },
-    ],
-  },
   {
     id: "savings_where",
     sectionId: "savings",
     question: {
-      en: "Where do you mostly keep your money?",
-      bn: "আপনি আপনার টাকা বেশিরভাগ কোথায় রাখেন?",
-      as: "আপুনি আপোনাৰ টকা বেছিভাগ ক'ত ৰাখে?",
+      en: "Where does most of your money stay?",
+      bn: "আপনার টাকা বেশিরভাগ কোথায় থাকে?",
+      as: "আপোনাৰ টকা বেছিভাগ ক'ত থাকে?",
       mni: "নহাক্না শেল য়াম্না কদায়দা থম্বা?",
       ne: "तपाईं आफ्नो पैसा प्रायः कहाँ राख्नुहुन्छ?",
       lus: "Khawiah ah nge sum tam ber i dah?",
@@ -64,27 +31,17 @@ export const savingsQuestions = [
       },
       {
         label: {
-          en: "Fixed deposits", bn: "ফিক্সড ডিপোজিট", as: "ফিক্সড ডিপজিট",
-          mni: "ফিক্সড ডিপোজিট", ne: "स्थिर निक्षेप",
-          lus: "Fixed deposit", kha: "Fixed deposit",
-          grt: "Fixed deposit", nag: "Fixed deposit",
-          trp: "Fixed deposit", brx: "फिक्सड डिपजिट",
+          en: "Fixed deposits / Gold", bn: "ফিক্সড ডিপোজিট / সোনা", as: "ফিক্সড ডিপজিট / সোণ",
+          mni: "ফিক্সড ডিপোজিট / সোনা", ne: "स्थिर निक्षेप / सुन",
+          lus: "Fixed deposit / Rangkachak", kha: "Fixed deposit / Gold",
+          grt: "Fixed deposit / Gold", nag: "Fixed deposit / Gold",
+          trp: "Fixed deposit / Sona", brx: "फिक्सड डिपजिट / सना",
         },
         score: 3,
       },
       {
         label: {
-          en: "Gold / Real estate", bn: "সোনা / রিয়েল এস্টেট", as: "সোণ / ৰিয়েল এষ্টেট",
-          mni: "সোনা / রিয়েল এস্টেট", ne: "सुन / घरजग्गा",
-          lus: "Gold / Ram leh in", kha: "Gold / Real estate",
-          grt: "Gold / Real estate", nag: "Gold / Real estate",
-          trp: "Sona / Real estate", brx: "सना / हा-गोदान",
-        },
-        score: 4,
-      },
-      {
-        label: {
-          en: "Stock market / Mutual funds", bn: "শেয়ার বাজার / মিউচুয়াল ফান্ড",
+          en: "Stocks / Mutual funds", bn: "শেয়ার বাজার / মিউচুয়াল ফান্ড",
           as: "শ্বেয়াৰ বজাৰ / মিউচুৱেল ফাণ্ড",
           mni: "স্টক মার্কেট / মিউচুয়াল ফান্ড", ne: "शेयर बजार / म्युचुअल फन्ड",
           lus: "Stock market / Mutual funds", kha: "Stock market / Mutual funds",
@@ -93,36 +50,13 @@ export const savingsQuestions = [
         },
         score: 5,
       },
-    ],
-  },
-  {
-    id: "savings_regular",
-    sectionId: "savings",
-    question: {
-      en: "Do you invest regularly?",
-      bn: "আপনি কি নিয়মিত বিনিয়োগ করেন?",
-      as: "আপুনি নিয়মীয়াকৈ বিনিয়োগ কৰে নে?",
-      mni: "নহাক্না রেগুলর ইনভেস্ট তৌবা?",
-      ne: "तपाईं नियमित लगानी गर्नुहुन्छ?",
-      lus: "Sum dahna i nei ṭhin em?",
-      kha: "Phi invest regular?",
-      grt: "Nangni regular invest on·anga?",
-      nag: "Apne regular invest kore?",
-      trp: "Nwngni niyomito biniyog koro?",
-      brx: "नोंथां रेगुलार बिनियोग खालामो?",
-    },
-    options: [
       {
         label: {
-          en: "Yes", bn: "হ্যাঁ", as: "হয়", mni: "হোই", ne: "गर्छु",
-          lus: "Aw", kha: "Hooid", grt: "On·a", nag: "Hoi", trp: "Hoi", brx: "गोजौ",
-        },
-        score: 5,
-      },
-      {
-        label: {
-          en: "No", bn: "না", as: "নহয়", mni: "নত্তে", ne: "गर्दिन",
-          lus: "Aih", kha: "Bam", grt: "An·cha", nag: "Nai", trp: "Dakha", brx: "नङा",
+          en: "I don't invest yet", bn: "আমি এখনো বিনিয়োগ করি না", as: "মই এতিয়াও বিনিয়োগ নকৰোঁ",
+          mni: "ঐ হৌজিক ফাওবা ইনভেস্ট তৌদে", ne: "म अझै लगानी गर्दिन",
+          lus: "Ka la hmang hrih lo", kha: "Ngi ym pat invest mynta",
+          grt: "Anga matni invest ong·ja", nag: "Mui etu invest nakore",
+          trp: "Ang biniyog koriya", brx: "आं दासिम बिनियोग खालामो",
         },
         score: 0,
       },
@@ -132,30 +66,30 @@ export const savingsQuestions = [
     id: "savings_inflation",
     sectionId: "savings",
     question: {
-      en: "Are your investments beating inflation (≈6–7%)?",
-      bn: "আপনার বিনিয়োগ কি মুদ্রাস্ফীতিকে হারাচ্ছে (≈৬–৭%)?",
-      as: "আপোনাৰ বিনিয়োগে মুদ্ৰাস্ফীতিক হৰুৱাই আছে নে (≈৬–৭%)?",
-      mni: "নহাক্কী ইনভেস্টমেন্টনা ইনফ্লেশন (≈৬–৭%) হনবা ফংলিবা?",
-      ne: "तपाईंको लगानीले मुद्रास्फीति (≈६–७%) लाई जित्दैछ?",
-      lus: "I sum dahna-in inflation (≈6–7%) a hne thei em?",
-      kha: "Ka investment phi ka beat inflation (≈6–7%)?",
-      grt: "Nangni investment inflation (≈6–7%) beat on·anga?",
-      nag: "Apne investment inflation (≈6–7%) beat kori ase?",
-      trp: "Nwngni biniyog inflation (≈6–7%) ke harachhe?",
-      brx: "नोंथांनि बिनियोगआ मुद्रास्फीति (≈6–7%) खौसे सोलायो?",
+      en: "Do you invest regularly to beat inflation?",
+      bn: "মুদ্রাস্ফীতিকে হারাতে আপনি কি নিয়মিত বিনিয়োগ করেন?",
+      as: "মুদ্ৰাস্ফীতিক হৰুৱাবলৈ আপুনি নিয়মীয়াকৈ বিনিয়োগ কৰে নে?",
+      mni: "ইনফ্লেশন হনবা ফংনবা নহাক্না রেগুলর ইনভেস্ট তৌবা?",
+      ne: "मुद्रास्फीतिलाई जित्न के तपाईं नियमित लगानी गर्नुहुन्छ?",
+      lus: "Inflation hne turin sum dahna i nei ṭhin em?",
+      kha: "Phi invest regular ban beat inflation?",
+      grt: "Inflation beat on·na nangni regular invest on·anga?",
+      nag: "Inflation beat koribole apne regular invest kore?",
+      trp: "Inflation ke haranor jonne nwngni niyomito biniyog koro?",
+      brx: "मुद्रास्फीतिखौ सेबायनो नोंथां रेगुलार बिनियोग खालामो?",
     },
     options: [
       {
         label: {
-          en: "Yes", bn: "হ্যাঁ", as: "হয়", mni: "হোই", ne: "गर्दैछ",
-          lus: "Aw", kha: "Hooid", grt: "On·a", nag: "Hoi", trp: "Hoi", brx: "गोजौ",
+          en: "Yes", bn: "হ্যাঁ", as: "হয়", mni: "হোই", ne: "गर्छु",
+          lus: "Aw", kha: "Hooid", grt: "On·a", nag: "Hoi", trp: "Hoi", brx: "गोजৌ",
         },
         score: 5,
       },
       {
         label: {
-          en: "No", bn: "না", as: "নহয়", mni: "নত্তে", ne: "गर्दैन",
-          lus: "Aih", kha: "Bam", grt: "An·cha", nag: "Nai", trp: "Dakha", brx: "नङा",
+          en: "No", bn: "না", as: "নহয়", mni: "নত্তে", ne: "गर्दिन",
+          lus: "Aih", kha: "Bam", grt: "An·cha", nag: "Nai", trp: "Dakha", brx: "नङা",
         },
         score: 0,
       },

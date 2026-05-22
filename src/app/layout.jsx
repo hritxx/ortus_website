@@ -1,6 +1,5 @@
 import RootLayout from "@/components/RootLayout";
 import { Analytics } from "@vercel/analytics/react";
-import ClientProvider from "@/components/ClientProvider";
 
 import "./globals.css";
 
@@ -48,9 +47,7 @@ export default function Layout({ children }) {
       className="h-full bg-blue-900 text-base antialiased text-neutral-100"
     >
       <body className="flex min-h-full flex-col">
-        <RootLayout>
-          <ClientProvider>{children}</ClientProvider>
-        </RootLayout>
+        <RootLayout>{children}</RootLayout>
         <Analytics />
       </body>
     </html>

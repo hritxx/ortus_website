@@ -7,79 +7,76 @@ import { t } from "./data/languages";
 
 /**
  * Initial invite popup — asks user if they want to take the financial health checkup.
- * Shown once per browser session after a 2.5s delay.
+ * Redesigned with a stunning premium dark glassmorphism theme and glowing accents.
  */
 export default function SurveyInvite({ lang, setLang, onStart, onDismiss }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.92, y: 20 }}
+      initial={{ opacity: 0, scale: 0.94, y: 30 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.92, y: 20 }}
-      transition={{ duration: 0.4, type: "spring", stiffness: 300, damping: 25 }}
-      className="relative w-full max-w-lg mx-auto overflow-hidden rounded-2xl bg-white shadow-2xl"
+      exit={{ opacity: 0, scale: 0.94, y: 30 }}
+      transition={{ duration: 0.4, type: "spring", stiffness: 260, damping: 22 }}
+      className="relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl shadow-blue-500/10"
       style={{ perspective: "1200px" }}
     >
+      {/* Background glowing gradients */}
+      <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
+
       {/* Close button */}
       <button
         onClick={onDismiss}
         className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full
-                   bg-white/80 text-neutral-500 backdrop-blur transition hover:bg-neutral-100 hover:text-neutral-700
-                   cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                   bg-white/5 border border-white/10 text-neutral-400 backdrop-blur transition-all duration-200
+                   hover:bg-white/10 hover:text-white cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         aria-label="Close"
       >
         <X className="h-4 w-4" />
       </button>
 
-      {/* Top gradient banner with animated icon */}
-      <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-neutral-900 px-8 py-10 text-center text-white overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-4 left-8 w-24 h-24 rounded-full border border-white/30" />
-          <div className="absolute bottom-2 right-10 w-16 h-16 rounded-full border border-white/20" />
-          <div className="absolute top-10 right-20 w-8 h-8 rounded-full bg-white/10" />
-        </div>
-
-        {/* Animated pulse icon */}
+      {/* Header Banner */}
+      <div className="relative px-8 pt-10 pb-6 text-center text-white overflow-hidden border-b border-white/5 bg-gradient-to-b from-neutral-900/50 to-transparent rounded-t-[inherit]">
+        {/* Glowing Pulse Icon Container */}
         <motion.div
-          className="relative mx-auto mb-5 flex h-20 w-20 items-center justify-center"
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+          animate={{ scale: [1, 1.04, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          {/* Pulse rings */}
-          <div className="absolute inset-0 rounded-full bg-blue-400/20 animate-ping" style={{ animationDuration: "2s" }} />
-          <div className="absolute inset-2 rounded-full bg-blue-400/15 animate-ping" style={{ animationDuration: "2.5s" }} />
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20">
-            <HeartPulse className="h-8 w-8 text-white" strokeWidth={2} />
+          {/* Neon Ring Glows */}
+          <div className="absolute inset-0 rounded-full bg-blue-500/15 animate-ping" style={{ animationDuration: "3s" }} />
+          <div className="absolute inset-2 rounded-full bg-blue-500/10 animate-ping" style={{ animationDuration: "4s" }} />
+          <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-neutral-900 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.25)]">
+            <HeartPulse className="h-7 w-7 text-blue-400" strokeWidth={2.2} />
           </div>
         </motion.div>
 
-        <div className="text-xs font-semibold uppercase tracking-[3px] text-blue-300 mb-3">
+        <div className="text-[10px] font-bold uppercase tracking-[4px] text-blue-400 mb-2">
           Ortus Finance
         </div>
-        <h2 className="font-display text-2xl sm:text-3xl font-bold leading-tight mb-2">
+        <h2 className="font-display text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
           {t(UI_TEXT.inviteTitle, lang)}
         </h2>
-        <p className="text-sm text-blue-200/80 leading-relaxed max-w-xs mx-auto">
+        <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm mx-auto">
           {t(UI_TEXT.inviteSubtitle, lang)}
         </p>
       </div>
 
-      {/* Body */}
-      <div className="px-8 py-8">
-        {/* Language picker */}
-        <div className="mb-6">
-          <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3 text-center">
+      {/* Body Area */}
+      <div className="px-8 pb-8 pt-6">
+        {/* Language selector */}
+        <div className="mb-6 bg-white/5 border border-white/5 rounded-2xl p-4">
+          <p className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-3 text-center">
             {t(UI_TEXT.chooseLang, lang)}
           </p>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-1.5 max-h-24 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 pr-1">
             {Object.entries(LANGUAGES).map(([code, { nativeName }]) => (
               <button
                 key={code}
                 onClick={() => setLang(code)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer
+                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer border
                   ${lang === code
-                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-blue-50 hover:text-blue-700"
+                    ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/30"
+                    : "bg-neutral-900 border-white/5 text-neutral-400 hover:border-white/10 hover:text-white"
                   }`}
               >
                 {nativeName}
@@ -88,31 +85,34 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss }) {
           </div>
         </div>
 
-        {/* CTA buttons */}
-        <motion.button
-          onClick={onStart}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700
-                     px-6 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/25
-                     transition-shadow duration-300 hover:shadow-xl hover:shadow-blue-500/30
-                     cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-        >
-          {t(UI_TEXT.startBtn, lang)}
-          <ArrowRight className="h-5 w-5" />
-        </motion.button>
+        {/* CTA Buttons */}
+        <div className="space-y-3">
+          <motion.button
+            onClick={onStart}
+            whileHover={{ scale: 1.01, translateY: -1 }}
+            whileTap={{ scale: 0.99 }}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700
+                       px-6 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-blue-600/20
+                       transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/30 border border-blue-500/30
+                       cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+          >
+            {t(UI_TEXT.startBtn, lang)}
+            <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+          </motion.button>
 
-        <button
-          onClick={onDismiss}
-          className="mt-3 w-full rounded-xl border-2 border-neutral-200 px-6 py-3 text-sm font-medium
-                     text-neutral-500 transition-all duration-200 hover:border-neutral-300 hover:text-neutral-700
-                     cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-        >
-          {t(UI_TEXT.laterBtn, lang)}
-        </button>
+          <button
+            onClick={onDismiss}
+            className="mt-3 w-full rounded-xl border border-white/10 px-6 py-3 text-xs sm:text-sm font-bold
+                       text-neutral-400 bg-neutral-900/60 transition-all duration-200 hover:border-white/20 hover:text-white
+                       cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
+          >
+            {t(UI_TEXT.laterBtn, lang)}
+          </button>
+        </div>
 
-        <p className="mt-4 text-center text-xs text-neutral-400">
-          ⏱ {t(UI_TEXT.takesTime, lang)}
+        {/* Time warning footer */}
+        <p className="mt-5 text-center text-[10px] sm:text-xs text-neutral-500 flex items-center justify-center gap-1">
+          <span>⏱</span> {t(UI_TEXT.takesTime, lang)}
         </p>
       </div>
     </motion.div>

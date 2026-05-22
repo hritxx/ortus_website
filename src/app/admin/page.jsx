@@ -3,9 +3,10 @@
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SessionProvider } from "next-auth/react";
 import clientsData from "../../constants/client2.js";
 
-export default function Admin() {
+function AdminContent() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
@@ -117,5 +118,13 @@ export default function Admin() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function Admin() {
+  return (
+    <SessionProvider>
+      <AdminContent />
+    </SessionProvider>
   );
 }

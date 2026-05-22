@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import SurveyInvite from "./SurveyInvite";
 import SurveyQuestions from "./SurveyQuestions";
@@ -19,6 +20,12 @@ export default function FinancialSurvey() {
   const [lang, setLang] = useState(DEFAULT_LANG);
   const [results, setResults] = useState(null);
   const [fabVisible, setFabVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Client-side mount flag
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Auto-show invite after 2.5s delay on first session visit
   useEffect(() => {
@@ -77,60 +84,63 @@ export default function FinancialSurvey() {
       {/* FAB — visible only when survey is closed */}
       <SurveyFAB onClick={handleOpenFromFAB} visible={fabVisible && !isModalOpen} />
 
-      {/* Modal overlay */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] flex items-start justify-center px-3 pb-3 pt-20 sm:items-center sm:p-4"
-          >
-            {/* Backdrop */}
+      {/* Modal overlay — Portaled to document.body to prevent stacking context clipping on mobile */}
+      {mounted && typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
+          {isModalOpen && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-neutral-950/60 backdrop-blur-sm"
-              onClick={phase === "invite" ? handleDismiss : undefined}
-            />
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[100] flex items-start justify-center px-3 pb-3 pt-20 sm:items-center sm:p-4"
+            >
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 bg-neutral-950/60 backdrop-blur-sm"
+                onClick={phase === "invite" ? handleDismiss : undefined}
+              />
 
-            {/* Scrollable content area */}
-            <div className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
-                            scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-300
-                            rounded-t-3xl rounded-b-2xl sm:max-h-[90vh] sm:rounded-2xl">
-              <AnimatePresence mode="wait">
-                {phase === "invite" && (
-                  <SurveyInvite
-                    key="invite"
-                    lang={lang}
-                    setLang={setLang}
-                    onStart={handleStartQuiz}
-                    onDismiss={handleDismiss}
-                  />
-                )}
-                {phase === "quiz" && (
-                  <SurveyQuestions
-                    key="quiz"
-                    lang={lang}
-                    setLang={setLang}
-                    onComplete={handleComplete}
-                  />
-                )}
-                {phase === "result" && results && (
-                  <SurveyResults
-                    key="result"
-                    lang={lang}
-                    results={results}
-                    onRetake={handleRetake}
-                  />
-                )}
-              </AnimatePresence>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {/* Scrollable content area */}
+              <div className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
+                              scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-300
+                              sm:max-h-[90vh]">
+                <AnimatePresence mode="wait">
+                  {phase === "invite" && (
+                    <SurveyInvite
+                      key="invite"
+                      lang={lang}
+                      setLang={setLang}
+                      onStart={handleStartQuiz}
+                      onDismiss={handleDismiss}
+                    />
+                  )}
+                  {phase === "quiz" && (
+                    <SurveyQuestions
+                      key="quiz"
+                      lang={lang}
+                      setLang={setLang}
+                      onComplete={handleComplete}
+                    />
+                  )}
+                  {phase === "result" && results && (
+                    <SurveyResults
+                      key="result"
+                      lang={lang}
+                      results={results}
+                      onRetake={handleRetake}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }

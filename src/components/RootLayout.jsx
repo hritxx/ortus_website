@@ -1,7 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useId, useState, useRef, useEffect } from "react";
-import { motion, MotionConfig, useReducedMotion } from "framer-motion";
 import Container from "./Container";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -14,7 +13,6 @@ import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
 import Image from "next/image";
-import { StickyBannerDemo } from "./StickyBanner";
 
 const Header = ({
   panelId,
@@ -118,7 +116,6 @@ const RootLayoutInner = ({ children }) => {
   const openRef = useRef();
   const closeRef = useRef();
   const navRef = useRef();
-  const shouldReduceMotion = useReducedMotion();
   useEffect(() => {
     function onClick(event) {
       if (event.target.closest("a")?.herf === window.location.href) {
@@ -132,7 +129,7 @@ const RootLayoutInner = ({ children }) => {
     };
   }, []);
   return (
-    <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
+    <>
       <header>
         <div
           className="absolute left-0 right-0 top-2 z-40 pt-14"
@@ -153,15 +150,16 @@ const RootLayoutInner = ({ children }) => {
             }}
           />
         </div>
-        <motion.div
-          layout
+        <div
           id={panelId}
-          style={{ height: expanded ? "auto" : "0.5rem" }}
-          className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
           aria-hidden={expanded ? undefined : "true"}
           inert={expanded ? undefined : ""}
+          className={clsx(
+            "absolute inset-x-0 top-0 z-50 overflow-hidden bg-neutral-950 pt-2 transition-[transform,opacity] duration-300 ease-out transform",
+            expanded ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+          )}
         >
-          <motion.div layout className="bg-neutral-800">
+          <div className="bg-neutral-800">
             <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
               <Header
                 invert
@@ -200,24 +198,17 @@ const RootLayoutInner = ({ children }) => {
                 </div>
               </Container>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </header>
-      <motion.div
-        layout
-        style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
-        className="relative flex flex-auto overflow-hidden bg-white pt-14"
-      >
-        <motion.div
-          layout
-          className="relative isolate flex w-full flex-col pt-9"
-        >
+      <div className="relative flex flex-auto overflow-hidden bg-white pt-14 [border-top-left-radius:40px] [border-top-right-radius:40px]">
+        <div className="relative isolate flex w-full flex-col pt-9">
           <main className="w-full flex-auto">{children}</main>
           {/* Footer */}
           <Footer />
-        </motion.div>
-      </motion.div>
-    </MotionConfig>
+        </div>
+      </div>
+    </>
   );
 };
 
