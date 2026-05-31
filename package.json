@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build"
   },
   "type": "module",
   "dependencies": {
@@ -40,6 +41,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.6",
     "@types/node": "24.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
