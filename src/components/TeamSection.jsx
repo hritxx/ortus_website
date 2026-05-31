@@ -2,13 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {
-  FaTimes,
-  FaEnvelope,
-  FaLinkedin,
-  FaTwitter,
-  FaChevronRight,
-} from "react-icons/fa";
+import { X, Mail, Linkedin, Twitter, ChevronRight } from "lucide-react";
 import Container from "./Container";
 import FadeIn from "./FadeIn";
 import { teamMembers } from "@/constants";
@@ -96,7 +90,7 @@ const TeamSection = () => {
                       <div className="mt-auto">
                         <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200 group-hover:bg-blue-600 group-hover:text-white">
                           View Profile
-                          <FaChevronRight className="ml-2 h-3 w-3" />
+                          <ChevronRight className="ml-2 h-3 w-3" />
                         </button>
                       </div>
                     </div>
@@ -124,7 +118,7 @@ const TeamSection = () => {
                     className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors duration-200"
                     aria-label="Close modal"
                   >
-                    <FaTimes size={18} />
+                    <X size={18} />
                   </button>
 
                   <div className="flex items-start space-x-6">
@@ -182,7 +176,7 @@ const TeamSection = () => {
                         className="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200"
                         aria-label={`Email ${selectedMember.name}`}
                       >
-                        <FaEnvelope className="mr-2 h-4 w-4" />
+                        <Mail className="mr-2 h-4 w-4" />
                         Email
                       </a>
                       <a
@@ -192,7 +186,7 @@ const TeamSection = () => {
                         className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
                         aria-label={`${selectedMember.name}'s LinkedIn profile`}
                       >
-                        <FaLinkedin className="mr-2 h-4 w-4" />
+                        <Linkedin className="mr-2 h-4 w-4" />
                         LinkedIn
                       </a>
                       <a
@@ -202,7 +196,7 @@ const TeamSection = () => {
                         className="inline-flex items-center px-4 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors duration-200"
                         aria-label={`${selectedMember.name}'s Twitter profile`}
                       >
-                        <FaTwitter className="mr-2 h-4 w-4" />
+                        <Twitter className="mr-2 h-4 w-4" />
                         Twitter
                       </a>
                     </div>

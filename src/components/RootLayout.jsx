@@ -5,8 +5,7 @@ import { LazyMotion, domMax } from "framer-motion";
 import Container from "./Container";
 import Link from "next/link";
 import Logo from "./Logo";
-import { HiMenuAlt4 } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
+import { Menu, X } from "lucide-react";
 import Button from "./Button";
 
 import clsx from "clsx";
@@ -136,8 +135,8 @@ const Header = ({
               className={clsx(
                 "h-6 w-6",
                 invert
-                  ? "fill-white group-hover:fill-neutral-200"
-                  : "fill-neutral-950 group-hover:fill-neutral-700"
+                  ? "text-white group-hover:text-neutral-200"
+                  : "text-neutral-950 group-hover:text-neutral-700"
               )}
             />
           </button>
@@ -218,7 +217,7 @@ const RootLayoutInner = ({ children }) => {
           {/* Header */}
           <Header
             panelId={panelId}
-            icon={HiMenuAlt4}
+            icon={Menu}
             toggleRef={openRef}
             expanded={expanded}
             onToggle={() => {
@@ -243,7 +242,7 @@ const RootLayoutInner = ({ children }) => {
               <Header
                 invert
                 panelId={panelId}
-                icon={IoMdClose}
+                icon={X}
                 toggleRef={closeRef}
                 expanded={expanded}
                 onToggle={() => {
