@@ -8,14 +8,14 @@ const Button = ({ invert, href, className, children, ...props }) => {
   if (isRegister) {
     return (
       <a
-        href="https://elevatebyortusfinance.in"
+        href="https://elevate.ortusfinance.in"
         className={clsx(
           className,
           "group relative inline-flex items-center gap-2 rounded-full px-5 py-2 sm:text-sm md:text-base font-bold transition-all duration-300",
-          "bg-gradient-to-r from-blue-600 to-indigo-600 text-white",
-          "shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35",
-          "hover:scale-[1.03] active:scale-[0.98]",
-          "border border-blue-400/30"
+          "bg-[#0B1E36] hover:bg-[#071324] text-white",
+          "shadow-sm hover:shadow-md",
+          "hover:scale-[1.02] active:scale-[0.98]",
+          "border border-blue-900/10"
         )}
         target="_blank"
         rel="noopener noreferrer"

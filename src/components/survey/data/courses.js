@@ -82,7 +82,8 @@ export const COURSES = [
  * @param {Object} sectionScores - { sectionId: { score, maxScore } }
  * @returns {Array} - Recommended courses
  */
-export function getRecommendedCourses(sectionScores) {
+export function getRecommendedCourses(sectionScores = {}) {
+  if (!sectionScores) return [];
   // Find weak sections (score <= 35% of max)
   const weakSections = Object.entries(sectionScores)
     .filter(([, { score, maxScore }]) => (score / maxScore) * 100 <= 35)

@@ -1,13 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { m } from "framer-motion";
-import { Share2, RotateCcw, BookOpen, Clock, User, Award, ExternalLink, X, Check, AlertCircle, Lock, Target, Download, Wallet, ShoppingCart, Shield, CreditCard, PiggyBank, HelpCircle } from "lucide-react";
+import { Share2, RotateCcw, BookOpen, Clock, User, Award, ExternalLink, X, Check, AlertCircle, Lock, Target, Download, Loader2, Wallet, ShoppingCart, Shield, CreditCard, PiggyBank, HelpCircle } from "lucide-react";
 import { SECTIONS } from "./data/sections";
 import { getTier, TIER_LABELS, getSectionAdvice, getAdviceLevel } from "./data/scoring";
 import { getRecommendedCourses } from "./data/courses";
 import { UI_TEXT } from "./data/uiText";
 import { t } from "./data/languages";
 import ThemePicker from "./ThemePicker";
+import ReportCard from "./ReportCard";
 
 const SECTION_ICONS = {
   Wallet,
@@ -127,11 +128,31 @@ function SectionBar({ section, score, maxScore, lang, delay = 0, isLight }) {
 /**
  * Results page — score ring, breakdowns, advice, and course recommendations in glowing dark mode.
  */
-export default function SurveyResults({ lang, results, onRetake, onClose, theme, themeId, setThemeId }) {
+export default function SurveyResults({ lang, results, onRetake, onClose, theme, themeId, setThemeId, userName }) {
   const { totalScore = 0, sectionScores = {} } = results || {};
   const tier = getTier(totalScore);
   const recommendedCourses = getRecommendedCourses(sectionScores);
   const isLight = themeId === "light";
+
+  const reportCardRef = useRef(null);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadReport = useCallback(async () => {
+    if (!reportCardRef.current || isDownloading) return;
+    setIsDownloading(true);
+    try {
+      const html2canvas = (await import("html2canvas")).default;
+      const canvas = await html2canvas(reportCardRef.current, { scale: 2, useCORS: true, allowTaint: true });
+      const link = document.createElement("a");
+      link.download = `ortus-report${userName ? `-${userName.toLowerCase().replace(/\s+/g, "-")}` : ""}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    } catch (err) {
+      console.error("Download failed:", err);
+    } finally {
+      setIsDownloading(false);
+    }
+  }, [isDownloading, userName]);
 
   const handleShare = () => {
     const text = `I just completed a Financial Health Checkup and discovered areas where I can improve my money management. Take yours here: https://ortusfinance.in\n\n— Powered by Ortus Finance`;
@@ -172,9 +193,10 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
 
   return (
     <m.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
       className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 isolate print-report-container ${theme.bg} ${theme.cardBg}`}
       style={{ transform: "translate3d(0, 0, 0)" }}
     >
@@ -205,9 +227,15 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
 
       {/* Score Header */}
       <div className={`relative px-8 pt-16 pb-8 text-center border-b bg-gradient-to-b rounded-t-[22px] ${theme.headerBg}`}>
-        <p className={`text-[10px] font-extrabold uppercase tracking-[4px] mb-5 ${theme.accent}`}>
+        <p className={`text-[10px] font-extrabold uppercase tracking-[4px] mb-2 ${theme.accent}`}>
           {t(UI_TEXT.yourScore, lang)}
         </p>
+
+        {userName && (
+          <p className={`text-sm font-extrabold mb-4 ${isLight ? "text-neutral-900" : "text-white"}`}>
+            Great job, <span className={theme.accent}>{userName}!</span>
+          </p>
+        )}
 
         {/* Pulsing Score Ring */}
         <m.div
@@ -539,13 +567,17 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
           Book Free Consultation
         </a>
 
-        {/* PDF Download Button */}
+        {/* Report Image Download Button */}
         <button
-          onClick={() => window.print()}
+          onClick={handleDownloadReport}
+          disabled={isDownloading}
           className={`flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-xs font-bold transition duration-300 text-center cursor-pointer focus:outline-none ${theme.buttonSecondary}`}
         >
-          <Download className="h-4.5 w-4.5 text-blue-500" />
-          Download PDF Report
+          {isDownloading
+            ? <Loader2 className="h-4 w-4 animate-spin" />
+            : <Download className="h-4 w-4" />
+          }
+          {isDownloading ? "Generating image..." : "Download Report Image"}
         </button>
 
         {/* Secondary CTA */}
@@ -590,6 +622,15 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
       {/* Print-only Footer */}
       <div className="hidden print:block text-center text-[9px] font-bold tracking-wider py-8 uppercase text-neutral-400 border-t border-neutral-100 mt-8">
         {t(UI_TEXT.poweredBy, lang)}
+      </div>
+
+      {/* Off-screen report card captured by html2canvas on download */}
+      <div
+        ref={reportCardRef}
+        style={{ position: "fixed", left: "-9999px", top: 0, zIndex: -1, pointerEvents: "none" }}
+        aria-hidden="true"
+      >
+        <ReportCard lang={lang} results={results} themeId={themeId} userName={userName} />
       </div>
     </m.div>
   );

@@ -13,3 +13,114 @@
 .slick-slider {
   @apply bg-white shadow-sm;
 }
+
+@page {
+  size: A4 portrait;
+  margin: 15mm;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-page-root,
+  .print-page-root * {
+    visibility: visible;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print-page-root {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    width: 180mm;
+    max-width: 180mm !important;
+    margin: 0 auto;
+    overflow: visible !important;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+/* Announcement Bar Marquee Animations */
+@keyframes scroll-left-to-right {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0%, 0, 0); }
+}
+
+@keyframes rainbow-glaze {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbow-bg-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.marquee-container-global {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-content-global {
+  display: inline-flex;
+  animation: scroll-left-to-right 22s linear infinite;
+  will-change: transform;
+}
+
+.rainbow-text-global {
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    #ff0055, #ffdd00, #00ffaa, #00aaff, #d800ff, #ff0055
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: rainbow-glaze 3s linear infinite;
+}
+
+.rainbow-glaze-btn-global {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    #ff0055, #00ffaa, #00aaff, #ff0055
+  );
+  background-size: 200% 200%;
+  animation: rainbow-bg-shift 3s ease infinite;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+}
+
+/* Custom scrollbars */
+.custom-scrollbar-thin::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+.custom-scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+.custom-scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+

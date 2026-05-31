@@ -106,8 +106,8 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
 
       setSubmitted(true);
       setTimeout(() => {
-        onSubmitted();
-      }, 800);
+        onSubmitted({ name: form.name.trim() });
+      }, 500);
     } catch (err) {
       setSubmitError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -122,9 +122,10 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
 
   return (
     <m.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
       className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
       style={{ transform: "translate3d(0, 0, 0)" }}
     >

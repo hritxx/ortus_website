@@ -23,11 +23,11 @@ export default function DeviceMockup() {
         </div>
 
         {/* Portfolio Card */}
-        <div className="rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 p-5 text-white shadow-lg shadow-blue-900/20 mb-6 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-150"></div>
+        <div className="rounded-2xl bg-[#0B1E36] border border-blue-950/40 p-5 text-white shadow-lg shadow-blue-950/20 mb-6 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-150"></div>
           <p className="text-xs font-medium text-blue-100 mb-1 relative z-10">Total Portfolio Value</p>
           <p className="text-2xl sm:text-3xl font-bold mb-2 relative z-10 tracking-tight">₹ 24,75,000</p>
-          <div className="flex items-center gap-1 text-xs font-medium bg-white/20 inline-flex px-2 py-1 rounded-md backdrop-blur-md relative z-10">
+          <div className="flex items-center gap-1 text-xs font-medium bg-white/10 inline-flex px-2 py-1 rounded-md backdrop-blur-md relative z-10">
             <TrendingUp className="w-3.5 h-3.5 text-emerald-300" />
             <span className="text-emerald-50">12.5% (1Y)</span>
           </div>
@@ -35,14 +35,7 @@ export default function DeviceMockup() {
           {/* Sparkline Graph */}
           <div className="mt-5 h-12 w-full flex items-end justify-between relative z-10">
              <svg className="w-full h-full" viewBox="0 0 100 40" preserveAspectRatio="none">
-               <path d="M0,35 C10,35 20,20 30,25 C40,30 50,10 60,15 C70,20 80,5 100,0" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-               <path d="M0,35 C10,35 20,20 30,25 C40,30 50,10 60,15 C70,20 80,5 100,0 L100,40 L0,40 Z" fill="url(#sparkline-gradient)" className="opacity-50" />
-               <defs>
-                 <linearGradient id="sparkline-gradient" x1="0" y1="0" x2="0" y2="1">
-                   <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />
-                   <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-                 </linearGradient>
-               </defs>
+               <path d="M0,35 C10,35 20,20 30,25 C40,30 50,10 60,15 C70,20 80,5 100,0" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
              </svg>
           </div>
         </div>
@@ -52,7 +45,7 @@ export default function DeviceMockup() {
           {[
             { icon: PlusCircle, label: "Invest", color: "text-blue-600", bg: "bg-blue-100" },
             { icon: PieChart, label: "SIP", color: "text-emerald-600", bg: "bg-emerald-100" },
-            { icon: Shield, label: "Explore", color: "text-indigo-600", bg: "bg-indigo-100" },
+            { icon: Shield, label: "Explore", color: "text-blue-600", bg: "bg-blue-50" },
             { icon: Bell, label: "More", color: "text-neutral-600", bg: "bg-neutral-100" },
           ].map((action, i) => (
             <div key={i} className="flex flex-col items-center gap-1.5">

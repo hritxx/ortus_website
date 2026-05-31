@@ -93,9 +93,10 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
 
   return (
     <m.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
       className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl flex flex-col justify-between min-h-[580px] transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
       style={{ transform: "translate3d(0, 0, 0)" }}
     >
@@ -130,20 +131,22 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
               <span className={`text-[9px] font-bold uppercase tracking-wider ${theme.textMuted} sm:hidden`}>Theme</span>
               <ThemePicker themeId={themeId} setThemeId={setThemeId} pickerId="questions" />
             </div>
-            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
-              <span className={`text-[9px] font-bold uppercase tracking-wider ${theme.textMuted} sm:hidden`}>Language</span>
-              <div className="flex gap-1 overflow-x-auto max-w-[180px] sm:max-w-[240px] custom-scrollbar-thin pr-1 py-1">
+            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+              <span className={`text-[9px] font-bold uppercase tracking-wider shrink-0 ${theme.textMuted} sm:hidden`}>Language</span>
+              <select
+                value={lang}
+                onChange={(e) => setLang(e.target.value)}
+                style={{ colorScheme: isLight ? "light" : "dark" }}
+                className={`text-[9px] font-bold rounded-lg border px-1.5 py-1 cursor-pointer focus:outline-none
+                  ${isLight
+                    ? "bg-white border-neutral-200 text-neutral-700"
+                    : "bg-neutral-800 border-white/10 text-neutral-300"
+                  }`}
+              >
                 {Object.entries(LANGUAGES).map(([code, { nativeName }]) => (
-                  <button
-                    key={code}
-                    onClick={() => setLang(code)}
-                    className={`shrink-0 px-2 py-0.5 rounded-full text-[9px] font-bold transition-all border cursor-pointer
-                      ${lang === code ? theme.pillActive : theme.pillInactive}`}
-                  >
-                    {nativeName}
-                  </button>
+                  <option key={code} value={code}>{nativeName}</option>
                 ))}
-              </div>
+              </select>
             </div>
           </div>
         </div>
@@ -172,10 +175,10 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
             /* Dedicated Section Intro Screen to prevent overlapping text */
             <m.div
               key={`intro-${currentSection.id}`}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="flex-1 flex flex-col items-center justify-center text-center p-4 min-h-[380px]"
             >
               <span className={`text-[10px] font-extrabold uppercase tracking-[4px] mb-2 ${theme.accent}`}>

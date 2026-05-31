@@ -10,11 +10,9 @@ import { HeartPulse, Coins } from "lucide-react";
 export default function SurveyFAB({ onClick, visible = true }) {
   const [hovered, setHovered] = useState(false);
 
-  if (!visible) return null;
-
   return (
     <AnimatePresence>
-      <m.div
+      {visible && <m.div
         initial={{ opacity: 0, y: 40, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 40, scale: 0.8 }}
@@ -74,7 +72,7 @@ export default function SurveyFAB({ onClick, visible = true }) {
             Health Checkup
           </span>
         </m.button>
-      </m.div>
+      </m.div>}
     </AnimatePresence>
   );
 }

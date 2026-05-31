@@ -7,6 +7,7 @@ import SurveyQuestions from "./SurveyQuestions";
 import SurveyDetails from "./SurveyDetails";
 import SurveyResults from "./SurveyResults";
 import SurveyFAB from "./SurveyFAB";
+import PrintableReport from "./PrintableReport";
 import { DEFAULT_LANG } from "./data/languages";
 import { SURVEY_THEMES } from "./data/themes";
 
@@ -21,6 +22,7 @@ export default function FinancialSurvey() {
   const [phase, setPhase] = useState("closed"); // closed | invite | quiz | details | result
   const [lang, setLang] = useState(DEFAULT_LANG);
   const [results, setResults] = useState(null);
+  const [userName, setUserName] = useState("");
   const [fabVisible, setFabVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
   
@@ -90,7 +92,8 @@ export default function FinancialSurvey() {
     setPhase("details");
   }, []);
 
-  const handleDetailsSubmitted = useCallback(() => {
+  const handleDetailsSubmitted = useCallback(({ name } = {}) => {
+    if (name) setUserName(name);
     setPhase("result");
   }, []);
 
@@ -112,6 +115,12 @@ export default function FinancialSurvey() {
       {/* FAB — visible only when survey is closed */}
       <SurveyFAB onClick={handleOpenFromFAB} visible={fabVisible && !isModalOpen} />
 
+      {/* Printable report — second portal, only rendered when results are ready */}
+      {mounted && typeof document !== "undefined" && phase === "result" && results && createPortal(
+        <PrintableReport lang={lang} results={results} theme={theme} themeId={themeId} userName={userName} />,
+        document.body
+      )}
+
       {/* Modal overlay — Portaled to document.body to prevent stacking context clipping on mobile */}
       {mounted && typeof document !== "undefined" && createPortal(
         <AnimatePresence>
@@ -123,11 +132,8 @@ export default function FinancialSurvey() {
               transition={{ duration: 0.3 }}
               className="fixed inset-0 z-[100] flex items-start justify-center px-3 pb-3 pt-20 sm:items-center sm:p-4"
             >
-              {/* Backdrop */}
-              <m.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+              {/* Backdrop — plain div; parent overlay handles fade-in/out */}
+              <div
                 className={`absolute inset-0 backdrop-blur-sm transition-colors duration-500
                   ${theme.id === "light" ? "bg-neutral-900/40" : "bg-neutral-950/60"}`}
                 onClick={phase === "invite" ? handleDismiss : undefined}
@@ -137,7 +143,7 @@ export default function FinancialSurvey() {
               <div className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
                               scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-300
                               p-3 sm:p-4 sm:max-h-[90vh]">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout">
                   {phase === "invite" && (
                     <SurveyInvite
                       key="invite"
@@ -182,6 +188,7 @@ export default function FinancialSurvey() {
                       theme={theme}
                       themeId={themeId}
                       setThemeId={handleSetThemeId}
+                      userName={userName}
                     />
                   )}
                 </AnimatePresence>

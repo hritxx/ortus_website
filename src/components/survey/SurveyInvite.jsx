@@ -15,12 +15,12 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
 
   return (
     <m.div
-      initial={{ opacity: 0, scale: 0.94, y: 30 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.94, y: 30 }}
-      transition={{ duration: 0.4, type: "spring", stiffness: 260, damping: 22 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -12 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
-      style={{ perspective: "1200px", transform: "translate3d(0, 0, 0)" }}
+      style={{ transform: "translate3d(0, 0, 0)" }}
     >
       {/* Background glowing gradients */}
       {!isLight && (
