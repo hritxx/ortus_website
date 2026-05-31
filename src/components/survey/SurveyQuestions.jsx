@@ -1,8 +1,7 @@
 "use client";
 import { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ArrowRight, Check, Sparkles, HelpCircle, Loader2 } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import { m, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ArrowRight, Check, Sparkles, HelpCircle, Loader2, Wallet, ShoppingCart, Shield, CreditCard, PiggyBank, Target } from "lucide-react";
 import { ALL_QUESTIONS } from "./data/questions";
 import { SECTIONS } from "./data/sections";
 import { LANGUAGES, t } from "./data/languages";
@@ -10,6 +9,16 @@ import { UI_TEXT } from "./data/uiText";
 import { SECTION_ILLUSTRATIONS } from "./SurveyIllustrations";
 import { CHEEKY_REMARKS } from "./data/cheekyRemarks";
 import ThemePicker from "./ThemePicker";
+
+const SECTION_ICONS = {
+  Wallet,
+  ShoppingCart,
+  Shield,
+  CreditCard,
+  PiggyBank,
+  Target,
+  HelpCircle
+};
 
 /**
  * Question stepper component — fully customizable themed layout.
@@ -69,7 +78,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
   }, [qIndex]);
 
   const overallProgress = ((qIndex + 1) / questions.length) * 100;
-  const SectionIcon = LucideIcons[currentSection?.icon] || HelpCircle;
+  const SectionIcon = SECTION_ICONS[currentSection?.icon] || HelpCircle;
   const IllustrationComponent = SECTION_ILLUSTRATIONS[currentQ.sectionId];
 
   // Dismiss section banner on load or step transition (increased slightly for premium reading time)
@@ -83,7 +92,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
   }, [showSectionBanner, isNewSection, qIndex]);
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
@@ -97,7 +106,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
 
       {/* Top progress bar */}
       <div className={`h-1 w-full rounded-t-[22px] ${isLight ? "bg-neutral-200" : "bg-white/5"}`}>
-        <motion.div
+        <m.div
           className={`h-full bg-gradient-to-r rounded-r-full ${theme.progressBar}`}
           initial={{ width: 0 }}
           animate={{ width: `${overallProgress}%` }}
@@ -107,7 +116,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
 
       {/* Header controls & dots */}
       <div className={`px-6 pt-4 pb-3 border-b z-10 ${isLight ? "bg-neutral-100/50 border-neutral-200/60" : "bg-neutral-900/20 border-white/5"} backdrop-blur-sm`}>
-        <div className="flex flex-col sm:flex-row gap-2 justify-between items-start sm:items-center mb-3">
+        <div className="flex flex-col sm:flex-row gap-3.5 justify-between items-start sm:items-center mb-3.5">
           {/* Section index indicator */}
           <span className={`text-[10px] font-extrabold uppercase tracking-wider whitespace-nowrap ${theme.textMuted}`}>
             {t(UI_TEXT.sectionOf, lang)
@@ -116,19 +125,25 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
           </span>
           
           {/* Theme selection + Language picker */}
-          <div className="flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end">
-            <ThemePicker themeId={themeId} setThemeId={setThemeId} />
-            <div className="flex gap-1 overflow-x-auto max-w-[140px] sm:max-w-[200px] scrollbar-none pr-1">
-              {Object.entries(LANGUAGES).map(([code, { nativeName }]) => (
-                <button
-                  key={code}
-                  onClick={() => setLang(code)}
-                  className={`shrink-0 px-2 py-0.5 rounded-full text-[9px] font-bold transition-all border cursor-pointer
-                    ${lang === code ? theme.pillActive : theme.pillInactive}`}
-                >
-                  {nativeName}
-                </button>
-              ))}
+          <div className="flex flex-col gap-2.5 w-full sm:flex-row sm:items-center sm:gap-3 sm:w-auto sm:justify-end">
+            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+              <span className={`text-[9px] font-bold uppercase tracking-wider ${theme.textMuted} sm:hidden`}>Theme</span>
+              <ThemePicker themeId={themeId} setThemeId={setThemeId} pickerId="questions" />
+            </div>
+            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+              <span className={`text-[9px] font-bold uppercase tracking-wider ${theme.textMuted} sm:hidden`}>Language</span>
+              <div className="flex gap-1 overflow-x-auto max-w-[180px] sm:max-w-[240px] custom-scrollbar-thin pr-1 py-1">
+                {Object.entries(LANGUAGES).map(([code, { nativeName }]) => (
+                  <button
+                    key={code}
+                    onClick={() => setLang(code)}
+                    className={`shrink-0 px-2 py-0.5 rounded-full text-[9px] font-bold transition-all border cursor-pointer
+                      ${lang === code ? theme.pillActive : theme.pillInactive}`}
+                  >
+                    {nativeName}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -155,7 +170,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
         <AnimatePresence mode="wait">
           {showSectionBanner && isNewSection ? (
             /* Dedicated Section Intro Screen to prevent overlapping text */
-            <motion.div
+            <m.div
               key={`intro-${currentSection.id}`}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -176,10 +191,10 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
                 <Loader2 className={`h-4 w-4 animate-spin ${theme.accent}`} />
                 <span>Loading questions...</span>
               </div>
-            </motion.div>
+            </m.div>
           ) : (
             /* Normal Question Rendering */
-            <motion.div
+            <m.div
               key={currentQ.id}
               custom={direction}
               initial={{ x: direction > 0 ? 30 : -30, opacity: 0 }}
@@ -207,7 +222,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
                   {currentQ.options.map((opt, i) => {
                     const isSelected = selectedScore === opt.score;
                     return (
-                      <motion.button
+                      <m.button
                         key={i}
                         onClick={() => handleSelectOption(opt.score)}
                         whileHover={{ scale: 1.002, x: 1 }}
@@ -229,7 +244,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
                           {isSelected && <Check className={`h-3 w-3 stroke-[3.5] ${isLight ? "text-indigo-600" : theme.accent}`} />}
                         </div>
                         <span className="text-xs sm:text-sm font-semibold leading-snug">{t(opt.label, lang)}</span>
-                      </motion.button>
+                      </m.button>
                     );
                   })}
                 </div>
@@ -238,7 +253,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
               {/* Cheeky Real-Talk Dynamic Drawer */}
               <AnimatePresence>
                 {selectedScore !== undefined && CHEEKY_REMARKS[currentQ.id]?.[selectedScore] && (
-                  <motion.div
+                  <m.div
                     initial={{ height: 0, opacity: 0, y: 10 }}
                     animate={{ height: "auto", opacity: 1, y: 0 }}
                     exit={{ height: 0, opacity: 0, y: 10 }}
@@ -257,10 +272,10 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
                         {CHEEKY_REMARKS[currentQ.id][selectedScore]}
                       </div>
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
@@ -289,7 +304,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
           </span>
 
           {/* Continue Button (Glows only when selection is active) */}
-          <motion.button
+          <m.button
             onClick={handleContinue}
             disabled={selectedScore === undefined}
             whileHover={selectedScore !== undefined ? { scale: 1.02 } : {}}
@@ -305,9 +320,9 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
           >
             <span>Continue</span>
             <ArrowRight className="h-3.5 w-3.5" />
-          </motion.button>
+          </m.button>
         </div>
       )}
-    </motion.div>
+    </m.div>
   );
 }

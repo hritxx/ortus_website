@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Users, Shield, Award, Clock } from 'lucide-react';
 
 const metrics = [
@@ -28,7 +28,7 @@ const itemVariants = {
 
 export default function MetricCards() {
   return (
-    <motion.div 
+    <m.div 
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -36,7 +36,7 @@ export default function MetricCards() {
       className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full"
     >
       {metrics.map((item, i) => (
-        <motion.div 
+        <m.div 
           key={i}
           variants={itemVariants}
           whileHover={{ y: -5, scale: 1.02, transition: { duration: 0.2 } }}
@@ -49,8 +49,8 @@ export default function MetricCards() {
             <h4 className="text-sm sm:text-lg font-bold text-neutral-900">{item.title}</h4>
             <p className="text-[11px] sm:text-xs text-neutral-500 font-medium leading-tight mt-0.5">{item.subtitle}</p>
           </div>
-        </motion.div>
+        </m.div>
       ))}
-    </motion.div>
+    </m.div>
   );
 }

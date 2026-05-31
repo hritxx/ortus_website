@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 import {
   BadgeCheck,
   Building2,
@@ -35,7 +35,7 @@ const staggerContainer = {
 
 const CertificateDetail = ({ icon: Icon, label, value, reducedMotion }) => {
   return (
-    <motion.div 
+    <m.div 
       whileHover={reducedMotion ? undefined : { y: -4, scale: 1.01 }}
       transition={{ duration: 0.25 }}
       className="relative group p-5 rounded-[18px] bg-white/90 border border-neutral-100 shadow-[0_10px_30px_rgba(15,23,42,0.04)] hover:shadow-[0_14px_34px_rgba(37,99,235,0.10)] transition-shadow duration-300"
@@ -54,7 +54,7 @@ const CertificateDetail = ({ icon: Icon, label, value, reducedMotion }) => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -77,7 +77,7 @@ const StartupCertificate = () => {
       </div>
 
       <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8" ref={containerRef}>
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -85,7 +85,7 @@ const StartupCertificate = () => {
         >
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-16 sm:mb-24">
-            <motion.div variants={fadeIn} className="flex justify-center mb-6">
+            <m.div variants={fadeIn} className="flex justify-center mb-6">
               <div className="relative group cursor-default">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full blur opacity-18 group-hover:opacity-28 transition duration-300"></div>
                 <div className="relative flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-neutral-200/60 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
@@ -95,31 +95,31 @@ const StartupCertificate = () => {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
             
-            <motion.h2 
+            <m.h2 
               variants={fadeIn}
               className="text-[40px] sm:text-[56px] lg:text-[76px] font-semibold tracking-[-0.04em] text-neutral-950 mb-6 leading-[0.95]"
             >
               Official Startup Registration
-            </motion.h2>
+            </m.h2>
             
-            <motion.p 
+            <m.p 
               variants={fadeIn}
               className="text-[17px] sm:text-[18px] text-neutral-500 font-medium"
             >
               Registered under the{" "}
               <span className="text-blue-600 font-semibold">Tripura Start-Up Policy</span>{" "}
               by the Government of Tripura
-            </motion.p>
+            </m.p>
           </div>
 
           {/* Premium Certificate Card */}
-          <motion.div 
+          <m.div 
             variants={fadeIn}
             className="w-full max-w-5xl mx-auto"
           >
-            <motion.div 
+            <m.div 
               whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.005 }}
               transition={{ type: "spring", stiffness: 240, damping: 24 }}
               className="relative rounded-[30px] bg-white shadow-[0_28px_80px_-28px_rgba(15,23,42,0.18)] border border-neutral-200/60 overflow-hidden group"
@@ -264,11 +264,11 @@ const StartupCertificate = () => {
                 </div>
 
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Trust Badges Row */}
-          <motion.div 
+          <m.div 
             variants={fadeIn}
             className="mt-16 flex flex-wrap justify-center gap-4 sm:gap-6 max-w-3xl mx-auto"
           >
@@ -277,7 +277,7 @@ const StartupCertificate = () => {
               { icon: BadgeCheck, text: "Officially Registered", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100/50" },
               { icon: FileText, text: "Legal Certification", color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100/50" },
             ].map((badge, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.01 }}
                 className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/82 border border-neutral-200/50 shadow-[0_8px_22px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_28px_rgba(15,23,42,0.08)] transition-shadow duration-300 cursor-default"
@@ -288,11 +288,11 @@ const StartupCertificate = () => {
                 <span className="text-[13px] font-semibold text-neutral-700 tracking-tight">
                   {badge.text}
                 </span>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
 
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

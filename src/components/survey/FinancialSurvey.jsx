@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import SurveyInvite from "./SurveyInvite";
 import SurveyQuestions from "./SurveyQuestions";
 import SurveyDetails from "./SurveyDetails";
@@ -116,7 +116,7 @@ export default function FinancialSurvey() {
       {mounted && typeof document !== "undefined" && createPortal(
         <AnimatePresence>
           {isModalOpen && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -124,7 +124,7 @@ export default function FinancialSurvey() {
               className="fixed inset-0 z-[100] flex items-start justify-center px-3 pb-3 pt-20 sm:items-center sm:p-4"
             >
               {/* Backdrop */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -186,7 +186,7 @@ export default function FinancialSurvey() {
                   )}
                 </AnimatePresence>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>,
         document.body

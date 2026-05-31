@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Lock, User, Phone, Mail, ArrowRight, Loader2, Check, X } from "lucide-react";
 import { UI_TEXT } from "./data/uiText";
 import { t } from "./data/languages";
@@ -120,58 +120,50 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
     PHONE_REGEX.test(form.phone) &&
     (!form.email.trim() || EMAIL_REGEX.test(form.email));
 
-  if (submitted) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.96 }}
-        className={`relative w-full max-w-lg mx-auto p-12 text-center rounded-3xl border shadow-2xl flex flex-col items-center justify-center min-h-[340px] transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
-        style={{ transform: "translate3d(0, 0, 0)" }}
-      >
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mb-6 shadow-[0_0_20px_rgba(16,185,129,0.15)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-            stroke="currentColor"
-            className="w-8 h-8"
-          >
-            <motion.path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            />
-          </svg>
-        </motion.div>
-        
-        <h3 className={`text-xl font-extrabold mb-2 tracking-tight ${isLight ? "text-neutral-900" : "text-white"}`}>
-          Details Received!
-        </h3>
-        <p className={`text-sm animate-pulse ${theme.textMuted}`}>
-          Preparing your financial readiness results...
-        </p>
-      </motion.div>
-    );
-  }
-
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
       className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
       style={{ transform: "translate3d(0, 0, 0)" }}
     >
+      {submitted ? (
+        <div className="p-12 text-center flex flex-col items-center justify-center min-h-[340px]">
+          <m.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mb-6 shadow-[0_0_20px_rgba(16,185,129,0.15)]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={3}
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <m.path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+              />
+            </svg>
+          </m.div>
+          
+          <h3 className={`text-xl font-extrabold mb-2 tracking-tight ${isLight ? "text-neutral-900" : "text-white"}`}>
+            Details Received!
+          </h3>
+          <p className={`text-sm animate-pulse ${theme.textMuted}`}>
+            Preparing your financial readiness results...
+          </p>
+        </div>
+      ) : (
+        <>
       {/* Background Orbs */}
       {!isLight && (
         <>
@@ -182,7 +174,7 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
 
       {/* Floating Theme Picker */}
       <div className="absolute top-4 left-4 z-20">
-        <ThemePicker themeId={themeId} setThemeId={setThemeId} />
+        <ThemePicker themeId={themeId} setThemeId={setThemeId} pickerId="details" />
       </div>
 
       {/* Compact Score Teaser Header */}
@@ -313,7 +305,7 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
         </div>
 
         {/* Submit button */}
-        <motion.button
+        <m.button
           onClick={handleSubmit}
           disabled={!isFormValid || submitting}
           whileHover={isFormValid && !submitting ? { scale: 1.01, translateY: -1 } : {}}
@@ -339,14 +331,16 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
               <ArrowRight className="h-4 w-4" />
             </>
           )}
-        </motion.button>
+        </m.button>
       </div>
 
       {/* Footer */}
       <p className={`text-center text-[9px] font-bold tracking-wider pb-4 uppercase ${theme.textMutedExtra}`}>
         {t(UI_TEXT.poweredBy, lang)}
       </p>
-    </motion.div>
+        </>
+      )}
+    </m.div>
   );
 }
 
@@ -371,7 +365,7 @@ function FormField({
   isLight,
 }) {
   return (
-    <motion.div
+    <m.div
       animate={error ? { x: [-6, 6, -4, 4, -2, 2, 0] } : {}}
       transition={{ duration: 0.4 }}
       className={optional ? "opacity-75 hover:opacity-100 transition-opacity duration-200" : ""}
@@ -405,13 +399,13 @@ function FormField({
         />
       </div>
       {error ? (
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-1 text-[10px] text-red-400 font-semibold pl-1 animate-pulse"
         >
           {error}
-        </motion.p>
+        </m.p>
       ) : (
         helperText && (
           <p className={`mt-1 text-[10px] pl-1 ${theme.textMutedExtra}`}>
@@ -419,6 +413,6 @@ function FormField({
           </p>
         )
       )}
-    </motion.div>
+    </m.div>
   );
 }

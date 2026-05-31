@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useId, useState, useRef, useEffect } from "react";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Container from "./Container";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -38,45 +39,54 @@ const AnnouncementBanner = () => {
     setVisible(false);
   };
 
+  const bannerItem = (
+    <div className="flex items-center gap-2 shrink-0 px-8">
+      <span className="relative flex h-2 w-2 shrink-0">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      <span className="rainbow-text-global text-[11px] sm:text-xs font-black tracking-wide select-none">
+        Applications Open — Openings Filling Fast!
+      </span>
+      <span className="rainbow-glaze-btn-global rounded-full px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider shrink-0 shadow-md select-none">
+        Apply Now →
+      </span>
+    </div>
+  );
+
   return (
-    <div className="relative z-50 w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 overflow-hidden">
-      {/* Animated shimmer overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)",
-          backgroundSize: "200% 100%",
-          animation: "banner-shimmer 3s ease-in-out infinite",
-        }}
-      />
+    <div className="relative z-50 w-full bg-[#0a0a0a] overflow-hidden border-b border-white/5 py-1.5">
       <a
-        href="https://elevatebyortusfinance.in"
+        href="https://elevate.ortusfinance.in"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 px-4 py-2.5 text-white no-underline"
+        className="marquee-container-global block w-full no-underline"
       >
-        <span className="text-sm sm:text-sm font-bold tracking-wide text-center leading-snug">
-          <span className="mr-1.5">🎓</span>
-          Applications Open — Openings Filling Fast!
-        </span>
-        <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm border border-white/20 transition hover:bg-white/25 shrink-0">
-          Apply Now →
-        </span>
+        <div className="marquee-content-global flex">
+          {/* Group 1 */}
+          <div className="flex shrink-0">
+            {bannerItem}
+            {bannerItem}
+            {bannerItem}
+            {bannerItem}
+          </div>
+          {/* Group 2 (Duplicate for seamless left-to-right scrolling) */}
+          <div className="flex shrink-0">
+            {bannerItem}
+            {bannerItem}
+            {bannerItem}
+            {bannerItem}
+          </div>
+        </div>
       </a>
       <button
         onClick={handleDismiss}
         className="absolute right-2 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full
-                   text-white/60 hover:text-white hover:bg-white/10 transition cursor-pointer"
+                   text-white/60 hover:text-white hover:bg-white/10 transition cursor-pointer z-20"
         aria-label="Dismiss banner"
       >
         ✕
       </button>
-      <style jsx>{`
-        @keyframes banner-shimmer {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
-        }
-      `}</style>
     </div>
   );
 };
@@ -283,8 +293,13 @@ const RootLayoutInner = ({ children }) => {
 
 const RootLayout = ({ children }) => {
   const pathname = usePathname();
-  return <RootLayoutInner key={pathname}>
-    {children}</RootLayoutInner>;
+  return (
+    <LazyMotion features={domAnimation} strict>
+      <RootLayoutInner key={pathname}>
+        {children}
+      </RootLayoutInner>
+    </LazyMotion>
+  );
 };
 
 export default RootLayout;

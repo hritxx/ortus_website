@@ -1,14 +1,23 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Share2, RotateCcw, BookOpen, Clock, User, Award, ExternalLink, X, Check, AlertCircle, Lock, Target } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import { m } from "framer-motion";
+import { Share2, RotateCcw, BookOpen, Clock, User, Award, ExternalLink, X, Check, AlertCircle, Lock, Target, Download, Wallet, ShoppingCart, Shield, CreditCard, PiggyBank, HelpCircle } from "lucide-react";
 import { SECTIONS } from "./data/sections";
 import { getTier, TIER_LABELS, getSectionAdvice, getAdviceLevel } from "./data/scoring";
 import { getRecommendedCourses } from "./data/courses";
 import { UI_TEXT } from "./data/uiText";
 import { t } from "./data/languages";
 import ThemePicker from "./ThemePicker";
+
+const SECTION_ICONS = {
+  Wallet,
+  ShoppingCart,
+  Shield,
+  CreditCard,
+  PiggyBank,
+  Target,
+  HelpCircle
+};
 
 const SECTION_NAMES = {
   income: "Income Stability",
@@ -33,7 +42,7 @@ function ScoreRing({ score, color, size = 160 }) {
       <svg width={size} height={size} className="-rotate-90">
         <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth={10} />
         {/* Pulsing outer glow stroke */}
-        <motion.circle
+        <m.circle
           cx={size / 2} cy={size / 2} r={radius} fill="none" stroke={color} strokeWidth={10}
           strokeDasharray={circumference}
           strokeDashoffset={offset}
@@ -44,7 +53,7 @@ function ScoreRing({ score, color, size = 160 }) {
           style={{ transformOrigin: "center", filter: `blur(4px) drop-shadow(0 0 8px ${color})` }}
         />
         {/* Main interactive progress stroke */}
-        <motion.circle
+        <m.circle
           cx={size / 2} cy={size / 2} r={radius} fill="none" stroke={color} strokeWidth={10}
           strokeDasharray={circumference}
           initial={{ strokeDashoffset: circumference }}
@@ -89,7 +98,7 @@ function AnimatedCounter({ target, color }) {
 function SectionBar({ section, score, maxScore, lang, delay = 0, isLight }) {
   const pct = (score / maxScore) * 100;
   const barColor = pct <= 35 ? "#EF4444" : pct <= 65 ? "#F59E0B" : pct <= 85 ? "#3B82F6" : "#10B981";
-  const Icon = LucideIcons[section.icon] || LucideIcons.HelpCircle;
+  const Icon = SECTION_ICONS[section.icon] || HelpCircle;
 
   return (
     <div className="mb-4">
@@ -103,7 +112,7 @@ function SectionBar({ section, score, maxScore, lang, delay = 0, isLight }) {
         </span>
       </div>
       <div className={`h-2 w-full rounded-full overflow-hidden border ${isLight ? 'bg-neutral-200 border-neutral-300/40' : 'bg-white/5 border-white/5'}`}>
-        <motion.div
+        <m.div
           className="h-full rounded-full"
           style={{ backgroundColor: barColor, boxShadow: `0 0 6px ${barColor}50` }}
           initial={{ width: 0 }}
@@ -119,7 +128,7 @@ function SectionBar({ section, score, maxScore, lang, delay = 0, isLight }) {
  * Results page — score ring, breakdowns, advice, and course recommendations in glowing dark mode.
  */
 export default function SurveyResults({ lang, results, onRetake, onClose, theme, themeId, setThemeId }) {
-  const { totalScore, sectionScores } = results;
+  const { totalScore = 0, sectionScores = {} } = results || {};
   const tier = getTier(totalScore);
   const recommendedCourses = getRecommendedCourses(sectionScores);
   const isLight = themeId === "light";
@@ -162,18 +171,18 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
   });
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 isolate ${theme.bg} ${theme.cardBg}`}
+      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 isolate print-report-container ${theme.bg} ${theme.cardBg}`}
       style={{ transform: "translate3d(0, 0, 0)" }}
     >
       {/* Close button */}
       {onClose && (
         <button
           onClick={onClose}
-          className={`absolute top-4 right-4 z-20 flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2
+          className={`absolute top-4 right-4 z-20 flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 print:hidden
             ${isLight 
               ? "bg-neutral-100 border-neutral-200 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 focus-visible:ring-indigo-500" 
               : "bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10 hover:text-white focus-visible:ring-blue-500"
@@ -190,8 +199,8 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
       )}
 
       {/* Floating Theme Picker */}
-      <div className="absolute top-4 left-4 z-20">
-        <ThemePicker themeId={themeId} setThemeId={setThemeId} />
+      <div className="absolute top-4 left-4 z-20 print:hidden">
+        <ThemePicker themeId={themeId} setThemeId={setThemeId} pickerId="results" />
       </div>
 
       {/* Score Header */}
@@ -201,13 +210,13 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
         </p>
 
         {/* Pulsing Score Ring */}
-        <motion.div
+        <m.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1, type: "spring" }}
         >
           <ScoreRing score={totalScore} color={tier.color} />
-        </motion.div>
+        </m.div>
 
         {/* 2. Percentile Comparison */}
         <div className="mt-3.5">
@@ -217,7 +226,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
         </div>
 
         {/* Tier Label */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
@@ -227,7 +236,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
           <span className="text-lg font-black" style={{ color: tier.color }}>
             {t(TIER_LABELS[tier.id], lang)}
           </span>
-        </motion.div>
+        </m.div>
 
         {/* 5. Score-Change Framing */}
         {nextTierInfo ? (
@@ -352,13 +361,13 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
               ? (isWeak ? "border-red-500 bg-red-50/50 text-red-950" : level === "mid" ? "border-amber-500 bg-amber-50/50 text-amber-950" : "border-emerald-500 bg-emerald-50/50 text-emerald-950")
               : (isWeak ? "border-red-500 bg-red-500/5 text-red-200" : level === "mid" ? "border-amber-500 bg-amber-50/5 text-amber-200" : "border-emerald-500 bg-emerald-50/5 text-emerald-200");
             
-            const Icon = LucideIcons[section.icon] || LucideIcons.HelpCircle;
+            const Icon = SECTION_ICONS[section.icon] || HelpCircle;
 
             // 6. Split sentences to form actionable checklists rather than plain paragraphs
             const sentences = adviceText.split(". ").filter(s => s.trim());
 
             return (
-              <motion.div
+              <m.div
                 key={section.id}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -397,7 +406,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
                     );
                   })}
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
@@ -421,7 +430,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
           {/* Clean Vertical Stacked Course Cards with correct padding and vector icons */}
           <div className="space-y-4">
             {recommendedCourses.map((course, i) => (
-              <motion.div
+              <m.div
                 key={course.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -481,7 +490,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
                     <ExternalLink className="h-3 w-3" />
                   </a>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -507,7 +516,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
           </p>
         </div>
         <a
-          href="https://elevatebyortusfinance.in"
+          href="https://elevate.ortusfinance.in"
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-flex items-center justify-center gap-1.5 rounded-xl px-5 py-3 text-xs font-bold transition duration-300 text-center shrink-0 shadow-md ${theme.buttonPrimary}`}
@@ -518,10 +527,10 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
       </div>
 
       {/* Buttons & CTA Hierarchy */}
-      <div className={`px-6 py-6 space-y-3.5 rounded-b-[22px] ${isLight ? 'bg-neutral-100/30' : ''}`}>
+      <div className={`px-6 py-6 space-y-3.5 rounded-b-[22px] print:hidden ${isLight ? 'bg-neutral-100/30' : ''}`}>
         {/* Primary CTA */}
         <a
-          href="https://elevatebyortusfinance.in"
+          href="https://elevate.ortusfinance.in"
           target="_blank"
           rel="noopener noreferrer"
           className={`flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs sm:text-sm font-bold text-center shadow-xl focus:outline-none ${theme.buttonPrimary}`}
@@ -529,6 +538,15 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
           <Award className="h-4 w-4" />
           Book Free Consultation
         </a>
+
+        {/* PDF Download Button */}
+        <button
+          onClick={() => window.print()}
+          className={`flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-xs font-bold transition duration-300 text-center cursor-pointer focus:outline-none ${theme.buttonSecondary}`}
+        >
+          <Download className="h-4.5 w-4.5 text-blue-500" />
+          Download PDF Report
+        </button>
 
         {/* Secondary CTA */}
         <a
@@ -568,6 +586,11 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
           {t(UI_TEXT.poweredBy, lang)}
         </p>
       </div>
-    </motion.div>
+
+      {/* Print-only Footer */}
+      <div className="hidden print:block text-center text-[9px] font-bold tracking-wider py-8 uppercase text-neutral-400 border-t border-neutral-100 mt-8">
+        {t(UI_TEXT.poweredBy, lang)}
+      </div>
+    </m.div>
   );
 }

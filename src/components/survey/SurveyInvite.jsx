@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import { HeartPulse, ArrowRight, X, Clock } from "lucide-react";
+import { m } from "framer-motion";
+import { HeartPulse, ArrowRight, X, Clock, Coins } from "lucide-react";
 import { UI_TEXT } from "./data/uiText";
 import { LANGUAGES } from "./data/languages";
 import { t } from "./data/languages";
@@ -14,7 +14,7 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
   const isLight = themeId === "light";
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.94, y: 30 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.94, y: 30 }}
@@ -32,7 +32,7 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
 
       {/* Floating Theme Picker */}
       <div className="absolute top-4 left-4 z-20">
-        <ThemePicker themeId={themeId} setThemeId={setThemeId} />
+        <ThemePicker themeId={themeId} setThemeId={setThemeId} pickerId="invite" />
       </div>
 
       {/* Close button */}
@@ -51,7 +51,7 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
       {/* Header Banner */}
       <div className={`relative px-8 pt-16 pb-6 text-center overflow-hidden bg-gradient-to-b rounded-t-[22px] ${theme.headerBg}`}>
         {/* Glowing Pulse Icon Container */}
-        <motion.div
+        <m.div
           className="relative mx-auto mb-5 flex h-20 w-20 items-center justify-center"
           animate={{ scale: [1, 1.04, 1] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
@@ -63,10 +63,23 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
               <div className="absolute inset-2 rounded-full bg-blue-500/5 animate-ping" style={{ animationDuration: "4s" }} />
             </>
           )}
-          <div className={`relative flex h-16 w-16 items-center justify-center rounded-full border transition-all ${theme.iconBg}`}>
-            <HeartPulse className={`h-7 w-7 ${theme.accent}`} strokeWidth={2.2} />
+          <div className={`relative flex h-16 w-16 items-center justify-center rounded-2xl border transition-all duration-500 ${theme.iconBg}`}>
+            {/* Animated background gradient layer */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/10 to-emerald-500/10 opacity-60 blur-sm" />
+            
+            {/* Overlapping Icons */}
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <Coins className={`absolute -bottom-1 -right-1 h-6 w-6 opacity-35 ${theme.accent}`} strokeWidth={1.5} />
+              <m.div
+                animate={{ scale: [1, 1.08, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-1 -left-1"
+              >
+                <HeartPulse className={`h-6 w-6 ${theme.accent}`} strokeWidth={2.2} />
+              </m.div>
+            </div>
           </div>
-        </motion.div>
+        </m.div>
 
         <div className={`text-[10px] font-extrabold uppercase tracking-[4px] mb-2 ${theme.accent}`}>
           Ortus Finance
@@ -102,7 +115,7 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
 
         {/* CTA Buttons */}
         <div className="space-y-3">
-          <motion.button
+          <m.button
             onClick={onStart}
             whileHover={{ scale: 1.01, translateY: -1 }}
             whileTap={{ scale: 0.99 }}
@@ -110,7 +123,7 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
           >
             {t(UI_TEXT.startBtn, lang)}
             <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-          </motion.button>
+          </m.button>
 
           <button
             onClick={onDismiss}
@@ -126,6 +139,6 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
           <span>{t(UI_TEXT.takesTime, lang)}</span>
         </p>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

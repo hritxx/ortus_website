@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, Calendar, Smartphone, Star } from 'lucide-react';
 import AnimatedUnderline from './AnimatedUnderline';
@@ -23,31 +23,31 @@ const itemVariants = {
 
 export default function HeroTextContent() {
   return (
-    <motion.div 
+    <m.div 
       variants={containerVariants}
       initial="hidden"
       animate="show"
       className="flex flex-col justify-center w-full max-w-2xl pt-10 pb-12 lg:py-24 z-10"
     >
       {/* Trust Badge */}
-      <motion.div variants={itemVariants} className="mb-6 lg:mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/80 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold w-fit backdrop-blur-md shadow-sm">
+      <m.div variants={itemVariants} className="mb-6 lg:mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/80 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold w-fit backdrop-blur-md shadow-sm">
         <Smartphone className="w-4 h-4" />
         <span>Download the Ortus Finance App today</span>
         <ArrowRight className="w-3 h-3 ml-1" />
-      </motion.div>
+      </m.div>
 
       {/* Headline */}
-      <motion.h1 variants={itemVariants} className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 leading-[1.05] mb-6 sm:mb-8">
+      <m.h1 variants={itemVariants} className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 leading-[1.05] mb-6 sm:mb-8">
         Let your financial success <AnimatedUnderline>shine</AnimatedUnderline> online.
-      </motion.h1>
+      </m.h1>
 
       {/* Supporting Copy */}
-      <motion.p variants={itemVariants} className="text-lg sm:text-xl text-neutral-600 leading-relaxed mb-8 sm:mb-10 max-w-[90%]">
+      <m.p variants={itemVariants} className="text-lg sm:text-xl text-neutral-600 leading-relaxed mb-8 sm:mb-10 max-w-[90%]">
         <strong className="font-semibold text-neutral-900">ORTUS FINANCE Pvt. Ltd.</strong> is founded by NISM-certified professionals. Experience seamless mutual fund distribution, data-backed insights, and goal-based planning.
-      </motion.p>
+      </m.p>
 
       {/* CTAs */}
-      <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10 sm:mb-14">
+      <m.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10 sm:mb-14">
         <Link
           href="https://play.google.com/store/apps/details?id=com.ortusfinance.app"
           target="_blank"
@@ -66,10 +66,10 @@ export default function HeroTextContent() {
           <Calendar className="w-4 h-4 text-neutral-500 group-hover:text-blue-600 transition-colors" />
           <span>Book 30-min Consultation</span>
         </Link>
-      </motion.div>
+      </m.div>
 
       {/* Trust Indicators */}
-      <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-neutral-500 font-medium">
+      <m.div variants={itemVariants} className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-neutral-500 font-medium">
         <div className="flex items-center gap-3">
           <div className="flex -space-x-2">
             {[1, 2, 3, 4].map((i) => (
@@ -94,9 +94,9 @@ export default function HeroTextContent() {
            </svg>
            <span className="font-semibold text-neutral-700">Google Play <span className="font-medium text-neutral-500">Verified</span></span>
         </div>
-      </motion.div>
+      </m.div>
 
-    </motion.div>
+    </m.div>
   );
 }
 

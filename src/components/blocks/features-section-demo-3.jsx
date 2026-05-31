@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -180,7 +180,7 @@ export const SkeletonTwo = () => {
       {/* TODO */}
       <div className="flex flex-row -ml-20">
         {images.map((image, idx) => (
-          <motion.div
+          <m.div
             variants={imageVariants}
             key={"images-first" + idx}
             style={{
@@ -195,12 +195,12 @@ export const SkeletonTwo = () => {
               width="500"
               height="500"
               className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0" />
-          </motion.div>
+          </m.div>
         ))}
       </div>
       <div className="flex flex-row">
         {images.map((image, idx) => (
-          <motion.div
+          <m.div
             key={"images-second" + idx}
             style={{
               rotate: Math.random() * 20 - 10,
@@ -215,7 +215,7 @@ export const SkeletonTwo = () => {
               width="500"
               height="500"
               className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0" />
-          </motion.div>
+          </m.div>
         ))}
       </div>
       <div
