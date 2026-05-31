@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useId, useState, useRef, useEffect } from "react";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion, domMax } from "framer-motion";
 import Container from "./Container";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -294,7 +294,7 @@ const RootLayoutInner = ({ children }) => {
 const RootLayout = ({ children }) => {
   const pathname = usePathname();
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={domMax} strict>
       <RootLayoutInner key={pathname}>
         {children}
       </RootLayoutInner>
