@@ -142,12 +142,6 @@ const testimonials = [
   },
   {
     quote:
-      "Ortus Finance-এর সার্ভিস অনেক ভালো। খুব সহজে আমি আমার পোর্টফোলিও ট্র্যাক করতে পারি। ধন্যবাদ অর্থুস টিমকে!",
-    name: "Hena Biswas",
-    title: "Santibazar, Dhalai Tripura",
-  },
-  {
-    quote:
       "ORTUS FINANCE stands out with its integrity and commitment to clients. I feel confident knowing my investments are in safe hands with certified professionals.",
     name: "Dr. Rupak Deb",
     title: "Kulai, Ambassa",
@@ -157,11 +151,5 @@ const testimonials = [
       "I was initially cautious about investing, but ORTUS FINANCE earned my trust with their professional guidance and hassle-free process. Highly recommended!",
     name: "Manik Lal Das",
     title: "Badharghat, Agartala Tripura",
-  },
-  {
-    quote:
-      "The team at Ortus Finance truly understands the needs of investors in Northeast India. Their personalized approach makes all the difference.",
-    name: "Bikas Deb",
-    title: "Halhali, Dhalai Tripura",
   },
 ];
