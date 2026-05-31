@@ -27,6 +27,71 @@ function isRateLimited(ip) {
   return false;
 }
 
+/**
+ * Server-side validation helper.
+ */
+function validatePayload(data) {
+  const { name, phone, email, totalScore } = data;
+  if (!name || typeof name !== "string" || !name.trim()) {
+    return "Name is required";
+  }
+  if (!phone || !PHONE_REGEX.test(phone)) {
+    return "Valid 10-digit Indian phone number required";
+  }
+  if (email && !EMAIL_REGEX.test(email)) {
+    return "Invalid email format";
+  }
+  if (typeof totalScore !== "number") {
+    return "Invalid score data";
+  }
+  return null;
+}
+
+/**
+ * Forwards payload to Google Sheets webhook and awaits response.
+ */
+async function forwardToWebhook(data) {
+  const webhookUrl = process.env.SURVEY_SHEET_WEBHOOK_URL;
+  if (!webhookUrl) {
+    console.warn(
+      "[survey-submit] WARNING: SURVEY_SHEET_WEBHOOK_URL environment variable is not defined. " +
+      "Google Sheet will not be updated. If you just added it, please restart the dev server."
+    );
+    return;
+  }
+
+  const { name, phone, email, totalScore, sectionScores } = data;
+  const sheetPayload = {
+    timestamp: new Date().toISOString(),
+    name: name.trim(),
+    phone,
+    email: email || "",
+    totalScore,
+    income: sectionScores?.income?.score ?? "",
+    spending: sectionScores?.spending?.score ?? "",
+    emergency: sectionScores?.emergency?.score ?? "",
+    debt: sectionScores?.debt?.score ?? "",
+    savings: sectionScores?.savings?.score ?? "",
+    goals: sectionScores?.goals?.score ?? "",
+  };
+
+  try {
+    const res = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(sheetPayload),
+    });
+    if (!res.ok) {
+      const bodyText = await res.text();
+      console.error(`[survey-submit] Webhook failed with status ${res.status}:`, bodyText);
+    } else {
+      console.log("[survey-submit] Webhook successfully updated Google Sheet.");
+    }
+  } catch (err) {
+    console.error("[survey-submit] Webhook fetch error:", err.message);
+  }
+}
+
 export async function POST(request) {
   try {
     const ip =
@@ -42,57 +107,12 @@ export async function POST(request) {
     }
 
     const body = await request.json();
-    const { name, phone, email, totalScore, sectionScores } = body;
-
-    // Server-side validation
-    if (!name || typeof name !== "string" || !name.trim()) {
-      return Response.json({ error: "Name is required" }, { status: 400 });
-    }
-    if (!phone || !PHONE_REGEX.test(phone)) {
-      return Response.json(
-        { error: "Valid 10-digit Indian phone number required" },
-        { status: 400 }
-      );
-    }
-    if (email && !EMAIL_REGEX.test(email)) {
-      return Response.json(
-        { error: "Invalid email format" },
-        { status: 400 }
-      );
-    }
-    if (typeof totalScore !== "number") {
-      return Response.json(
-        { error: "Invalid score data" },
-        { status: 400 }
-      );
+    const validationError = validatePayload(body);
+    if (validationError) {
+      return Response.json({ error: validationError }, { status: 400 });
     }
 
-    // Forward to Google Sheets webhook if configured
-    const webhookUrl = process.env.SURVEY_SHEET_WEBHOOK_URL;
-    if (webhookUrl) {
-      const sheetPayload = {
-        timestamp: new Date().toISOString(),
-        name: name.trim(),
-        phone,
-        email: email || "",
-        totalScore,
-        income: sectionScores?.income?.score ?? "",
-        spending: sectionScores?.spending?.score ?? "",
-        emergency: sectionScores?.emergency?.score ?? "",
-        debt: sectionScores?.debt?.score ?? "",
-        savings: sectionScores?.savings?.score ?? "",
-        goals: sectionScores?.goals?.score ?? "",
-      };
-
-      // Fire-and-forget to avoid blocking the response
-      fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(sheetPayload),
-      }).catch((err) => {
-        console.error("[survey-submit] Webhook error:", err.message);
-      });
-    }
+    await forwardToWebhook(body);
 
     return Response.json({ success: true });
   } catch (err) {

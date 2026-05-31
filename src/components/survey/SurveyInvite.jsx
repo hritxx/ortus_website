@@ -19,8 +19,8 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.94, y: 30 }}
       transition={{ duration: 0.4, type: "spring", stiffness: 260, damping: 22 }}
-      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 ${theme.bg} ${theme.cardBg}`}
-      style={{ perspective: "1200px" }}
+      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
+      style={{ perspective: "1200px", transform: "translate3d(0, 0, 0)" }}
     >
       {/* Background glowing gradients */}
       {!isLight && (
@@ -49,7 +49,7 @@ export default function SurveyInvite({ lang, setLang, onStart, onDismiss, theme,
       </button>
 
       {/* Header Banner */}
-      <div className={`relative px-8 pt-16 pb-6 text-center overflow-hidden bg-gradient-to-b rounded-t-[inherit] ${theme.headerBg}`}>
+      <div className={`relative px-8 pt-16 pb-6 text-center overflow-hidden bg-gradient-to-b rounded-t-[22px] ${theme.headerBg}`}>
         {/* Glowing Pulse Icon Container */}
         <motion.div
           className="relative mx-auto mb-5 flex h-20 w-20 items-center justify-center"

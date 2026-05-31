@@ -166,7 +166,8 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 ${theme.bg} ${theme.cardBg}`}
+      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 isolate ${theme.bg} ${theme.cardBg}`}
+      style={{ transform: "translate3d(0, 0, 0)" }}
     >
       {/* Close button */}
       {onClose && (
@@ -194,7 +195,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
       </div>
 
       {/* Score Header */}
-      <div className={`relative px-8 pt-16 pb-8 text-center border-b bg-gradient-to-b rounded-t-[inherit] ${theme.headerBg}`}>
+      <div className={`relative px-8 pt-16 pb-8 text-center border-b bg-gradient-to-b rounded-t-[22px] ${theme.headerBg}`}>
         <p className={`text-[10px] font-extrabold uppercase tracking-[4px] mb-5 ${theme.accent}`}>
           {t(UI_TEXT.yourScore, lang)}
         </p>
@@ -517,7 +518,7 @@ export default function SurveyResults({ lang, results, onRetake, onClose, theme,
       </div>
 
       {/* Buttons & CTA Hierarchy */}
-      <div className={`px-6 py-6 space-y-3.5 rounded-b-[inherit] ${isLight ? 'bg-neutral-100/30' : ''}`}>
+      <div className={`px-6 py-6 space-y-3.5 rounded-b-[22px] ${isLight ? 'bg-neutral-100/30' : ''}`}>
         {/* Primary CTA */}
         <a
           href="https://elevatebyortusfinance.in"

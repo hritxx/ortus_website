@@ -87,7 +87,8 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl flex flex-col justify-between min-h-[580px] transition-colors duration-300 ${theme.bg} ${theme.cardBg}`}
+      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl flex flex-col justify-between min-h-[580px] transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
+      style={{ transform: "translate3d(0, 0, 0)" }}
     >
       {/* Background Glowing Orb */}
       {!isLight && (
@@ -95,7 +96,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
       )}
 
       {/* Top progress bar */}
-      <div className={`h-1 w-full rounded-t-[inherit] ${isLight ? "bg-neutral-200" : "bg-white/5"}`}>
+      <div className={`h-1 w-full rounded-t-[22px] ${isLight ? "bg-neutral-200" : "bg-white/5"}`}>
         <motion.div
           className={`h-full bg-gradient-to-r rounded-r-full ${theme.progressBar}`}
           initial={{ width: 0 }}
@@ -266,7 +267,7 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
 
       {/* Footer Nav Bar */}
       {!(showSectionBanner && isNewSection) && (
-        <div className={`flex items-center justify-between border-t px-6 py-4 z-10 rounded-b-[inherit] ${theme.navBg}`}>
+        <div className={`flex items-center justify-between border-t px-6 py-4 z-10 rounded-b-[22px] ${theme.navBg}`}>
           <button
             onClick={handleBack}
             disabled={qIndex === 0}

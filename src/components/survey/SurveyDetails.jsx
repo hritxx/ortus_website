@@ -126,7 +126,8 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96 }}
-        className={`relative w-full max-w-lg mx-auto p-12 text-center rounded-3xl border shadow-2xl flex flex-col items-center justify-center min-h-[340px] transition-colors duration-300 ${theme.bg} ${theme.cardBg}`}
+        className={`relative w-full max-w-lg mx-auto p-12 text-center rounded-3xl border shadow-2xl flex flex-col items-center justify-center min-h-[340px] transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
+        style={{ transform: "translate3d(0, 0, 0)" }}
       >
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
@@ -168,7 +169,8 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 ${theme.bg} ${theme.cardBg}`}
+      className={`relative w-full max-w-lg mx-auto overflow-hidden rounded-3xl border shadow-2xl transition-colors duration-300 isolate ${theme.bg} ${theme.cardBg}`}
+      style={{ transform: "translate3d(0, 0, 0)" }}
     >
       {/* Background Orbs */}
       {!isLight && (
@@ -184,7 +186,7 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
       </div>
 
       {/* Compact Score Teaser Header */}
-      <div className={`relative px-6 pt-14 pb-4 text-center border-b bg-gradient-to-b rounded-t-[inherit] ${theme.headerBg}`}>
+      <div className={`relative px-6 pt-14 pb-4 text-center border-b bg-gradient-to-b rounded-t-[22px] ${theme.headerBg}`}>
         {/* Compact lock and blurred score row */}
         <div className="flex items-center justify-center gap-3.5 mb-3.5 max-w-xs mx-auto">
           <div className={`relative w-11 h-11 flex items-center justify-center rounded-xl border shadow-[0_0_15px_rgba(59,130,246,0.08)] ${isLight ? 'bg-neutral-100 border-neutral-300' : 'bg-neutral-900 border-white/10'}`}>

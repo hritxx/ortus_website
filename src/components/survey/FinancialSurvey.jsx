@@ -136,7 +136,7 @@ export default function FinancialSurvey() {
               {/* Scrollable content area */}
               <div className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
                               scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-300
-                              sm:max-h-[90vh]">
+                              p-3 sm:p-4 sm:max-h-[90vh]">
                 <AnimatePresence mode="wait">
                   {phase === "invite" && (
                     <SurveyInvite
