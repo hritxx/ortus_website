@@ -227,4 +227,19 @@ export const UI_TEXT = {
     trp: "Ortus Finance thong te",
     brx: "Ortus Finance नि जाहाथाय",
   },
+
+  // --- Details / Lead Capture Phase ---
+  unlockTitle: { en: "Unlock Your Financial Score" },
+  unlockSubtitle: { en: "Enter your details to reveal your personalized results" },
+  nameLabel: { en: "Full Name" },
+  namePlaceholder: { en: "Enter your name" },
+  phoneLabel: { en: "Phone Number" },
+  phonePlaceholder: { en: "10-digit mobile number" },
+  emailLabel: { en: "Email (Optional)" },
+  emailPlaceholder: { en: "your@email.com" },
+  submitDetails: { en: "Reveal My Score" },
+  invalidPhone: { en: "Enter a valid 10-digit mobile number" },
+  invalidEmail: { en: "Enter a valid email address" },
+  nameRequired: { en: "Name is required" },
+  submitting: { en: "Submitting..." },
 };

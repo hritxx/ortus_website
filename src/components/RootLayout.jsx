@@ -14,6 +14,73 @@ import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
 import Image from "next/image";
 
+const BANNER_KEY = "ortus_banner_dismissed";
+
+/**
+ * Top announcement banner — "Applications Open, Openings Filling Fast!"
+ * Dismissible, persisted to sessionStorage.
+ */
+const AnnouncementBanner = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem(BANNER_KEY)) {
+      setVisible(true);
+    }
+  }, []);
+
+  if (!visible) return null;
+
+  const handleDismiss = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    sessionStorage.setItem(BANNER_KEY, "true");
+    setVisible(false);
+  };
+
+  return (
+    <div className="relative z-50 w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 overflow-hidden">
+      {/* Animated shimmer overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)",
+          backgroundSize: "200% 100%",
+          animation: "banner-shimmer 3s ease-in-out infinite",
+        }}
+      />
+      <a
+        href="https://elevatebyortusfinance.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 px-4 py-2.5 text-white no-underline"
+      >
+        <span className="text-sm sm:text-sm font-bold tracking-wide text-center leading-snug">
+          <span className="mr-1.5">🎓</span>
+          Applications Open — Openings Filling Fast!
+        </span>
+        <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm border border-white/20 transition hover:bg-white/25 shrink-0">
+          Apply Now →
+        </span>
+      </a>
+      <button
+        onClick={handleDismiss}
+        className="absolute right-2 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full
+                   text-white/60 hover:text-white hover:bg-white/10 transition cursor-pointer"
+        aria-label="Dismiss banner"
+      >
+        ✕
+      </button>
+      <style jsx>{`
+        @keyframes banner-shimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+      `}</style>
+    </div>
+  );
+};
+
 const Header = ({
   panelId,
   invert = false,
@@ -131,6 +198,8 @@ const RootLayoutInner = ({ children }) => {
   return (
     <>
       <header>
+        {/* Announcement Banner */}
+        <AnnouncementBanner />
         <div
           className="absolute left-0 right-0 top-2 z-40 pt-14"
           aria-hidden={expanded ? "true" : undefined}

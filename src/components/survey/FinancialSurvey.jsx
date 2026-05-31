@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import SurveyInvite from "./SurveyInvite";
 import SurveyQuestions from "./SurveyQuestions";
+import SurveyDetails from "./SurveyDetails";
 import SurveyResults from "./SurveyResults";
 import SurveyFAB from "./SurveyFAB";
 import { DEFAULT_LANG } from "./data/languages";
@@ -16,7 +17,7 @@ const SESSION_KEY = "ortus_survey_shown";
  * Uses sessionStorage to show the invite popup only once per browser session.
  */
 export default function FinancialSurvey() {
-  const [phase, setPhase] = useState("closed"); // closed | invite | quiz | result
+  const [phase, setPhase] = useState("closed"); // closed | invite | quiz | details | result
   const [lang, setLang] = useState(DEFAULT_LANG);
   const [results, setResults] = useState(null);
   const [fabVisible, setFabVisible] = useState(false);
@@ -63,6 +64,10 @@ export default function FinancialSurvey() {
 
   const handleComplete = useCallback((resultData) => {
     setResults(resultData);
+    setPhase("details");
+  }, []);
+
+  const handleDetailsSubmitted = useCallback(() => {
     setPhase("result");
   }, []);
 
@@ -126,12 +131,21 @@ export default function FinancialSurvey() {
                       onComplete={handleComplete}
                     />
                   )}
+                  {phase === "details" && results && (
+                    <SurveyDetails
+                      key="details"
+                      lang={lang}
+                      results={results}
+                      onSubmitted={handleDetailsSubmitted}
+                    />
+                  )}
                   {phase === "result" && results && (
                     <SurveyResults
                       key="result"
                       lang={lang}
                       results={results}
                       onRetake={handleRetake}
+                      onClose={handleDismiss}
                     />
                   )}
                 </AnimatePresence>
