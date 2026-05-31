@@ -8,6 +8,7 @@ import SurveyDetails from "./SurveyDetails";
 import SurveyResults from "./SurveyResults";
 import SurveyFAB from "./SurveyFAB";
 import { DEFAULT_LANG } from "./data/languages";
+import { SURVEY_THEMES } from "./data/themes";
 
 const SESSION_KEY = "ortus_survey_shown";
 
@@ -22,6 +23,28 @@ export default function FinancialSurvey() {
   const [results, setResults] = useState(null);
   const [fabVisible, setFabVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
+  
+  // Theme state persisted in localStorage
+  const [themeId, setThemeId] = useState("light");
+
+  // Load theme from localStorage on client side
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("ortus_survey_theme");
+      if (savedTheme && SURVEY_THEMES[savedTheme]) {
+        setThemeId(savedTheme);
+      }
+    }
+  }, []);
+
+  const handleSetThemeId = useCallback((id) => {
+    setThemeId(id);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("ortus_survey_theme", id);
+    }
+  }, []);
+
+  const theme = SURVEY_THEMES[themeId] || SURVEY_THEMES.slate;
 
   // Client-side mount flag
   useEffect(() => {
@@ -105,7 +128,8 @@ export default function FinancialSurvey() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="absolute inset-0 bg-neutral-950/60 backdrop-blur-sm"
+                className={`absolute inset-0 backdrop-blur-sm transition-colors duration-500
+                  ${theme.id === "light" ? "bg-neutral-900/40" : "bg-neutral-950/60"}`}
                 onClick={phase === "invite" ? handleDismiss : undefined}
               />
 
@@ -121,6 +145,9 @@ export default function FinancialSurvey() {
                       setLang={setLang}
                       onStart={handleStartQuiz}
                       onDismiss={handleDismiss}
+                      theme={theme}
+                      themeId={themeId}
+                      setThemeId={handleSetThemeId}
                     />
                   )}
                   {phase === "quiz" && (
@@ -129,6 +156,9 @@ export default function FinancialSurvey() {
                       lang={lang}
                       setLang={setLang}
                       onComplete={handleComplete}
+                      theme={theme}
+                      themeId={themeId}
+                      setThemeId={handleSetThemeId}
                     />
                   )}
                   {phase === "details" && results && (
@@ -137,6 +167,9 @@ export default function FinancialSurvey() {
                       lang={lang}
                       results={results}
                       onSubmitted={handleDetailsSubmitted}
+                      theme={theme}
+                      themeId={themeId}
+                      setThemeId={handleSetThemeId}
                     />
                   )}
                   {phase === "result" && results && (
@@ -146,6 +179,9 @@ export default function FinancialSurvey() {
                       results={results}
                       onRetake={handleRetake}
                       onClose={handleDismiss}
+                      theme={theme}
+                      themeId={themeId}
+                      setThemeId={handleSetThemeId}
                     />
                   )}
                 </AnimatePresence>
