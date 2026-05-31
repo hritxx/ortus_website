@@ -2,6 +2,12 @@
   "name": "ortus-website",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "chrome >= 89",
+    "firefox >= 89",
+    "safari >= 15",
+    "edge >= 89"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
