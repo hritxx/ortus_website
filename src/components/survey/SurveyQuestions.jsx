@@ -1,7 +1,7 @@
 "use client";
 import { useState, useCallback, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ArrowRight, Check, Sparkles, HelpCircle, Loader2, Wallet, ShoppingCart, Shield, CreditCard, PiggyBank, Target } from "lucide-react";
+import { ChevronLeft, ArrowRight, Check, Sparkles, HelpCircle, Loader2, Wallet, ShoppingCart, Shield, CreditCard, PiggyBank, Target, X } from "lucide-react";
 import { ALL_QUESTIONS } from "./data/questions";
 import { SECTIONS } from "./data/sections";
 import { LANGUAGES, t } from "./data/languages";
@@ -24,7 +24,7 @@ const SECTION_ICONS = {
  * Question stepper component — fully customizable themed layout.
  * Displays interactive section introductions and dynamic questionnaire flows.
  */
-export default function SurveyQuestions({ lang, setLang, onComplete, theme, themeId, setThemeId }) {
+export default function SurveyQuestions({ lang, setLang, onComplete, onClose, theme, themeId, setThemeId }) {
   const [qIndex, setQIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [direction, setDirection] = useState(1);
@@ -118,12 +118,27 @@ export default function SurveyQuestions({ lang, setLang, onComplete, theme, them
       {/* Header controls & dots */}
       <div className={`px-6 pt-4 pb-3 border-b z-10 ${isLight ? "bg-neutral-100/50 border-neutral-200/60" : "bg-neutral-900/20 border-white/5"} backdrop-blur-sm`}>
         <div className="flex flex-col sm:flex-row gap-3.5 justify-between items-start sm:items-center mb-3.5">
-          {/* Section index indicator */}
-          <span className={`text-[10px] font-extrabold uppercase tracking-wider whitespace-nowrap ${theme.textMuted}`}>
-            {t(UI_TEXT.sectionOf, lang)
-              .replace("{current}", sectionIndex + 1)
-              .replace("{total}", SECTIONS.length)}
-          </span>
+          {/* Close + section index indicator */}
+          <div className="flex items-center gap-2">
+            {onClose && (
+              <button
+                onClick={onClose}
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2
+                  ${isLight
+                    ? "bg-neutral-100 border-neutral-200 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 focus-visible:ring-indigo-500"
+                    : "bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10 hover:text-white focus-visible:ring-blue-500"
+                  }`}
+                aria-label="Close"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            )}
+            <span className={`text-[10px] font-extrabold uppercase tracking-wider whitespace-nowrap ${theme.textMuted}`}>
+              {t(UI_TEXT.sectionOf, lang)
+                .replace("{current}", sectionIndex + 1)
+                .replace("{total}", SECTIONS.length)}
+            </span>
+          </div>
           
           {/* Theme selection + Language picker */}
           <div className="flex flex-col gap-2.5 w-full sm:flex-row sm:items-center sm:gap-3 sm:w-auto sm:justify-end">

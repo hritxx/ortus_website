@@ -44,7 +44,7 @@ function validateField(field, value, lang) {
  * Lead-capture form shown after quiz completion, before score reveal.
  * Fully styled dynamically matching selected enterprise theme.
  */
-export default function SurveyDetails({ lang, results, onSubmitted, theme, themeId, setThemeId }) {
+export default function SurveyDetails({ lang, results, onSubmitted, onClose, theme, themeId, setThemeId }) {
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
@@ -177,6 +177,21 @@ export default function SurveyDetails({ lang, results, onSubmitted, theme, theme
       <div className="absolute top-4 left-4 z-20">
         <ThemePicker themeId={themeId} setThemeId={setThemeId} pickerId="details" />
       </div>
+
+      {/* Close button */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className={`absolute top-4 right-4 z-20 flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2
+            ${isLight
+              ? "bg-neutral-100 border-neutral-200 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 focus-visible:ring-indigo-500"
+              : "bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10 hover:text-white focus-visible:ring-blue-500"
+            }`}
+          aria-label="Close"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      )}
 
       {/* Compact Score Teaser Header */}
       <div className={`relative px-6 pt-14 pb-4 text-center border-b bg-gradient-to-b rounded-t-[22px] ${theme.headerBg}`}>

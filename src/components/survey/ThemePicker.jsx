@@ -35,7 +35,7 @@ function ThemeButton({ theme, isActive, isLight, onClick, pickerId }) {
   return (
     <button
       onClick={onClick}
-      className={`relative flex items-center justify-center gap-1 rounded-full px-2.5 py-1.5 text-xs font-medium transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-1
+      className={`relative flex shrink-0 items-center justify-center gap-1 rounded-full px-2.5 py-2 text-xs font-medium transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-1
         ${isActive 
           ? "text-white font-semibold" 
           : isLight 
@@ -82,10 +82,11 @@ export default function ThemePicker({ themeId, setThemeId, pickerId = "default" 
   const isLight = themeId === "light";
 
   return (
-    <div 
+    <div
       className={`inline-flex items-center gap-1 p-1 rounded-full border shadow-sm transition-all duration-300 backdrop-blur-md select-none
-        ${isLight 
-          ? "bg-neutral-100/80 border-neutral-200/80" 
+        max-w-[72vw] overflow-x-auto sm:max-w-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+        ${isLight
+          ? "bg-neutral-100/80 border-neutral-200/80"
           : "bg-black/60 border-white/10"
         }`}
     >

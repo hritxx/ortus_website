@@ -1,10 +1,9 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useId, useState, useRef, useEffect } from "react";
-import { LazyMotion, domMax } from "framer-motion";
+import { LazyMotion, domMax, MotionConfig } from "framer-motion";
 import Container from "./Container";
 import Link from "next/link";
-import Logo from "./Logo";
 import { Menu, X } from "lucide-react";
 import Button from "./Button";
 
@@ -98,22 +97,34 @@ const Header = ({
   onToggle,
   toggleRef,
 }) => {
+  const [logoError, setLogoError] = useState(false);
   //container
   return (
     <Container>
       <div className="flex items-center justify-between">
-        {/*logo*/}
-        <Link href={"/"} aria-label="Home">
-          <div className="flex items-center">
+        {/* Logo — swaps to the white variant inside the inverted (dark) menu panel.
+            Falls back to plain "ORTUS FINANCE" text only if the image fails to load. */}
+        <Link href={"/"} aria-label="ORTUS FINANCE — Home">
+          {logoError ? (
+            <span
+              className={clsx(
+                "font-bold text-xl sm:text-2xl tracking-tight",
+                invert ? "text-white" : "text-neutral-950"
+              )}
+            >
+              ORTUS FINANCE
+            </span>
+          ) : (
             <Image
-              src="/images/logo.png" // Replace with the actual path to your logo image
-              alt="ORTUS Logo"
-              width={60} // Adjust width as needed
-              height={60} // Adjust height as needed
-              className="mr-2"
+              src={invert ? "/images/logo-1.png" : "/images/logo.png"}
+              alt="ORTUS FINANCE"
+              width={236}
+              height={140}
+              priority={!invert}
+              onError={() => setLogoError(true)}
+              className="h-16 w-auto sm:h-20"
             />
-            <Logo invert={invert}>ORTUS FINANCE</Logo>
-          </div>
+          )}
         </Link>
         <div className="flex items-center gap-x-8">
           <Button href={"/contact"} invert={invert}>
@@ -294,9 +305,11 @@ const RootLayout = ({ children }) => {
   const pathname = usePathname();
   return (
     <LazyMotion features={domMax} strict>
-      <RootLayoutInner key={pathname}>
-        {children}
-      </RootLayoutInner>
+      <MotionConfig reducedMotion="user">
+        <RootLayoutInner key={pathname}>
+          {children}
+        </RootLayoutInner>
+      </MotionConfig>
     </LazyMotion>
   );
 };

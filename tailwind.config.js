@@ -57,6 +57,11 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      spacing: {
+        // `4.5` is not part of Tailwind's default scale; several components
+        // (hero CTAs `py-4.5`, survey radio `h-4.5/w-4.5`) rely on it.
+        "4.5": "1.125rem",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

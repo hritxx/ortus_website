@@ -68,20 +68,34 @@ export default function FinancialSurvey() {
     }
   }, []);
 
-  // Lock/unlock body scroll when modal is open
+  // Lock/unlock scroll when modal is open. Target documentElement (the real
+  // scroller given html.h-full + body.min-h-full); `scrollbar-gutter: stable`
+  // (base.css) keeps the gutter reserved so there is no horizontal jump.
   useEffect(() => {
+    const root = document.documentElement;
     if (phase !== "closed") {
-      document.body.style.overflow = "hidden";
+      root.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      root.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => { root.style.overflow = ""; };
   }, [phase]);
 
   const handleDismiss = useCallback(() => {
     setPhase("closed");
     setFabVisible(true);
   }, []);
+
+  // Escape closes the modal from any phase so the user is never trapped
+  // (the quiz/details steps have no backdrop dismissal).
+  useEffect(() => {
+    if (phase === "closed") return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") handleDismiss();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [phase, handleDismiss]);
 
   const handleStartQuiz = useCallback(() => {
     setPhase("quiz");
@@ -140,7 +154,11 @@ export default function FinancialSurvey() {
               />
 
               {/* Scrollable content area */}
-              <div className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-label="Financial Health Checkup"
+                className="relative z-10 w-full max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain
                               scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-300
                               p-3 sm:p-4 sm:max-h-[90vh]">
                 <AnimatePresence mode="popLayout">
@@ -162,6 +180,7 @@ export default function FinancialSurvey() {
                       lang={lang}
                       setLang={setLang}
                       onComplete={handleComplete}
+                      onClose={handleDismiss}
                       theme={theme}
                       themeId={themeId}
                       setThemeId={handleSetThemeId}
@@ -173,6 +192,7 @@ export default function FinancialSurvey() {
                       lang={lang}
                       results={results}
                       onSubmitted={handleDetailsSubmitted}
+                      onClose={handleDismiss}
                       theme={theme}
                       themeId={themeId}
                       setThemeId={handleSetThemeId}
